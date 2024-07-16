@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="default_style.css">
+    <link rel="stylesheet" type="text/css" href="header_style.css">
+
+</head>
+
+<body>
+    <!-- 整个页面 -->
+    <div id="layout">
+        <!-- 包括上方搜索栏和导航页 -->
+        <div class="header" role="=banner">
+            <!-- ::before -->
+            <!-- 填充两侧，保证内容在中间 -->
+            <div class="wrapper">
+                <!-- 左侧logo部分 -->
+                <div class="header-con">
+                    <h1 class="logo" role="banner">
+                        <!-- 链接跳转主页 -->
+                        <a href="#">
+                            <img src="./img/logo.png" alt="logo" style="height:50px">
+                        </a>
+                    </h1>
+                    <!-- logo的右侧部分，包括搜索条和右侧菜单 -->
+                    <div class="header-right">
+                        <!-- 搜索条，包括搜索栏和搜索按钮-->
+                        <div class="header-search">
+                            <div class="search-bd">
+                                <!-- 提交表单(待添加) -->
+                                <input type="text" class="search-input" id="search-input"
+                                    placeholder="搜索车票/餐饮/常旅客/相关章程">
+                            </div>
+                            <button class="search-btn"><img class="icon-search" src="./img/search.png"
+                                    alt="serach"></button>
+
+                        </div>
+                        <!-- 右侧菜单 -->
+                        <ul class="header-menu">
+                            <li class="menu-line">|</li>
+                            <li class="menu-item menu-nav">
+                                <a href="#" class="menu-nav-hd" aria-expanded="true">
+                                    <div class="dropdown-arrow">
+                                    </div>我的星济铁路
+                                </a>
+
+                                <ul class="menu-dropdown">
+                                    <li><a class="menu-dropdown-item" href="#">子菜单项 1</a></li>
+                                    <li><a class="menu-dropdown-item" href="#">子菜单项 2</a></li>
+                                    <li><a class="menu-dropdown-item" href="#">子菜单项 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-line">|</li>
+                            <li id="header-login" class="menu-item menu-log">
+                                <a href="#" class="menu-nav-hd">登录</a>
+                                <a href="#" class="menu-nav-hd">注册</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-box">
+                <ul class="nav">
+                    <li id="shouye" class="nav-item"><a class="nav-hd" href="#">首页<div class="dropdown-arrow"></div>
+                            <!-- 下拉箭头 --></a>
+                        <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul>
+                    </li>
+                    <li id="chepiao" class="nav-item"><a class="nav-hd" href="#">车票<div class="dropdown-arrow"></div>
+                        </a>
+                        <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul>
+                    </li>
+                    <li id="tuangoufuwu" class="nav-item"><a class="nav-hd" href="#">团购服务<div class="dropdown-arrow">
+                            </div></a>
+                        <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul>
+                    </li>
+                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="#">站车服务<div class="dropdown-arrow">
+                            </div></a>
+                        <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul>
+                    </li>
+                    <li id="shanglvfuwu" class="nav-item"><a class="nav-hd" href="#">商旅服务<div class="dropdown-arrow">
+                            </div></a>
+                        <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul>
+                    </li>
+                    <li id="chuxingzhinan" class="nav-item"><a class="nav-hd" href="#">出行指南<div class="dropdown-arrow">
+                            </div></a>
+                        <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul>
+                    </li>
+                    <li id="xinxichaxun" class="nav-item"><a class="nav-hd" href="#">信息查询<div class="dropdown-arrow">
+                            </div></a>
+                        <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 获取所有带有下拉菜单的菜单项
+    var navItems = document.querySelectorAll('.nav-item, .menu-nav-hd');
+
+    // 遍历每个菜单项，添加点击事件监听器
+    navItems.forEach(function (item) {
+        var link = item.querySelector('.nav-hd, .menu-nav-hd'); // 获取菜单项中的链接
+        var dropdown = item.querySelector('.nav-dropdown, .menu-dropdown'); // 获取下拉菜单
+
+        // 添加点击事件监听器
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // 阻止链接默认行为
+
+            // 切换下拉菜单的显示状态
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</html>
