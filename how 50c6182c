@@ -1,0 +1,21 @@
+[33m69eaa5e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmyz[m[33m, [m[1;31morigin/myz[m[33m)[m HEAD@{0}: checkout: moving from 50c6182ccb26c2ca7c5f828ad233224d90bba149 to myz
+[33m50c6182c[m HEAD@{1}: commit: Fix: 修复登录bug
+[33m69eaa5e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmyz[m[33m, [m[1;31morigin/myz[m[33m)[m HEAD@{2}: checkout: moving from myz to 69eaa5e215bf2518173f6add3e99a3ebb873bda0
+[33m69eaa5e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmyz[m[33m, [m[1;31morigin/myz[m[33m)[m HEAD@{3}: checkout: moving from cljj to myz
+[33m3aa379b9[m[33m ([m[1;32mcljj[m[33m)[m HEAD@{4}: commit: try to update based on cljj, but remain to complete
+[33m7b94c8d2[m[33m ([m[1;31morigin/cljj[m[33m)[m HEAD@{5}: pull origin cljj: Fast-forward
+[33md73dfb2b[m HEAD@{6}: checkout: moving from cljj to cljj
+[33md73dfb2b[m HEAD@{7}: checkout: moving from myz to cljj
+[33m69eaa5e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmyz[m[33m, [m[1;31morigin/myz[m[33m)[m HEAD@{8}: reset: moving to HEAD
+[33m69eaa5e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmyz[m[33m, [m[1;31morigin/myz[m[33m)[m HEAD@{9}: checkout: moving from cljj to myz
+[33md73dfb2b[m HEAD@{10}: checkout: moving from myz to cljj
+[33m69eaa5e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmyz[m[33m, [m[1;31morigin/myz[m[33m)[m HEAD@{11}: checkout: moving from cljj to myz
+[33md73dfb2b[m HEAD@{12}: checkout: moving from myz to cljj
+[33m69eaa5e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmyz[m[33m, [m[1;31morigin/myz[m[33m)[m HEAD@{13}: commit: Update: 基本功能实现
+[33md66d1bfe[m HEAD@{14}: checkout: moving from bsh to myz
+[33m78b93838[m[33m ([m[1;31morigin/bsh[m[33m, [m[1;32mbsh[m[33m)[m HEAD@{15}: checkout: moving from myz to bsh
+[33md66d1bfe[m HEAD@{16}: checkout: moving from bsh to myz
+[33m78b93838[m[33m ([m[1;31morigin/bsh[m[33m, [m[1;32mbsh[m[33m)[m HEAD@{17}: checkout: moving from myz to bsh
+[33md66d1bfe[m HEAD@{18}: commit: update frontend
+[33ma758e6d2[m[33m ([m[1;31morigin/购票[m[33m, [m[1;31morigin/查询[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{19}: checkout: moving from main to myz
+[33ma758e6d2[m[33m ([m[1;31morigin/购票[m[33m, [m[1;31morigin/查询[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{20}: clone: from https://github.com/Ru-bato/Database-Course-Design.git
