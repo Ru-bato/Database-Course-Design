@@ -41,10 +41,11 @@ namespace DB_Backend.DB_BackendBLL
             bool hasMinimumLength = password.Length >= 10;
             bool hasDigit = Regex.IsMatch(password, @"\d");
             bool hasLowerCase = Regex.IsMatch(password, @"[a-z]");
-            bool hasUpperCase = Regex.IsMatch(password, @"[A-Z]");
-            bool hasSpecialCharacter = Regex.IsMatch(password, @"[/!@#$%^&*()]");
+            //bool hasUpperCase = Regex.IsMatch(password, @"[A-Z]");
+            //bool hasSpecialCharacter = Regex.IsMatch(password, @"[/!@#$%^&*()]");
 
-            bool isValid = hasMinimumLength && hasDigit && hasLowerCase && hasUpperCase && hasSpecialCharacter;
+            //bool isValid = hasMinimumLength && hasDigit && hasLowerCase && hasUpperCase && hasSpecialCharacter;
+            bool isValid = hasMinimumLength && hasDigit && hasLowerCase;
             return isValid;
         }
 

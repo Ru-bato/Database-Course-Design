@@ -25,24 +25,23 @@ namespace DB_Backend.DB_BackendDAL
                 }
                 OracleCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "SELECT * FROM USERS WHERE USER_ID=3";
-                //command.Parameters.Clear();
-                //command.Parameters.Add("user_id", OracleDbType.Varchar2, UID, ParameterDirection.Input);
+                command.CommandText = "SELECT * FROM USERSTEST WHERE USER_ID = :user_id";
+                command.Parameters.Clear();
+                command.Parameters.Add("user_id", OracleDbType.Varchar2, UID, ParameterDirection.Input);
                 Console.WriteLine("UID = " +  UID);
-                Console.WriteLine("DEBUG: SQL = " + command.CommandText + " SQL END");
                 try
                 {
                     OracleDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        user.User_ID = reader["USER_ID"].ToString();
+                        user.User_ID = reader["User_ID"].ToString();
                         user.Username = reader["Username"].ToString();
-                        //user.Account_Status = reader["Account_Status"].ToString();
-                        //user.Address = reader["Address"].ToString();
                         user.Password = reader["Password"].ToString();
-                        //user.Phone_Number = reader["Phone_Number"].ToString();
-                        //user.Role = reader["Role"].ToString();
-                        //user.Avatar = GetAvatar(reader["User_ID"].ToString());
+                        user.Phone_Number = reader["Phone_Number"].ToString();
+                        user.ID_Number = reader["ID_Number"].ToString();
+                        user.Is_Student = reader["Is_Student"].ToString() == "Y";
+                        user.Status = reader["Status"].ToString() == "Y";
+                        user.Riding_Interval = reader["Riding_Interval"].ToString();
                     }
                     if (user.User_ID == "-1")
                         throw new Exception("不存在的用户，请注册新用户！");
@@ -56,7 +55,9 @@ namespace DB_Backend.DB_BackendDAL
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
+                    throw;
                 }
+                connection.Close();
             }
             return user;
         }

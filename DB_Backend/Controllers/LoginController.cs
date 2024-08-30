@@ -52,8 +52,8 @@ namespace DB_Backend.Controllers
             string uid = loginFormat.User_ID;
             string password = loginFormat.Password;
             Console.WriteLine("Login: " + uid + " " + password);
-            User candidate = UserManager.Login(uid, password); // remain to fix
-            password = ComputeSHA256Hash(password);
+            User candidate = UserManager.Login(uid, password);
+            //password = ComputeSHA256Hash(password);
             if(candidate.Password != password)
             {
                 return Unauthorized(-1); //"密码错误，请重新输入"
