@@ -55,11 +55,11 @@ namespace DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("INSERT INTO Users (User_id, Username, Aassword, Id_number, Is_student, Status, Phone_number, Riding_interval) VALUES (:User_id, :Username, :Aassword, :Id_number, :Is_student, :Status, :Phone_number, :Riding_interval)", connection))
+                using (var command = new OracleCommand("INSERT INTO Users (User_id, Username, Password, Id_number, Is_student, Status, Phone_number, Riding_interval) VALUES (:User_id, :Username, :Password, :Id_number, :Is_student, :Status, :Phone_number, :Riding_interval)", connection))
                 {
                     command.Parameters.Add(new OracleParameter("User_id", user.User_id));
                     command.Parameters.Add(new OracleParameter("Username", user.Username));
-                    command.Parameters.Add(new OracleParameter("Aassword", user.Aassword));
+                    command.Parameters.Add(new OracleParameter("Password", user.Password));
                     command.Parameters.Add(new OracleParameter("Id_number", user.Id_number));
                     command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
                     command.Parameters.Add(new OracleParameter("Status", user.Status));
@@ -88,7 +88,7 @@ namespace DB_BackendDAL
                             {
                                 User_id = reader["User_id"].ToString(),
                                 Username = reader["Username"].ToString(),
-                                Aassword = reader["Aassword"].ToString(),
+                                Password = reader["Password"].ToString(),
                                 Id_number = reader["Id_number"].ToString(),
                                 Is_student = Convert.ToBoolean(reader["Is_student"]),
                                 Status = Convert.ToBoolean(reader["Status"]),
@@ -108,10 +108,10 @@ namespace DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("UPDATE Users SET Username = :Username, Aassword = :Aassword, Id_number = :Id_number, Is_student = :Is_student, Status = :Status, Phone_number = :Phone_number, Riding_interval = :Riding_interval WHERE User_id = :User_id", connection))
+                using (var command = new OracleCommand("UPDATE Users SET Username = :Username, Password = :Password, Id_number = :Id_number, Is_student = :Is_student, Status = :Status, Phone_number = :Phone_number, Riding_interval = :Riding_interval WHERE User_id = :User_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("Username", user.Username));
-                    command.Parameters.Add(new OracleParameter("Aassword", user.Aassword));
+                    command.Parameters.Add(new OracleParameter("Password", user.Password));
                     command.Parameters.Add(new OracleParameter("Id_number", user.Id_number));
                     command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
                     command.Parameters.Add(new OracleParameter("Status", user.Status));

@@ -17,7 +17,7 @@ namespace DB_BackendBLL
         public void CreateUser(User user)
         {
             // 业务规则：用户名和密码不能为空
-            if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Aassword))
+            if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Password))
             {
                 throw new ArgumentException("用户名和密码不能为空");
             }
@@ -41,7 +41,7 @@ namespace DB_BackendBLL
         public void UpdateUser(User user)
         {
             // 业务规则：用户名和密码不能为空
-            if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Aassword))
+            if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Password))
             {
                 throw new ArgumentException("用户名和密码不能为空");
             }
