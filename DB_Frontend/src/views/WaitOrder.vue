@@ -1,15 +1,15 @@
 <template>
   <div>
-    <OrdersList />
+    <WaitOrder />
   </div>
 </template>
 
 <script lang="ts">
-import OrdersList from '../components/OrdersList.vue';
+import WaitOrder from '../components/WaitOrder.vue';
 
 export default {
   components: {
-    OrdersList
+    WaitOrder
   }
 };
 </script>

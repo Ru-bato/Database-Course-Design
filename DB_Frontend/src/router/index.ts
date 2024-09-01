@@ -4,8 +4,11 @@ import Login from '../views/Login.vue';
 import Booking from '../views/Booking.vue';
 import LoginPage from '../views/TestLoginPage.vue';
 import RegisterPage from '../views/TestRegisterPage.vue';
-import OrdersList from '../views/OrdersList.vue';
 import MyTickets from '../views/MyTickets.vue';
+import PaidOrder from '../views/PaidOrder.vue';
+import UnpaidOrder from '../views/UnpaidOrder.vue';
+import WaitOrder from '../views/WaitOrder.vue';
+import TrainManagement from '../views/TrainManagement.vue';
 
 
 // const router = createRouter({
@@ -32,8 +35,11 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/login', name: 'Login', component: LoginPage },
   { path: '/register', name: 'Register', component: RegisterPage },
   { path: '/booking', name: 'Booking', component: Booking },
-  { path: '/order', name: 'OrdersList', component: OrdersList },
   { path: '/ticket', name: 'MyTickets', component: MyTickets },
+  { path: '/paidorder', name: 'PaidOrder', component: PaidOrder },
+  { path: '/unpaidorder', name: 'UnpaidOrder', component: UnpaidOrder },
+  { path: '/waitorder', name: 'WaitOrder', component: WaitOrder },
+  { path: '/trainmanagement', name: 'TrainManagement', component: TrainManagement },
 ];
 
 const router = createRouter({

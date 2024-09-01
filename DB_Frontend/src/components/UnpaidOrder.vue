@@ -1,25 +1,16 @@
 <template>
   <div class="order-container">
-    <h2>我的订单</h2>
-
-    <!-- Order status filter buttons -->
-    <div class="filter-buttons">
-      <button 
-        v-for="status in ['已支付', '未支付', '候补']" 
-        :key="status" 
-        :class="['filter-button', {'active': selectedStatus === status}]" 
-        @click="filterByStatus(status)">
-        {{ status }}
-      </button>
-    </div>
+    <h2>未支付订单</h2>
 
     <!-- Date range picker -->
     <div class="date-picker">
-      <label for="start-date">起始日期:</label>
-      <input type="date" id="start-date" v-model="startDate" />
-      <label for="end-date">结束日期:</label>
-      <input type="date" id="end-date" v-model="endDate" />
-      <button @click="filterByDate">筛选</button>
+      <div class="date-picker-inner">
+        <label for="start-date">起始日期:</label>
+        <input type="date" id="start-date" v-model="startDate" />
+        <label for="end-date">结束日期:</label>
+        <input type="date" id="end-date" v-model="endDate" />
+        <button @click="filterByDate">筛选</button>
+      </div>
     </div>
 
     <!-- Order list -->
@@ -60,11 +51,11 @@
           </div>
           <div class="detail-row">
             <span class="label">出发站：</span>
-            <span>{{ order.departureStation }}</span>
+            <a :href="getMapUrl(order.departureStation)" target="_blank" class="station-link departure">{{ order.departureStation }}</a>
           </div>
           <div class="detail-row">
             <span class="label">目的站：</span>
-            <span>{{ order.arrivalStation }}</span>
+            <a :href="getMapUrl(order.arrivalStation)" target="_blank" class="station-link arrival">{{ order.arrivalStation }}</a>
           </div>
           <div class="detail-row">
             <span class="label">出发时间：</span>
@@ -76,9 +67,7 @@
           </div>
         </div>
         <div class="order-actions">
-          <button v-if="order.orderStatus === 'paid'" @click="handleChangeTicket(order.orderId)">改签</button>
-          <button v-if="order.orderStatus === 'unpaid'" @click="handlePay(order.orderId)">支付</button>
-          <button v-if="order.orderStatus === 'wait'" @click="handleWaitlistStatus(order.orderId)">候补情况</button>
+          <button @click="handlePay(order.orderId)">支付</button>
           <button @click="handleCancelOrder(order.orderId)">取消订单</button>
         </div>
       </div>
@@ -107,15 +96,14 @@ interface Order {
 export default {
   setup() {
     const orders = ref<Order[]>([]);
-    const selectedStatus = ref<string>('已支付');
     const startDate = ref<string>('');
     const endDate = ref<string>('');
     const filteredOrders = ref<Order[]>([]);
 
-    const userId = '0001';
+    const userId = '0002';// 需要组长去调整
 
     const fetchOrders = () => {
-      axios.get(`http://localhost:5138/api/MyOrder/GetMyOrder?cust=${userId}`)
+      axios.get(`http://localhost:5138/api/MyOrder/GetMyUnpaidOrder?cust=${userId}`)
         .then(response => {
           orders.value = response.data;
           applyFilters();
@@ -127,16 +115,10 @@ export default {
 
     const applyFilters = () => {
       filteredOrders.value = orders.value.filter(order => {
-        const matchesStatus = selectedStatus.value === getStatusLabel(order.orderStatus);
         const matchesDate = (!startDate.value || new Date(order.departureTime) >= new Date(startDate.value)) &&
                             (!endDate.value || new Date(order.departureTime) <= new Date(endDate.value));
-        return matchesStatus && matchesDate;
+        return matchesDate;
       });
-    };
-
-    const filterByStatus = (status: string) => {
-      selectedStatus.value = status;
-      applyFilters();
     };
 
     const filterByDate = () => {
@@ -157,16 +139,12 @@ export default {
       return ticketType === 'adult' ? '成人票' : '学生票';
     };
 
-    const handleChangeTicket = (orderId: string) => {
-      console.log('改签订单:', orderId);
+    const getMapUrl = (station: string) => {
+      return `https://www.amap.com/search?query=${encodeURIComponent(station)}`;
     };
 
     const handlePay = (orderId: string) => {
       console.log('支付订单:', orderId);
-    };
-
-    const handleWaitlistStatus = (orderId: string) => {
-      console.log('查看候补情况:', orderId);
     };
 
     const handleCancelOrder = (orderId: string) => {
@@ -179,17 +157,14 @@ export default {
 
     return {
       filteredOrders,
-      selectedStatus,
       startDate,
       endDate,
-      filterByStatus,
       filterByDate,
       getStatusLabel,
       getStatusClass,
       getTicketTypeLabel,
-      handleChangeTicket,
+      getMapUrl,
       handlePay,
-      handleWaitlistStatus,
       handleCancelOrder,
     };
   }
@@ -208,30 +183,19 @@ export default {
   min-height: 100vh;
 }
 
-.filter-buttons {
-  margin-bottom: 20px;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.filter-buttons .filter-button {
-  padding: 10px 20px;
-  margin-right: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  flex: 1;
-  max-width: 120px;
-}
-
-.filter-buttons .filter-button.active {
-  background-color: #007bff;
-  color: #fff;
+h2 {
+  font-weight: bold; /* 使 "已支付订单" 文本加粗 */
 }
 
 .date-picker {
   margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.date-picker-inner {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,10 +204,28 @@ export default {
 
 .date-picker label {
   margin-right: 10px;
+  font-weight: bold;
 }
 
 .date-picker input {
   margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.date-picker button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.date-picker button:hover {
+  background-color: #0056b3;
 }
 
 .order-card {
@@ -317,6 +299,13 @@ export default {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.order-actions button:hover {
+  background-color: #0056b3;
 }
 
 .no-orders {
@@ -343,4 +332,20 @@ export default {
   text-align: center;
 }
 
+.station-link {
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
+}
+
+.station-link.departure {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.station-link.arrival {
+  color: #28a745;
+  border-color: #28a745;
+}
 </style>
