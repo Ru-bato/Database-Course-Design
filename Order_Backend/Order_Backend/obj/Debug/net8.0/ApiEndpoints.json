@@ -2,7 +2,59 @@
   {
     "ContainingType": "Order_Backend.Controllers.AdminOrdersController",
     "Method": "Add",
-    "RelativePath": "api/AdminOrders/AddOrder",
+    "RelativePath": "api/AdminOrders/AddTrain",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "t_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "d_station",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "a_station",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "d_time",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "a_time",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Order_Backend.Controllers.AdminOrdersController",
+    "Method": "Delete",
+    "RelativePath": "api/AdminOrders/deleteTrain",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "t_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Order_Backend.Controllers.AdminOrdersController",
+    "Method": "Get",
+    "RelativePath": "api/AdminOrders/GetAllTrain",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -11,18 +63,108 @@
   },
   {
     "ContainingType": "Order_Backend.Controllers.AdminOrdersController",
-    "Method": "Get",
-    "RelativePath": "api/AdminOrders/GetAllOrders",
+    "Method": "GetOne",
+    "RelativePath": "api/AdminOrders/GetOneTrain",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "t_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Order_Backend.Controllers.AdminOrdersController",
+    "Method": "Upadta",
+    "RelativePath": "api/AdminOrders/updateTrain",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "t_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "d_station",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "a_station",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "d_time",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "a_time",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Order_Backend.Controllers.MyOrderController",
     "Method": "Get",
-    "RelativePath": "api/MyOrder/GetMyOrder",
+    "RelativePath": "api/MyOrder/GetMyAllOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Order_Backend.Controllers.MyOrderController",
+    "Method": "GetPaid",
+    "RelativePath": "api/MyOrder/GetMyPaidOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Order_Backend.Controllers.MyOrderController",
+    "Method": "GetUnpaid",
+    "RelativePath": "api/MyOrder/GetMyUnpaidOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Order_Backend.Controllers.MyOrderController",
+    "Method": "GetWait",
+    "RelativePath": "api/MyOrder/GetMyWaitOrder",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
