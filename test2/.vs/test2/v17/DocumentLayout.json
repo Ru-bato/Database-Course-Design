@@ -1,0 +1,244 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backendbll\\adminmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backendbll\\adminmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backendbll\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backendbll\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backenddal\\orderserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backenddal\\orderserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backendmodel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backendmodel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backenddal\\adminserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backenddal\\adminserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backendmodel\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backendmodel\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backendmodel\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backendmodel\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|e:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\db_backendbll\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68620F79-1297-4BFD-BC32-3943780E8F47}|test2\\test2.csproj|solutionrelative:test2\\db_backendbll\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "test2\\Controllers\\OrderController.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "test2\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T06:54:45.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "test2\\Controllers\\AdminController.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "test2\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T06:53:50.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "test2\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\Controllers\\UserController.cs",
+              "RelativeToolTip": "test2\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T06:51:38.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderManager.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendBLL\\OrderManager.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendBLL\\OrderManager.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendBLL\\OrderManager.cs",
+              "RelativeToolTip": "test2\\DB_BackendBLL\\OrderManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T11:39:08.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminManager.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendBLL\\AdminManager.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendBLL\\AdminManager.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendBLL\\AdminManager.cs",
+              "RelativeToolTip": "test2\\DB_BackendBLL\\AdminManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T11:38:46.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserServer.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendDAL\\UserServer.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendDAL\\UserServer.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendDAL\\UserServer.cs",
+              "RelativeToolTip": "test2\\DB_BackendDAL\\UserServer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T09:54:37.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderServer.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendDAL\\OrderServer.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendDAL\\OrderServer.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendDAL\\OrderServer.cs",
+              "RelativeToolTip": "test2\\DB_BackendDAL\\OrderServer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T11:24:31.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendModel\\User.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendModel\\User.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendModel\\User.cs",
+              "RelativeToolTip": "test2\\DB_BackendModel\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T10:16:32.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\Program.cs",
+              "RelativeDocumentMoniker": "test2\\Program.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\Program.cs",
+              "RelativeToolTip": "test2\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T09:57:59.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminServer.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendDAL\\AdminServer.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendDAL\\AdminServer.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendDAL\\AdminServer.cs",
+              "RelativeToolTip": "test2\\DB_BackendDAL\\AdminServer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T11:24:00.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendModel\\Admin.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendModel\\Admin.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendModel\\Admin.cs",
+              "RelativeToolTip": "test2\\DB_BackendModel\\Admin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T10:25:21.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Order.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendModel\\Order.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendModel\\Order.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendModel\\Order.cs",
+              "RelativeToolTip": "test2\\DB_BackendModel\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T10:27:27.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserManager.cs",
+              "DocumentMoniker": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendBLL\\UserManager.cs",
+              "RelativeDocumentMoniker": "test2\\DB_BackendBLL\\UserManager.cs",
+              "ToolTip": "E:\\\u8BFE\u7A0B\u8BBE\u8BA1\\\u6570\u636E\u5E93\\test2\\test2\\DB_BackendBLL\\UserManager.cs",
+              "RelativeToolTip": "test2\\DB_BackendBLL\\UserManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T11:28:40.49Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
