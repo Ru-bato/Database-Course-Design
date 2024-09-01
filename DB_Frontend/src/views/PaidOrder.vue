@@ -2,20 +2,20 @@
   <div class="container">
     <HeaderComponent />
     <NavComponent />
-    <MyTickets /> 
+    <PaidOrder />
   </div>
 </template>
 
 <script lang="ts">
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import NavComponent from '@/components/NavComponent.vue';
-import MyTickets from '@/components/MyTickets.vue';
+import PaidOrder from '@/components/PaidOrder.vue';
 
 export default {
   components: {
     HeaderComponent,
     NavComponent,
-    MyTickets,
+    PaidOrder
   }
 };
 </script>
