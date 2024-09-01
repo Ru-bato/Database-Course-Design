@@ -56,6 +56,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/header_style.css";
-
+@import "../assets/header_style.css";
 </style>

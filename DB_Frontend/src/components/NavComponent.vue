@@ -79,7 +79,11 @@ export default {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #fff;
-  cursor: pointer;
+  cursor: pointer;  
+}
+
+li.nav-item::marker {
+  content: none;
 }
 
 .nav-item:hover .nav-dropdown {

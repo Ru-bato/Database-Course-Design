@@ -8,8 +8,8 @@ namespace DB_Backend.DB_BackendDAL
 {
     public class UserServer
     {
-        public static string conStr = "User ID=system;Password=Db_12306;Data Source=47.100.21.14:1521/orcl";
-        public static User GetUserByUID(string UID)
+        public static string conStr = AccommodateServer.conStr;
+        public static User GetUserByTel(string Tel)
         {
             User user = new User();
             using (OracleConnection connection = new OracleConnection(conStr))
@@ -25,10 +25,10 @@ namespace DB_Backend.DB_BackendDAL
                 }
                 OracleCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "SELECT * FROM USERSTEST WHERE USER_ID = :user_id";
+                command.CommandText = "SELECT * FROM USERSTEST WHERE Phone_Number = :tel";
                 command.Parameters.Clear();
-                command.Parameters.Add("user_id", OracleDbType.Varchar2, UID, ParameterDirection.Input);
-                Console.WriteLine("UID = " +  UID);
+                command.Parameters.Add("tel", OracleDbType.Varchar2, Tel, ParameterDirection.Input);
+                Console.WriteLine("Tel = " +  Tel);
                 try
                 {
                     OracleDataReader reader = command.ExecuteReader();
@@ -62,31 +62,39 @@ namespace DB_Backend.DB_BackendDAL
             return user;
         }
 
-        public static string InsertUser(string Username, string pwd)
+        public static string InsertUser(string Username, string Password, string Phone_Number, string ID_Number)
         {
             string UID = "-1";
             try
             {
                 using (OracleConnection connection = new OracleConnection(conStr))
                 {
-                    connection.Open();
+                    try
+                    {
+                        connection.Open();
+                        Console.WriteLine("Connection successful in UserServer.cs!");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Connection failed:! " + ex);
+                    }
                     OracleCommand command = connection.CreateCommand();
                     command.CommandType = CommandType.Text;
-                    string account_status = "In Good Standing";
-                    command.CommandText = "INSERT INTO User (User_ID, Username, password)" +
-                        "VALUES (user_id_seq.NEXTVAL, :user_name, :password)";
+                    string status = "Y";
+                    command.CommandText = "INSERT INTO USERSTEST (User_ID, Username, Password, Phone_Number, ID_Number, Status)" +
+                        "VALUES (user_id_seq.NEXTVAL, :username, :Password, :Phone_number, :ID_Number, :Status)";
                     command.Parameters.Clear();
-                    command.Parameters.Add("user_name", OracleDbType.Varchar2, Username, ParameterDirection.Input);
-                    command.Parameters.Add("password", OracleDbType.Varchar2, pwd, ParameterDirection.Input);
-                    //command.Parameters.Add("phone_number", OracleDbType.Varchar2, phoneNumber, ParameterDirection.Input);
-                    //command.Parameters.Add("account_status", OracleDbType.Varchar2, account_status, ParameterDirection.Input);
-                    //command.Parameters.Add("address", OracleDbType.Varchar2, Address, ParameterDirection.Input);
-                    //command.Parameters.Add("Role", OracleDbType.Varchar2, Role, ParameterDirection.Input);
+                    command.Parameters.Add("username", OracleDbType.Varchar2, Username, ParameterDirection.Input);
+                    command.Parameters.Add("Password", OracleDbType.Varchar2, Password, ParameterDirection.Input);
+                    command.Parameters.Add("Phone_Number", OracleDbType.Varchar2, Phone_Number, ParameterDirection.Input);
+                    command.Parameters.Add("ID_Number", OracleDbType.Varchar2, ID_Number, ParameterDirection.Input);
+                    command.Parameters.Add("Status", OracleDbType.Varchar2, status, ParameterDirection.Input);
                     try
                     {
                         command.ExecuteNonQuery();
                         command.CommandText = "select user_id_seq.CURRVAL from dual";
                         UID = command.ExecuteScalar().ToString();
+                        Console.WriteLine("Regist success, UID = " + UID);
                     }
                     catch (OracleException ex)
                     {

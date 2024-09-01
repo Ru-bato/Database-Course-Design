@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using DB_Backend.DB_BackendDAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +12,9 @@ builder.Services.AddHttpContextAccessor();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<MyTicketDbContext>(options =>
+    options.UseOracle(builder.Configuration.GetConnectionString("OracleDbConnection")));
+
 
 builder.Services.AddCors(options =>
 {

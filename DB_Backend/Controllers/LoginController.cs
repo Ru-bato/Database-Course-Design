@@ -16,11 +16,11 @@ namespace DB_Backend.Controllers
     {
         public class LoginFormat
         {
-            public string User_ID { get; set; }
+            public string Phone_Number { get; set; }
             public string Password { get; set; }
             public LoginFormat()
             {
-                User_ID = string.Empty;
+                Phone_Number = string.Empty;
                 Password = string.Empty;
             }
         }
@@ -45,25 +45,32 @@ namespace DB_Backend.Controllers
                 return stringBuilder.ToString();
             }
         }
-
+        /// <summary>
+        /// 登录接口，使用手机号登录
+        /// </summary>
+        /// <param name="loginFormat"></param>
+        /// <returns>Ok or Unauthorized</returns>
         [HttpPost]
         public IActionResult Login([FromBody] LoginFormat loginFormat)
         {
-            string uid = loginFormat.User_ID;
+            string phoneNumber = loginFormat.Phone_Number;
             string password = loginFormat.Password;
-            Console.WriteLine("Login: " + uid + " " + password);
-            User candidate = UserManager.Login(uid, password);
+            Console.WriteLine("Login: " + phoneNumber + " " + password);
+            User candidate = UserManager.Login(phoneNumber, password);
             //password = ComputeSHA256Hash(password);
             if(candidate.Password != password)
             {
+                Console.WriteLine("密码错误，请重新输入");
                 return Unauthorized(-1); //"密码错误，请重新输入"
             }
             else if(candidate.Status == false)
             {
+                Console.WriteLine("账号已被封禁，请等待解禁");
                 return Unauthorized(-2); //"账号已被封禁，请等待解禁"
             }
             else if(candidate.User_ID == "-1")
             {
+                Console.WriteLine("用户不存在");
                 return Unauthorized(-3); //"用户不存在"
             }
             else

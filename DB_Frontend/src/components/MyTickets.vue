@@ -1,241 +1,251 @@
 <template>
-  <div class="tickets-container">
-    <div class="filter-section">
-      <span class="notice">订单信息保存期限为30日。</span>
-      <label>乘车日期:</label>
-      <div class="date-picker-container">
-        <input type="date" v-model="filters.startDate" class="date-picker" />
-        <span>至</span>
-        <input type="date" v-model="filters.endDate" class="date-picker" />
-      </div>
-      <label>
-        <input type="checkbox" v-model="filters.studentOnly" /> 学生票
-      </label>
-      <button @click="filterTickets" class="search-button">查询</button>
+  <div class="order-container">
+    <h2>我的车票</h2>
+
+    <!-- Date range picker -->
+    <div class="date-picker">
+      <label for="start-date">起始日期:</label>
+      <input type="date" id="start-date" v-model="startDate" />
+      <label for="end-date">结束日期:</label>
+      <input type="date" id="end-date" v-model="endDate" />
+      <button @click="filterByDate">筛选</button>
     </div>
 
-    <ul class="ticket-list">
-      <li v-for="(ticket, index) in filteredTickets" :key="index" class="ticket-item">
-        <div class="ticket-header">
-          <span class="ticket-date">{{ ticket.date }} {{ ticket.weekday }}</span>
-          <span class="order-number">订单号: {{ ticket.orderNumber }}</span>
+    <!-- Order list -->
+    <div v-if="filteredOrders.length === 0" class="no-orders">
+      <p>你目前没有车票</p>
+    </div>
+    <div v-else>
+      <div v-for="(order, index) in filteredOrders" :key="order.orderId" class="order-card" :class="{'alternate-bg': index % 2 === 1}">
+        <div class="order-header">
+          <h3>订单号: <span class="blue-text">{{ order.orderId }}</span></h3>
         </div>
-        <div class="ticket-body">
-          <div class="ticket-details">
-            <p>乘客姓名: {{ ticket.passengerName }}</p>
-            <p>火车号: {{ ticket.trainNumber }}</p>
-            <p>出发时间: {{ ticket.departureTime }}</p>
-            <p>出发站: {{ ticket.departureStation }}</p>
-            <p>到达站: {{ ticket.arrivalStation }}</p>
+        <div class="order-details">
+          <div class="detail-row">
+            <span class="label">列车号：</span>
+            <span class="blue-text">{{ order.trainId }}</span>
           </div>
-          <div class="ticket-payment">
-            <span>{{ ticket.paymentMethod }}</span>
+          <div class="detail-row">
+            <span class="label">价格：</span>
+            <span class="blue-text">{{ order.price }}元</span>
           </div>
-          <div class="ticket-actions">
-            <button v-if="ticket.status === '待支付'" class="pay-button">改签票</button>
-            <button v-if="ticket.status === '已支付'" class="pay-button">改签</button>
-            <button class="change-destination-button">变更到站</button>
-            <button class="food-specialties-button">餐饮·特产</button>
-            <button class="print-button">打印信息单</button>
-            <a href="#" class="refund-link">退票</a>
+          <div class="detail-row">
+            <span class="label">车票类型：</span>
+            <span class="blue-text">{{ getTicketTypeLabel(order.ticketType) }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">出发站：</span>
+            <span class="station-link" @click="openMap(order.departureStation)">{{ order.departureStation }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">终点站：</span>
+            <span class="station-link" @click="openMap(order.arrivalStation)">{{ order.arrivalStation }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">出发时间：</span>
+            <span class="blue-text">{{ order.departureTime }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">到达时间：</span>
+            <span class="blue-text">{{ order.arriveTime }}</span>
           </div>
         </div>
-      </li>
-    </ul>
+        <div class="order-actions">
+          <button class="orange-button">餐饮</button>
+          <button class="blue-button">退票</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+
+interface Order {
+  orderId: string;
+  trainId: string;
+  price: number;
+  ticketType: string;
+  departureStation: string;
+  arrivalStation: string;
+  departureTime: string;
+  arriveTime: string;
+}
+
 export default {
-  data() {
-    return {
-      filters: {
-        startDate: "",
-        endDate: "",
-        studentOnly: false,
-      },
-      tickets: [
-        {
-          date: "2024-07-19",
-          weekday: "周五",
-          orderNumber: "EJ67234897",
-          passengerName: "张三",
-          trainNumber: "G1234",
-          departureTime: "08:00",
-          departureStation: "北京南站",
-          arrivalStation: "上海虹桥",
-          paymentMethod: "线上购买 非现金支付",
-          status: "待支付",
-        },
-        {
-          date: "2024-07-20",
-          weekday: "周六",
-          orderNumber: "EJ84329264",
-          passengerName: "李四",
-          trainNumber: "D5678",
-          departureTime: "09:30",
-          departureStation: "南京南站",
-          arrivalStation: "杭州东站",
-          paymentMethod: "线上购买 非现金支付",
-          status: "已支付",
-        },
-        // 更多车票数据...
-      ],
-      filteredTickets: [],
+  setup() {
+    const orders = ref<Order[]>([]);
+    const startDate = ref<string>('');
+    const endDate = ref<string>('');
+    const filteredOrders = ref<Order[]>([]);
+
+    const fetchOrders = async () => {
+      try {
+        const userId = '0002'; // 假设当前登录的 userId 为 0002
+        const response = await axios.get(`http://localhost:5138/api/MyTicket/GetMyTicket?cust=${userId}`);
+        orders.value = response.data;
+        applyFilters();
+      } catch (error) {
+        console.error('Error fetching orders:', error);
+      }
     };
-  },
-  mounted() {
-    this.filterTickets();
-  },
-  methods: {
-    filterTickets() {
-      this.filteredTickets = this.tickets.filter((ticket) => {
-        let matchesDate = true;
-        let matchesStudent = true;
 
-        if (this.filters.startDate && this.filters.endDate) {
-          matchesDate =
-            ticket.date >= this.filters.startDate &&
-            ticket.date <= this.filters.endDate;
-        }
-
-        if (this.filters.studentOnly) {
-          // 假设学生票信息在 ticket 中有一个字段可以用来判断
-          matchesStudent = ticket.studentTicket === true;
-        }
-
-        return matchesDate && matchesStudent;
+    const applyFilters = () => {
+      filteredOrders.value = orders.value.filter(order => {
+        const matchesDate = (!startDate.value || new Date(order.departureTime) >= new Date(startDate.value)) &&
+                            (!endDate.value || new Date(order.departureTime) <= new Date(endDate.value));
+        return matchesDate;
       });
-    },
-  },
+    };
+
+    const filterByDate = () => {
+      applyFilters();
+    };
+
+    const getTicketTypeLabel = (ticketType: string) => {
+      return ticketType === 'adult' ? '成人票' : '学生票';
+    };
+
+    const openMap = (stationName: string) => {
+      const encodedStationName = encodeURIComponent(stationName);
+      const mapUrl = `https://www.amap.com/search?query=${encodedStationName}`;
+      window.open(mapUrl, '_blank');
+    };
+
+    onMounted(() => {
+      fetchOrders();
+    });
+
+    return {
+      orders,
+      startDate,
+      endDate,
+      filteredOrders,
+      filterByDate,
+      getTicketTypeLabel,
+      openMap
+    };
+  }
 };
 </script>
 
 <style scoped>
-.tickets-container {
+.order-container {
+  max-width: 2000px; /* 增加最大宽度 */
+  margin: 0 auto;
   padding: 20px;
-  background-color: #f7f7f7;
-}
-
-.notice {
-  color: orange;
-  margin-bottom: 15px;
-  display: block;
-  text-align: center;
-}
-
-.filter-section {
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.date-picker-container {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
+  align-items: center; /* 水平居中 */
+  justify-content: flex-start; /* 顶部对齐 */
+  min-height: 100vh; /* 确保容器至少占据视口高度 */
+  width: 100%; /* 确保容器占据全宽 */
+  box-sizing: border-box; /* 确保 padding 不会影响总宽度 */
 }
 
 .date-picker {
-  margin: 0 5px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.search-button {
-  padding: 5px 15px;
-  background-color: #3b99fc;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.ticket-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.ticket-item {
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.ticket-header {
+  margin: 20px auto;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* 确保日期选择器占据全宽 */
 }
 
-.ticket-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.ticket-details {
-  flex: 1;
-}
-
-.ticket-details p {
-  margin: 5px 0;
-}
-
-.ticket-payment {
-  flex: 1;
-  text-align: right;
-}
-
-.ticket-actions {
-  flex: 2;
-  text-align: right;
-}
-
-.ticket-actions button,
-.ticket-actions .refund-link {
+.date-picker label {
   margin-right: 10px;
-  padding: 5px 10px;
-  background-color: #3b99fc;
+}
+
+.date-picker input {
+  margin-right: 10px;
+}
+
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  display: flex; 
+  flex-direction: column; /* 改为竖向布局 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* 占据全宽 */
+  box-sizing: border-box; /* 确保 padding 不会影响总宽度 */
+}
+
+.order-card.alternate-bg {
+  background-color: #f9f9f9; /* 交替背景色 */
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* 增加底部间距 */
+}
+
+.order-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.order-details {
+  display: flex;
+  flex-wrap: wrap; /* 换行排列 */
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.detail-row {
+  margin-bottom: 10px;
+  width: 48%; /* 调整为每行两个元素 */
+}
+
+.label {
+  color: #007bff; /* 蓝色字体 */
+}
+
+.blue-text {
+  color: #333; /* 标签字体颜色 */
+}
+
+.station-link {
+  color: #007bff; /* 链接颜色 */
+  text-decoration: underline; /* 下划线 */
+  cursor: pointer; /* 鼠标指针样式 */
+}
+
+.no-orders {
+  text-align: center;
+  color: #6c757d;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.orange-button {
+  background-color: #ff9800;
   color: white;
   border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
   cursor: pointer;
-  border-radius: 4px;
 }
 
-.ticket-actions .refund-link {
-  background-color: transparent;
-  color: #3b99fc;
-  text-decoration: underline;
-}
-
-.ticket-actions button:last-child,
-.ticket-actions .refund-link:last-child {
-  margin-right: 0;
-}
-
-.pay-button {
-  background-color: #ff9800;
-}
-
-.change-destination-button {
-  background-color: #4caf50;
-}
-
-.food-specialties-button {
-  background-color: #9c27b0;
-}
-
-.print-button {
-  background-color: #009688;
+.blue-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 </style>

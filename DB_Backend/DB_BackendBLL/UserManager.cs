@@ -10,59 +10,109 @@ namespace DB_Backend.DB_BackendBLL
 {
     public class UserManager
     {
-        public static string ComputeSHA256Hash(string input)
+        /// <summary>
+        /// 在后端接收到密码后，进行哈希处理。为了增加安全性，使用一个强密码哈希算法。
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static string ComputeSHA256Hash(string input) // Todo: 暂时不加盐
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                // 将输入字符串转换为字节数组
-                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-
-                // 计算哈希值
+                var saltedInput = input; // Todo: 暂时不加盐
+                byte[] inputBytes = Encoding.UTF8.GetBytes(saltedInput);
                 byte[] hashBytes = sha256.ComputeHash(inputBytes);
-
-                // 将字节数组转换为十六进制字符串
-                StringBuilder stringBuilder = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    stringBuilder.Append(hashBytes[i].ToString("x2")); // 使用 "x2" 格式将字节转换为两位十六进制
-                }
-
-                return stringBuilder.ToString();
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
             }
         }
-
-        public static User Login(string User_ID, string Password)
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="Phone_Number"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+        public static User Login(string Phone_Number, string Password)
         {
-            User candidate = UserServer.GetUserByUID(User_ID);
+            User candidate = UserServer.GetUserByTel(Phone_Number);
             return candidate;
         }
+        /// <summary>
+        /// 检验手机号格式是否合法
+        /// </summary>
+        /// <param name="Phone_Number"></param>
+        /// <returns>true: 合法, false: 不合法</returns>
+        private static bool ValidatePhoneNumber(string Phone_Number)
+        {
+            string pattern = @"^\d{11}$";
+            bool isValid = Regex.IsMatch(Phone_Number, pattern);
+            return isValid;
+        }
+        /// <summary>
+        /// 检验密码格式是否合法
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns>true: 合法, false: 不合法</returns>
         private static bool ValidatePassword(string password)
         {
             bool hasMinimumLength = password.Length >= 10;
             bool hasDigit = Regex.IsMatch(password, @"\d");
             bool hasLowerCase = Regex.IsMatch(password, @"[a-z]");
-            //bool hasUpperCase = Regex.IsMatch(password, @"[A-Z]");
-            //bool hasSpecialCharacter = Regex.IsMatch(password, @"[/!@#$%^&*()]");
+            bool hasUpperCase = Regex.IsMatch(password, @"[A-Z]");
+            bool hasSpecialCharacter = Regex.IsMatch(password, @"[/!@#$%^&*_()]");
 
-            //bool isValid = hasMinimumLength && hasDigit && hasLowerCase && hasUpperCase && hasSpecialCharacter;
-            bool isValid = hasMinimumLength && hasDigit && hasLowerCase;
+            bool isValid = hasMinimumLength && hasDigit && hasLowerCase && hasUpperCase && hasSpecialCharacter;
             return isValid;
         }
+        /// <summary>
+        /// 检验注册格式是否合法
+        /// </summary>
+        /// <param name="Username"></param>
+        /// <param name="Password"></param>
+        /// <param name="Phone_Number"></param>
+        /// <returns>
+        /// <para>!ValidatePhoneNumber: 1</para> 
+        /// <para>!ValidatePassword: 2</para> 
+        /// <para>Username.Length > 20: 3</para>
+        /// <para>valid: 0</para>
+        /// </returns>
+        private static int ValidRegistration(string Username, string Password, string Phone_Number)
+        {
+            if (!ValidatePhoneNumber(Phone_Number))
+            {
+                return 1;
+            }
+            else if (!ValidatePassword(Password))
+            {
+                return 2;
+            }
+            else if (Username.Length > 20)
+            {
+                return 3;
+            }
+            else
+                return 0;
 
-        public static int Register(out string User_ID, string Username, string Password)
+        }
+        /// <summary>
+        /// 注册
+        /// </summary>
+        /// <param name="User_ID"></param>
+        /// <param name="Username"></param>
+        /// <param name="Password"></param>
+        /// <param name="Phone_Number"></param>
+        /// <returns></returns>
+        public static int Register(out string User_ID, string Username, string Password, string Phone_Number, string ID_Number)
         {
             User_ID = null;
-            bool code = ValidatePassword(Password);
-            if (!code)
-            {
-                return -2;
-            }
-            User_ID = UserServer.InsertUser(Username, ComputeSHA256Hash(Password));
-            if(User_ID == "-1")
+            int code = ValidRegistration(Username, Password, Phone_Number);
+            Console.WriteLine("code = " + code);
+            if (code != 0) { return code; } // means incorrect
+            User_ID = UserServer.InsertUser(Username, Password, Phone_Number, ID_Number);
+            if (User_ID == "-1")
             {
                 return -1;
             }
-            return 0;
+            return code;
         }
     }
 }
