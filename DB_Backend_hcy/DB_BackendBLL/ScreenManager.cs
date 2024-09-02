@@ -76,7 +76,7 @@ namespace DB_Backend.DB_BackendBLL
                     string? station = dr["DEPARTURE_STATION"].ToString();
                     string? _time = dr["ARRIVAL_TIME"].ToString();
                     string? exit = dr["TRAIN_EXIT"].ToString();
-                    string? status = dr["ARRIVAL_TRAIN_STATUS"].ToString();
+                    string? status = dr["ARRIVE_TRAIN_STATUS"].ToString();
 
                     if (id != null && station != null && _time != null && exit != null && status != null)
                     {

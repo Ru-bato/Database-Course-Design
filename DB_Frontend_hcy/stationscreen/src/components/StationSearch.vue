@@ -102,6 +102,8 @@ export default defineComponent({
     });
 
     const toggleDepart = () => {
+      trainList.value = [];
+
       isDepartActive.value = true;
       isArriveActive.value = false;
       viewMode.value = 'depart';
@@ -109,6 +111,8 @@ export default defineComponent({
     };
 
     const toggleArrive = () => {
+      trainList.value = [];
+
       isDepartActive.value = false;
       isArriveActive.value = true;
       viewMode.value = 'arrive';
@@ -119,6 +123,8 @@ export default defineComponent({
       const url = isDepartActive.value 
         ? 'http://localhost:5080/api/Screen/departure'
         : 'http://localhost:5080/api/Screen/arrival';
+
+      trainList.value = [];
 
       try {
         const response = await axios.post(url, { query: stationName.value });
