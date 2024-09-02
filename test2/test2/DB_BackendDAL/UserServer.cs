@@ -137,5 +137,39 @@ namespace DB_BackendDAL
                 }
             }
         }
+
+        // 获取所有用户
+        public List<User> GetAllUsers()
+        {
+            var users = new List<User>();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("SELECT * FROM Users", connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var user = new User
+                            {
+                                User_id = reader["User_id"].ToString(),
+                                Username = reader["Username"].ToString(),
+                                Password = reader["Password"].ToString(),
+                                Id_number = reader["Id_number"].ToString(),
+                                Is_student = Convert.ToBoolean(reader["Is_student"]),
+                                Status = Convert.ToBoolean(reader["Status"]),
+                                Phone_number = reader["Phone_number"].ToString(),
+                                Riding_interval = reader["Riding_interval"].ToString(),
+                            };
+                            users.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return users;
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace test2.Controllers
                     };
                     _adminManager.CreateAdmin(admin);
 
-                    return Ok("Admin created successfully.");
+                    return Ok("User created successfully.");
                 }
                 else
                 {
@@ -73,7 +73,7 @@ namespace test2.Controllers
                 var response = new
                 {
                     User = user,
-                    IsAdmin = isAdmin
+                    IsAdmin = isAdmin,
                 };
                 return Ok(response);
             }

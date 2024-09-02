@@ -33,6 +33,11 @@ namespace DB_BackendBLL
             return _passengerServer.GetPassengerById(passengerId);
         }
 
+        public List<Passenger> GetPassengersByUserId(string userId)
+        {
+            return _passengerServer.GetPassengersByUserId(userId);
+        }
+
         public void UpdatePassenger(Passenger passenger)
         {
             if (string.IsNullOrWhiteSpace(passenger.Passenger_name) || string.IsNullOrWhiteSpace(passenger.Id_number))

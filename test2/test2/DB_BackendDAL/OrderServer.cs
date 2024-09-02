@@ -75,6 +75,39 @@ namespace DB_BackendDAL
             return null;
         }
 
+        // 根据User_id获取所有相关的乘车人
+        public List<Orderlist> GetOrdersByUserId(string userId)
+        {
+            List<Orderlist> orders = new List<Orderlist>();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("SELECT * FROM Orders WHERE User_id = :User_id", connection))
+                {
+                    command.Parameters.Add(new OracleParameter("User_id", userId));
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            orders.Add(new Orderlist
+                            {
+                                Order_id = reader["Order_id"].ToString(),
+                                User_id = reader["User_id"].ToString(),
+                                Train_id = reader["Train_id"].ToString(),
+                                Orderstatus = reader["Orderstatus"].ToString(),
+                                Price = reader["Price"].ToString(),
+                                passenger_id = reader["Passenger_id"].ToString(),
+                                ticket_type = reader["Ticket_type"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            return orders;
+        }
+
         // 更新订单信息
         public void UpdateOrder(Orderlist order)
         {

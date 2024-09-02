@@ -78,5 +78,92 @@ namespace test2.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        // 修改用户登录状态（通过修改Status属性）
+        [HttpPut("ProhibitUserLogin/{id}")]
+        public IActionResult ProhibitUserLogin(string id, bool status)
+        {
+            try
+            {
+                var user = _userManager.GetUserById(id);
+                if (user == null) return NotFound("User not found.");
+                var admin = _adminManager.GetAdminById(id);
+                if (admin != null)
+                {
+                    return BadRequest("Admins cannot be changed.");
+                }
+                user.Status = status;
+                _userManager.UpdateUser(user);
+
+                return Ok($"User login status updated to {status}.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        //创建以及查询信息与UserController.cs中内容重复，不重复编程
+
+        // 删除用户
+        [HttpDelete("DeleteUser/{id}")]
+        public IActionResult DeleteNoAdminUser(string id)
+        {
+            try
+            {
+                var admin = _adminManager.GetAdminById(id);
+                if (admin != null)
+                {
+                    return BadRequest("Admins cannot be deleted.");
+                }
+
+                _userManager.DeleteUser(id);
+                return Ok("User deleted successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // 修改用户信息
+        [HttpPut("UpdateUser")]
+        public IActionResult UpdateNoAdminUser(User user)
+        {
+            try
+            {
+                var admin = _adminManager.GetAdminById(user.User_id);
+                if (admin != null)
+                {
+                    return BadRequest("Admins cannot be modified.");
+                }
+
+                _userManager.UpdateUser(user);
+                return Ok("User updated successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        //为Admin添加一个能够得到全部用户id列表的功能
+        [HttpGet("GetAllUserIds")]
+        public IActionResult GetAllUserIds()
+        {
+            try
+            {
+                var userIds = _userManager.GetAllUserIds();
+                if (userIds == null || userIds.Count == 0)
+                {
+                    return NotFound("No users found.");
+                }
+                return Ok(userIds);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

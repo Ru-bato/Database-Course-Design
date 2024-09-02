@@ -67,6 +67,36 @@ namespace DB_BackendDAL
             return null;
         }
 
+        // 根据User_id获取所有相关的乘车人
+        public List<Passenger> GetPassengersByUserId(string userId)
+        {
+            List<Passenger> passengers = new List<Passenger>();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("SELECT * FROM Passengers WHERE User_id = :User_id", connection))
+                {
+                    command.Parameters.Add(new OracleParameter("User_id", userId));
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            passengers.Add(new Passenger
+                            {
+                                passenger_id = reader["passenger_id"].ToString(),
+                                User_id = reader["User_id"].ToString(),
+                                Passenger_name = reader["Passenger_name"].ToString(),
+                                Id_number = reader["Id_number"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            return passengers;
+        }
+
         // 更新乘车人信息
         public void UpdatePassenger(Passenger passenger)
         {

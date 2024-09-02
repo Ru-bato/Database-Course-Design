@@ -36,6 +36,11 @@ namespace DB_BackendBLL
             return _orderServer.GetOrderById(orderId);
         }
 
+        public List<Orderlist> GetOrdersByUserId(string userId)
+        {
+            return _orderServer.GetOrdersByUserId(userId);
+        }
+
         // 更新订单信息
         public void UpdateOrder(Orderlist order)
         {

@@ -59,6 +59,13 @@ namespace DB_BackendBLL
 
             _userServer.DeleteUser(userId);
         }
+
+        // 获取所有用户的 User_id
+        public List<string> GetAllUserIds()
+        {
+            var users = _userServer.GetAllUsers();
+            return users.Select(u => u.User_id).ToList();
+        }
     }
 }
 

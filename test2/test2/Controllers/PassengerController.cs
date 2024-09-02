@@ -1,5 +1,6 @@
 ﻿using DB_BackendBLL;
 using DB_BackendModel;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace test2.Controllers
@@ -8,10 +9,16 @@ namespace test2.Controllers
     [Route("api/[controller]")]
     public class PassengerController : ControllerBase
     {
+        private readonly UserManager _userManager;
+        private readonly AdminManager _adminManager;
+        private readonly OrderManager _orderManager;
         private readonly PassengerManager _passengerManager;
 
-        public PassengerController(PassengerManager passengerManager)
+        public PassengerController(UserManager userManager, AdminManager adminManager, OrderManager orderManager, PassengerManager passengerManager)
         {
+            _userManager = userManager;
+            _adminManager = adminManager;
+            _orderManager = orderManager;
             _passengerManager = passengerManager;
         }
 
@@ -65,6 +72,23 @@ namespace test2.Controllers
             {
                 _passengerManager.DeletePassenger(id);
                 return Ok("Passenger deleted successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        //将User_id下的Passenger项以一个新的表的形式全部输出
+        [HttpGet("GetPassengersByUserId/{userId}")]
+        public IActionResult GetPassengersByUserId(string userId)
+        {
+            try
+            {
+                var passengers = _passengerManager.GetPassengersByUserId(userId);
+                if (passengers == null || passengers.Count == 0)
+                    return NotFound("No passengers found for the given user ID.");
+                return Ok(passengers);
             }
             catch (Exception ex)
             {

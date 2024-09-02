@@ -1,5 +1,6 @@
 ﻿using DB_BackendBLL;
 using DB_BackendModel;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace test2.Controllers
@@ -8,11 +9,17 @@ namespace test2.Controllers
     [Route("api/[controller]")]
     public class OrderController : ControllerBase
     {
+        private readonly UserManager _userManager;
+        private readonly AdminManager _adminManager;
         private readonly OrderManager _orderManager;
+        private readonly PassengerManager _passengerManager;
 
-        public OrderController(OrderManager orderManager)
+        public OrderController(UserManager userManager, AdminManager adminManager, OrderManager orderManager, PassengerManager passengerManager)
         {
+            _userManager = userManager;
+            _adminManager = adminManager;
             _orderManager = orderManager;
+            _passengerManager = passengerManager;
         }
 
         [HttpPost("CreateOrder")]
@@ -65,6 +72,23 @@ namespace test2.Controllers
             {
                 _orderManager.DeleteOrder(id);
                 return Ok("Order deleted successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        //由用户的id得到订单的信息
+        [HttpGet("GetPassengersByUserId/{userId}")]
+        public IActionResult GetOrdersByUserId(string userId)
+        {
+            try
+            {
+                var orders = _orderManager.GetOrdersByUserId(userId);
+                if (orders == null || orders.Count == 0)
+                    return NotFound("No passengers found for the given user ID.");
+                return Ok(orders);
             }
             catch (Exception ex)
             {
