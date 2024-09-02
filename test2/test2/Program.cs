@@ -12,11 +12,13 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 builder.Services.AddTransient<UserServer>();
 builder.Services.AddTransient<AdminServer>();
 builder.Services.AddTransient<OrderServer>();
+builder.Services.AddTransient<PassengerServer>();  // 新增服务
 
 // 添加 BLL 服务
 builder.Services.AddTransient<UserManager>();
 builder.Services.AddTransient<AdminManager>();
 builder.Services.AddTransient<OrderManager>();
+builder.Services.AddTransient<PassengerManager>();  // 新增服务
 
 // 添加控制器服务
 builder.Services.AddControllers();
