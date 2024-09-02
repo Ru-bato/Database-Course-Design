@@ -84,7 +84,7 @@ export default defineComponent({
 
     const fetchTrains = async () => {
       try {
-        const response = await axios.get('http://localhost:5138/api/AdminOrders/GetAllTrain');
+        const response = await axios.get('http://localhost:5000/api/AdminOrders/GetAllTrain');
         trains.value = response.data;
       } catch (error) {
         console.error('Failed to fetch trains', error);
@@ -99,7 +99,7 @@ export default defineComponent({
 
     const deleteTrain = async (trainId: string) => {
       try {
-        await axios.delete(`http://localhost:5138/api/AdminOrders/deleteTrain?t_id=${trainId}`);
+        await axios.delete(`http://localhost:5000/api/AdminOrders/deleteTrain?t_id=${trainId}`);
         fetchTrains();
       } catch (error) {
         console.error('Failed to delete train', error);
@@ -113,7 +113,7 @@ export default defineComponent({
     const updateTrain = async () => {
       if (editingTrain.value) {
         try {
-          await axios.put(`http://localhost:5138/api/AdminOrders/updateTrain`, null, {
+          await axios.put(`http://localhost:5000/api/AdminOrders/updateTrain`, null, {
             params: {
               t_id: editingTrain.value.trainId,
               d_station: editingTrain.value.departureStation,
@@ -136,7 +136,7 @@ export default defineComponent({
 
     const addTrain = async () => {
       try {
-        await axios.post(`http://localhost:5138/api/AdminOrders/AddTrain`, null, {
+        await axios.post(`http://localhost:5000/api/AdminOrders/AddTrain`, null, {
           params: {
             t_id: newTrain.value.trainId,
             d_station: newTrain.value.departureStation,

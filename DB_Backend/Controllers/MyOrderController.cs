@@ -72,6 +72,7 @@ namespace DB_Backend.Controllers
                     //var ruleCodes = string.IsNullOrEmpty(cust) ? _dbContext.ORDERLIST
                     //    .ToList() : _dbContext.ORDERLIST.Where(code => code.User_id == cust)
                     //    .ToList();
+                    Console.WriteLine("cust = " + cust);
                     var ruleCodes = from ticket in _dbContext.ORDERLIST
                                     join train in _dbContext.TRAIN
                                     on ticket.Train_id equals train.Train_id
@@ -100,7 +101,6 @@ namespace DB_Backend.Controllers
                     return StatusCode(500, ex.Message);
                 }
             }
-
         }
         [HttpGet("GetMyUnpaidOrder")]
         public IActionResult GetUnpaid(string? cust)
@@ -140,7 +140,6 @@ namespace DB_Backend.Controllers
                     return StatusCode(500, ex.Message);
                 }
             }
-
         }
         [HttpGet("GetMyWaitOrder")]
         public IActionResult GetWait(string? cust)
@@ -180,7 +179,6 @@ namespace DB_Backend.Controllers
                     return StatusCode(500, ex.Message);
                 }
             }
-
         }
     }
 }

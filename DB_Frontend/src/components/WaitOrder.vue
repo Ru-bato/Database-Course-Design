@@ -99,11 +99,10 @@ export default {
     const startDate = ref<string>('');
     const endDate = ref<string>('');
     const filteredOrders = ref<Order[]>([]);
-
-    const userId = '0001';// 需要组长去调整
+    const userId = localStorage.getItem('User_ID');
 
     const fetchOrders = () => {
-      axios.get(`http://localhost:5138/api/MyOrder/GetMyWaitOrder?cust=${userId}`)
+      axios.get(`http://localhost:5000/api/MyOrder/GetMyWaitOrder?cust=${userId}`)
         .then(response => {
           orders.value = response.data;
           applyFilters();

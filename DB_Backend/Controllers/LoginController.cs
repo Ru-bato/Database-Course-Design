@@ -58,20 +58,20 @@ namespace DB_Backend.Controllers
             Console.WriteLine("Login: " + phoneNumber + " " + password);
             User candidate = UserManager.Login(phoneNumber, password);
             //password = ComputeSHA256Hash(password);
-            if(candidate.Password != password)
+            if (candidate.Password != password)
             {
                 Console.WriteLine("密码错误，请重新输入");
-                return Unauthorized(-1); //"密码错误，请重新输入"
+                return Unauthorized(new { code = -1, message = "密码错误，请重新输入" });
             }
-            else if(candidate.Status == false)
+            else if (candidate.Status == false)
             {
                 Console.WriteLine("账号已被封禁，请等待解禁");
-                return Unauthorized(-2); //"账号已被封禁，请等待解禁"
+                return Unauthorized(new { code = -2, message = "账号已被封禁，请等待解禁" });
             }
-            else if(candidate.User_ID == "-1")
+            else if (candidate.User_ID == "-1")
             {
                 Console.WriteLine("用户不存在");
-                return Unauthorized(-3); //"用户不存在"
+                return Unauthorized(new { code = -3, message = "用户不存在" });
             }
             else
             {
@@ -89,8 +89,7 @@ namespace DB_Backend.Controllers
                         Riding_Interval = candidate.Riding_Interval
                     }
                 };
-                string responseJson = JsonSerializer.Serialize(responseData);
-                return Ok(responseJson);
+                return Ok(responseData);
             }
         }
     }

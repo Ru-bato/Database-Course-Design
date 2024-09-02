@@ -80,11 +80,11 @@ export default {
     const startDate = ref<string>('');
     const endDate = ref<string>('');
     const filteredOrders = ref<Order[]>([]);
+    const userId = localStorage.getItem('User_ID'); // 获得当前登录的userId
 
     const fetchOrders = async () => {
       try {
-        const userId = '0002'; // 假设当前登录的 userId 为 0002
-        const response = await axios.get(`http://localhost:5138/api/MyTicket/GetMyTicket?cust=${userId}`);
+        const response = await axios.get(`http://localhost:5000/api/MyTicket/GetMyTicket?cust=${userId}`);
         orders.value = response.data;
         applyFilters();
       } catch (error) {
