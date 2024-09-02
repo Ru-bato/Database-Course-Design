@@ -102,7 +102,7 @@ export default {
     const userId = localStorage.getItem('User_ID');
 
     const fetchOrders = () => {
-      axios.get(`http://localhost:5138/api/MyOrder/GetMyUnpaidOrder?cust=${userId}`)
+      axios.get(`http://localhost:5000/api/MyOrder/GetMyUnpaidOrder?cust=${userId}`)
         .then(response => {
           orders.value = response.data;
           applyFilters();
