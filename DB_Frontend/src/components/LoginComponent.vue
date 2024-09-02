@@ -107,7 +107,7 @@ const login = () => {
       if (userId) {
         alert(userId);
         // localStorage.setItem('User_ID', userId);
-        localStorage.setItem('User_ID', "0001");
+        localStorage.setItem('User_ID', userId);
         console.log('登陆成功');
         router.push('/'); // 重定向到首页
       }

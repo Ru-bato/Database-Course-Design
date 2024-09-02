@@ -102,6 +102,7 @@ export default {
     const userId = localStorage.getItem('User_ID');
 
     const fetchOrders = () => {
+      console.log(`http://localhost:5000/api/MyOrder/GetMyPaidOrder?cust=${userId}`);
       axios.get(`http://localhost:5000/api/MyOrder/GetMyPaidOrder?cust=${userId}`)
         .then(response => {
           orders.value = response.data;

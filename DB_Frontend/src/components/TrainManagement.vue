@@ -136,7 +136,7 @@ export default defineComponent({
 
     const addTrain = async () => {
       try {
-        await axios.post(`http://localhost:5138/api/AdminOrders/AddTrain`, null, {
+        await axios.post(`http://localhost:5000/api/AdminOrders/AddTrain`, null, {
           params: {
             t_id: newTrain.value.trainId,
             d_station: newTrain.value.departureStation,
