@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "DB_Backend.Controllers.ScreenController",
+    "Method": "SearchTrainsByArrivalStation",
+    "RelativePath": "api/Screen/arrival",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DB_Backend.DB_BackendModel.QueryTrainModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.ScreenController",
+    "Method": "SearchTrainsByDepatureStation",
+    "RelativePath": "api/Screen/departure",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DB_Backend.DB_BackendModel.QueryTrainModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
