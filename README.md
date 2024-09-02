@@ -1,23 +1,45 @@
-# 星“济”铁路——铁路票务智能化管理平台（请大家先阅读项目进度）
+# DB_Frontend
 
-main分支跟进了9.2日0点的最新进度，记为Version 1（zhc的后端代码将在Version 2）合并
+This template should help get you started developing with Vue 3 in Vite.
 
-## Version 1已完成：
- - 登录、注册（对应数据库中USERSTEST表，User_ID从1开始递增，密码格式为包含大小写，数字和特殊字符，总长度 > 10，例如Password_123）
- - 其他见GROUP-TICKET-xjb-cljj分支相关说明
+## Recommended IDE Setup
 
-## 运行项目
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
- - 运行前端
-   
-  ```bash
-  npm install
-  npm run dev
-  ```
+## Type Support for `.vue` Imports in TS
 
- - 运行后端（另一个终端）
-  ```bash
-  cd DB_Backend // 后端根目录
-  dotnet run
-  ```
-然后前后端可以连通
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+npm run test:unit
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
