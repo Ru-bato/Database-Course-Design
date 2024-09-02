@@ -103,7 +103,13 @@ const login = () => {
     .then(response => {
       // 登陆成功
       console.log(response.data);
-      router.push('/'); // 重定向到首页
+      const userId = response.data.data.user_ID;
+      if (userId) {
+        alert(userId);
+        localStorage.setItem('User_ID', userId);
+        console.log('登陆成功');
+        router.push('/'); // 重定向到首页
+      }
     })
     .catch(error => {
       // 错误处理

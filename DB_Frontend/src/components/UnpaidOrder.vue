@@ -99,8 +99,7 @@ export default {
     const startDate = ref<string>('');
     const endDate = ref<string>('');
     const filteredOrders = ref<Order[]>([]);
-
-    const userId = '0002';// 需要组长去调整
+    const userId = localStorage.getItem('User_ID');
 
     const fetchOrders = () => {
       axios.get(`http://localhost:5138/api/MyOrder/GetMyUnpaidOrder?cust=${userId}`)
