@@ -1,5 +1,6 @@
 ﻿using DB_BackendBLL;
 using DB_BackendModel;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace test2.Controllers
@@ -8,11 +9,17 @@ namespace test2.Controllers
     [Route("api/[controller]")]
     public class AdminController : ControllerBase
     {
+        private readonly UserManager _userManager;
         private readonly AdminManager _adminManager;
+        private readonly OrderManager _orderManager;
+        private readonly PassengerManager _passengerManager;
 
-        public AdminController(AdminManager adminManager)
+        public AdminController(UserManager userManager, AdminManager adminManager, OrderManager orderManager, PassengerManager passengerManager)
         {
+            _userManager = userManager;
             _adminManager = adminManager;
+            _orderManager = orderManager;
+            _passengerManager = passengerManager;
         }
 
         [HttpPost("CreateAdmin")]
