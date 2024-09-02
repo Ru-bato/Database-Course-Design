@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="myapp-container">
-    <MyHeader />
     <div class="mymain">
       <MySidebar @menu-selected="currentMenu = $event" />
       <div class="mycontent">
@@ -11,17 +10,15 @@
 </template>
 
 <script>
-import MyHeader from '../components/MyHeader.vue';
-import MySidebar from '../components/Sidebar.vue';
-import HomePage from '../components/HomePage.vue';
-import EditInfo from '../components/EditInfo.vue';
-import EditPassenger from '../components/EditPassenger.vue';
-import AdminFunctions from '../components/AdminFunctions.vue';
+import MySidebar from '../components/PersonalSidebar.vue';
+import HomePage from '../components/PersonalHomePage.vue';
+import EditInfo from '../components/PersonalEditInfo.vue';
+import EditPassenger from '../components/PersonalEditPassenger.vue';
+import AdminFunctions from '../components/PersonalAdminFunctions.vue';
 
 export default {
   name: 'App',
   components: {
-    MyHeader,
     MySidebar,
     HomePage,
     EditInfo,
@@ -44,18 +41,13 @@ export default {
   box-sizing: border-box;
 }
 
-/* 确保页眉在顶部显示 */
+/* 确保整个页面布局填充 */
 .myapp-container {
   display: flex;
-  flex-direction: column; /* 垂直布局：页眉在上方，mymain 在下方 */
+  flex-direction: row; /* 水平布局：侧边栏在左，内容在右 */
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-}
-
-/* 确保页眉占满整个宽度 */
-.myapp-container > * {
-  width: 100%; /* 子元素宽度设置为100% */
 }
 
 /* 主体部分：侧边栏在左，内容在右 */
@@ -64,7 +56,6 @@ export default {
   flex-direction: row; /* 水平布局：侧边栏在左，内容部分在右 */
   flex: 1;
   width: 100%;
-  overflow: hidden;
 }
 
 .mycontent {
