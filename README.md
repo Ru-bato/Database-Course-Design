@@ -1,4 +1,5 @@
 # DB_Frontend
 
-目前显示还存在问题，前端还未连接后端
-先别加进去
+前后端未完全连接 先别加 
+
+在/src/router/index.ts 中分别添加import PersonalPage from '@/views/PersonalPage.vue'和path中的{ path:'/personal', name: 'PersonalPage', component: PersonalPage}
