@@ -22,7 +22,7 @@ namespace test2.Controllers
             _passengerManager = passengerManager;
         }
 
-        [HttpPost("CreateOrder")]
+        [HttpPost("CreateOrder")]//添加订单（其实与本程序无关）
         public IActionResult CreateOrder(Orderlist order)
         {
             try
@@ -36,7 +36,7 @@ namespace test2.Controllers
             }
         }
 
-        [HttpGet("GetOrder/{id}")]
+        [HttpGet("GetOrder/{id}")]//由order_id得到对应的订单信息
         public IActionResult GetOrder(string id)
         {
             try
@@ -51,7 +51,7 @@ namespace test2.Controllers
             }
         }
 
-        [HttpPut("UpdateOrder")]
+        [HttpPut("UpdateOrder")]//更新订单信息，但需要提供新的order表
         public IActionResult UpdateOrder(Orderlist order)
         {
             try
@@ -65,7 +65,34 @@ namespace test2.Controllers
             }
         }
 
-        [HttpDelete("DeleteOrder/{id}")]
+        [HttpPut("UpdateUserOrder")]//修改用户已有的订单，调用上述程序
+        public IActionResult UpdateUserOrder(string orderid, string userid, string trainid, string orderstatus, string price, string passengerid, string tickettype)
+        {
+            try
+            {
+
+                Orderlist order = new Orderlist
+                {
+                    Order_id = orderid,
+                    User_id = userid,
+                    Train_id = trainid,
+                    Orderstatus = orderstatus,
+                    Price = price,
+                    passenger_id = passengerid,
+                    ticket_type = tickettype,
+
+                };
+                _orderManager.UpdateOrder(order);
+                return Ok("Order updated successfully.");
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete("DeleteOrder/{id}")]//由order_id删除对应的项
         public IActionResult DeleteOrder(string id)
         {
             try
@@ -79,8 +106,7 @@ namespace test2.Controllers
             }
         }
 
-        //由用户的id得到订单的信息
-        [HttpGet("GetPassengersByUserId/{userId}")]
+        [HttpGet("GetPassengersByUserId/{userId}")]//由用户的id得到订单的信息
         public IActionResult GetOrdersByUserId(string userId)
         {
             try

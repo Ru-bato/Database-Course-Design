@@ -22,7 +22,7 @@ namespace test2.Controllers
             _passengerManager = passengerManager;
         }
 
-        [HttpPost("CreatePassenger")]
+        [HttpPost("CreatePassenger")]//创建乘车人，需要用户提供passenger表
         public IActionResult CreatePassenger(Passenger passenger)
         {
             try
@@ -36,7 +36,9 @@ namespace test2.Controllers
             }
         }
 
-        [HttpGet("GetPassenger/{id}")]
+        
+
+        [HttpGet("GetPassenger/{id}")]//根据passenger_id得到passenger的所有信息
         public IActionResult GetPassenger(string id)
         {
             try
@@ -51,7 +53,7 @@ namespace test2.Controllers
             }
         }
 
-        [HttpPut("UpdatePassenger")]
+        [HttpPut("UpdatePassenger")]//更新passenger乘客信息，但需要提供passenger表
         public IActionResult UpdatePassenger(Passenger passenger)
         {
             try
@@ -65,7 +67,31 @@ namespace test2.Controllers
             }
         }
 
-        [HttpDelete("DeletePassenger/{id}")]
+        [HttpPut("UpdateUserPassenger")]//修改用户已有的乘车人，调用上述程序
+        public IActionResult UpdateUserPassenger(string passengerid, string userid, string passengername, string idnumber)
+        {
+            try
+            {
+
+                Passenger passenger = new Passenger
+                {
+                    passenger_id = passengerid,
+                    User_id = userid,
+                    Passenger_name=passengername,
+                    Id_number=idnumber
+
+                };
+                _passengerManager.UpdatePassenger(passenger);
+                return Ok("Passenger updated successfully.");
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete("DeletePassenger/{id}")]//根据passenger_id删除对应的passenger项
         public IActionResult DeletePassenger(string id)
         {
             try
@@ -79,8 +105,7 @@ namespace test2.Controllers
             }
         }
 
-        //将User_id下的Passenger项以一个新的表的形式全部输出
-        [HttpGet("GetPassengersByUserId/{userId}")]
+        [HttpGet("GetPassengersByUserId/{userId}")]//将User_id下的Passenger项以一个新的表的形式全部输出
         public IActionResult GetPassengersByUserId(string userId)
         {
             try
