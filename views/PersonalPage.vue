@@ -55,7 +55,7 @@ export default {
   display: flex;
   flex-direction: row; /* 水平布局：侧边栏在左，内容部分在右 */
   flex: 1;
-  width: 100%;
+  width: 250%;
 }
 
 .mycontent {
