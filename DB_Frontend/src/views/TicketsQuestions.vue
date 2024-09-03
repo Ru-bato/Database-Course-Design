@@ -2,7 +2,7 @@
     <!-- 整个页面 -->
     <div id="layout">
         <!-- 包括上方搜索栏和导航页 -->
-        <div class="header" role="=banner">
+        <div class="header" role="banner">
             <!-- ::before -->
             <!-- 填充两侧，保证内容在中间 -->
             <div class="wrapper">
@@ -11,7 +11,7 @@
                     <h1 class="logo" role="banner">
                         <!-- 链接跳转主页 -->
                         <a href="#">
-                            <img src="@/img/logo.png" alt="logo" style="height:50px">
+                            <img src="../img/logo.png" alt="logo" style="height:50px">
                         </a>
                     </h1>
                     <!-- logo的右侧部分，包括搜索条和右侧菜单 -->
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <button class="search-btn" @click="showAnswer"><img class="icon-search"
-                                    src="@/img/search.png" alt="search"></button>
+                                    src="../img/search.png" alt="search"></button>
                         </div>
                         <!-- 右侧菜单 -->
                         <ul class="header-menu">
@@ -189,7 +189,7 @@
                         <div class="question" @click="toggleAnswer(index + 1, `answer1`)">
                             {{ index + 1 }}. {{ item.question }}
                         </div>
-                        <div :id="`answer1-${index + 1}`" class="answer">
+                        <div :id="'answer1-' + (index + 1)" class="answer">
                             {{ item.answer }}
                         </div>
                     </div>
@@ -291,14 +291,22 @@ export default {
     },
     methods: {
         showAnswer() {
+            console.log('here is showAnswer', this.searchQuery);
             // 这里可以根据 searchQuery 从 questions 和 answers 数组中获取对应的答案
             const questionIndex = this.questions.indexOf(this.searchQuery);
             if (questionIndex !== -1) {
                 this.answer = this.answers[questionIndex];
+                console.log(1);
             } else {
                 this.answer = '未找到答案';
+                console.log(2);
             }
-            this.dialogVisible = true;
+            console.log(this.answer);
+            // 使用 this.$nextTick 确保 DOM 在数据更新后才显示对话框
+            this.$nextTick(() => {
+                this.dialogVisible = true;
+            });
+            console.log('dialogVisible', this.dialogVisible);
         },
         async fetchSuggestions(query) {
             try {
@@ -435,6 +443,13 @@ export default {
         await this.getQuestionBackend();  // 确保在组件挂载时获取数据
         this.setupNavItems(); // 初始化导航项
         this.toggleMenu('ticket-menu', 'ticket-info', 'subtitle-1'); // 打开时默认显示车票信息
+        if (localStorage.getItem('searchQuery')) {
+            this.searchQuery = localStorage.getItem('searchQuery');
+            console.log(this.searchQuery);
+            await this.fetchSuggestions(this.searchQuery); // 确保fetchSuggestions完成
+            this.showAnswer();
+            localStorage.removeItem('searchQuery');
+        }
     },
 };
 </script>
@@ -448,7 +463,7 @@ export default {
 @import url("../assets/guide_style.css");
 
 
-#layout{
+#layout {
     min-width: 100vw;
     height: 100vh;
 }

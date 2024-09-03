@@ -12,13 +12,14 @@
     float: left;
     margin: 15px 0 0 0;
     padding: 0;
+    background-color: white;
 }
 
 .logo a {
     display: block;
     width: 200px;
     height: 50px;
-
+    color: white;
 }
 
 .header-search {
@@ -91,6 +92,7 @@
     /* 鼠标指针形状 */
     transition: all 0.3s ease;
     /* 添加过渡效果 */
+    position: absolute;
 }
 
 .search-btn:hover {
@@ -149,7 +151,6 @@
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid blue;
-
 }
 
 
