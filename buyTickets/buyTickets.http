@@ -1,0 +1,11 @@
+@buyTickets_HostAddress = http://localhost:5193
+
+GET {{buyTickets_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{buyTickets_HostAddress}}/todos/1
+Accept: application/json
+
+###

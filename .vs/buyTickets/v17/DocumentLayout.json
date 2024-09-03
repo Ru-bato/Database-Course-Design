@@ -1,0 +1,237 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|f:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\backend\\buytickets\\buytickets\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\backendmodel\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\backendmodel\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\backenddal\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\backenddal\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\backenddal\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\backenddal\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u5F20\u51EF\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\build\\Container.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\backenddal\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\backenddal\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\backendbll\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\backendbll\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\backendbll\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\backendbll\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buytickets\\buytickets.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{033ED63C-C1EB-4BF1-A16C-E7F010351EB2}|buyTickets\\buyTickets.csproj|solutionrelative:buytickets\\buytickets.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TicketController.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\Controllers\\TicketController.cs",
+              "RelativeDocumentMoniker": "buyTickets\\Controllers\\TicketController.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\Controllers\\TicketController.cs",
+              "RelativeToolTip": "buyTickets\\Controllers\\TicketController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAgwCUAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T09:03:13.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendModel\\Ticket.cs",
+              "RelativeDocumentMoniker": "buyTickets\\BackendModel\\Ticket.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendModel\\Ticket.cs",
+              "RelativeToolTip": "buyTickets\\BackendModel\\Ticket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T08:53:04.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TicketRepository.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendDAL\\TicketRepository.cs",
+              "RelativeDocumentMoniker": "buyTickets\\BackendDAL\\TicketRepository.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendDAL\\TicketRepository.cs",
+              "RelativeToolTip": "buyTickets\\BackendDAL\\TicketRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T08:55:47.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ITicketRepository.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendDAL\\ITicketRepository.cs",
+              "RelativeDocumentMoniker": "buyTickets\\BackendDAL\\ITicketRepository.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendDAL\\ITicketRepository.cs",
+              "RelativeToolTip": "buyTickets\\BackendDAL\\ITicketRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T08:54:00.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Container.targets",
+              "DocumentMoniker": "C:\\Users\\\u5F20\u51EF\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\build\\Container.targets",
+              "ToolTip": "C:\\Users\\\u5F20\u51EF\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\build\\Container.targets",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAswNgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-09-03T06:48:06.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\Startup.cs",
+              "RelativeDocumentMoniker": "buyTickets\\Startup.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\Startup.cs",
+              "RelativeToolTip": "buyTickets\\Startup.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwCEAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T09:22:07.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendDAL\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "buyTickets\\BackendDAL\\ApplicationDbContext.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendDAL\\ApplicationDbContext.cs",
+              "RelativeToolTip": "buyTickets\\BackendDAL\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T09:43:49.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\appsettings.json",
+              "RelativeDocumentMoniker": "buyTickets\\appsettings.json",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\appsettings.json",
+              "RelativeToolTip": "buyTickets\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-30T09:28:04.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "buyTickets\\Properties\\launchSettings.json",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\Properties\\launchSettings.json",
+              "RelativeToolTip": "buyTickets\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-02T11:58:46.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\Program.cs",
+              "RelativeDocumentMoniker": "buyTickets\\Program.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\Program.cs",
+              "RelativeToolTip": "buyTickets\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T11:47:54.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TicketService.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendBLL\\TicketService.cs",
+              "RelativeDocumentMoniker": "buyTickets\\BackendBLL\\TicketService.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendBLL\\TicketService.cs",
+              "RelativeToolTip": "buyTickets\\BackendBLL\\TicketService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T08:58:49.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ITicketService.cs",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendBLL\\ITicketService.cs",
+              "RelativeDocumentMoniker": "buyTickets\\BackendBLL\\ITicketService.cs",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\BackendBLL\\ITicketService.cs",
+              "RelativeToolTip": "buyTickets\\BackendBLL\\ITicketService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T08:58:08.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "buyTickets",
+              "DocumentMoniker": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\buyTickets.csproj",
+              "RelativeDocumentMoniker": "buyTickets\\buyTickets.csproj",
+              "ToolTip": "F:\\\u6570\u636E\u5E93\u8BFE\u8BBE\\Backend\\buyTickets\\buyTickets\\buyTickets.csproj",
+              "RelativeToolTip": "buyTickets\\buyTickets.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-30T09:30:39.384Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
