@@ -15,27 +15,31 @@ namespace DB_Backend.DB_BackendBLL
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string ComputeSHA256Hash(string input) // Todo: 暂时不加盐
+        public static string ComputeSHA256Hash(string input) // TODO: 暂时不加盐
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                var saltedInput = input; // Todo: 暂时不加盐
+                var saltedInput = input; // TODO: 暂时不加盐
                 byte[] inputBytes = Encoding.UTF8.GetBytes(saltedInput);
                 byte[] hashBytes = sha256.ComputeHash(inputBytes);
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
             }
         }
         /// <summary>
-        /// 登录
+        /// 登录，这是一个通用接口，既能用于手机号+密码登录，又能用于手机号+身份证号验证身份
         /// </summary>
         /// <param name="Phone_Number"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        public static User Login(string Phone_Number, string Password)
+        public static User Login(string Phone_Number)
         {
             User candidate = UserServer.GetUserByTel(Phone_Number);
             return candidate;
         }
+        //public static User Verify(string Phone_Number, string ID_Number) 
+        //{ 
+        //    User candidate = UserServer.GetUserByVerify(Phone_Number, ID_Number);
+        //}
         /// <summary>
         /// 检验手机号格式是否合法
         /// </summary>
@@ -113,6 +117,20 @@ namespace DB_Backend.DB_BackendBLL
                 return -1;
             }
             return code;
+        }
+
+        public static int ChangePassword(string User_ID, string New_Password)
+        {
+            try
+            {
+                UserServer.UpdatePassword(User_ID, New_Password);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("密码修改失败，发生未知错误");
+                return -1;
+            }
+            return 0;
         }
     }
 }

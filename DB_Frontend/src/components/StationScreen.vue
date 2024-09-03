@@ -7,7 +7,23 @@
         <div class="train-result-titlist titlist-controller">
           <div class="train-number">车次</div>
           <div class="train-station">{{ tableTitle.stationType }}</div>
-          <div class="train-time">{{ tableTitle.timeType }}<span class="btn-sort"><i class="sort-top active" attr-code="trainTime"></i><i class="sort-down" attr-code="trainTime"></i></span></div>
+          <div class="train-time">
+            {{ tableTitle.timeType }}
+            <span class="btn-sort">
+              <i
+                class="sort-top"
+                :class="{ active: isAscActive }"
+                attr-code="trainTime"
+                @click="toggleSort(true)"
+              ></i>
+              <i
+                class="sort-down"
+                :class="{ active: !isAscActive }"
+                attr-code="trainTime"
+                @click="toggleSort(false)"
+              ></i>
+            </span>
+          </div>
           <div class="train-check">{{ tableTitle.checkType }}</div>
           <div class="train-status">状态</div>
         </div>
@@ -48,10 +64,36 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['tableTitle', 'trainList']
-};
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+import type { Train } from './StationSearch.vue';
+
+export default defineComponent ({
+  props: {
+    tableTitle: {type: Object, required: true},
+    trainList: {type: Array as () => Train[], required: true},
+
+    sortTrainsAsc: {type: Function, required: true},
+    sortTrainsDesc: {type: Function, required: true},
+  },
+  setup(props) {
+    const isAscActive = ref(true); // 默认为升序
+
+    const toggleSort = (isAsc: boolean) => {
+      isAscActive.value = isAsc; // 更新排序状态
+      if (isAsc) {
+        props.sortTrainsAsc();
+      } else {
+        props.sortTrainsDesc();
+      }
+    };
+
+    return {
+      isAscActive,
+      toggleSort
+    }
+  }
+});
 </script>
 
 <style scoped>

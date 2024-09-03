@@ -11,7 +11,7 @@
           <label for="ID_Number">身份证号</label>
           <input type="ID_Number" id="ID_Number" v-model="resetForm.ID_Number" placeholder="请输入身份证号" required />
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="new_password">新密码</label>
           <input type="new_password" id="new_password" v-model="resetForm.new_password" placeholder="请输入新密码" required />
         </div>
@@ -19,8 +19,8 @@
           <label for="confirm_password">确认密码</label>
           <input type="confirm_password" id="confirm_password" v-model="resetForm.confirm_password" placeholder="请确认密码"
             required />
-        </div>
-        <button type="submit" class="btn btn-primary" @click="handleResetPassword">重置密码</button>
+        </div> -->
+        <button type="submit" class="btn btn-primary" @click="handleResetPassword">身份验证</button>
         <div class="extra-options">
           <router-link :to="{ name: 'Login' }" class="btn">返回登录</router-link>
         </div>

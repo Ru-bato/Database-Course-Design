@@ -61,7 +61,12 @@
   </div>
 
   <!-- 处理出发/到达按钮切换 -->
-  <StationScreen :tableTitle="tableTitle" :trainList="filteredTrains" />
+  <StationScreen
+    :tableTitle="tableTitle"
+    :trainList="filteredTrains"
+    :sortTrainsAsc="sortTrainsAsc"
+    :sortTrainsDesc="sortTrainsDesc"
+  />
 </template>
 
 <script lang="ts">
@@ -69,7 +74,7 @@ import { defineComponent, ref, computed } from 'vue';
 import axios from 'axios';
 import StationScreen from './StationScreen.vue';
 
-interface Train {
+export interface Train {
   number: string; // 车次
   station: string; // 车站
   _time: string; // 时间
@@ -81,7 +86,7 @@ export default defineComponent({
   components: {
     StationScreen
   },
-  setup() {  
+  setup() {
     const stationName = ref<string>('');
     const trainNumber = ref<string>('');
     const isDepartActive = ref<boolean>(true);
@@ -102,6 +107,8 @@ export default defineComponent({
     });
 
     const toggleDepart = () => {
+      trainList.value = [];
+
       isDepartActive.value = true;
       isArriveActive.value = false;
       viewMode.value = 'depart';
@@ -109,6 +116,8 @@ export default defineComponent({
     };
 
     const toggleArrive = () => {
+      trainList.value = [];
+
       isDepartActive.value = false;
       isArriveActive.value = true;
       viewMode.value = 'arrive';
@@ -117,13 +126,15 @@ export default defineComponent({
 
     const queryTrains = async () => {
       const url = isDepartActive.value 
-        ? 'http://localhost:5000/api/Screen/departure'
-        : 'http://localhost:5000/api/Screen/arrival';
+        ? 'http://localhost:5000/api/Screen/departure' : 'http://localhost:5000/api/Screen/arrival';
+
+      trainList.value = [];
 
       try {
         const response = await axios.post(url, { query: stationName.value });
         if (response.data) {
           trainList.value = response.data as Train[];
+          sortTrainsAsc(); // 默认升序排序
         } else {
           console.log('empty');
         }
@@ -136,6 +147,20 @@ export default defineComponent({
       queryTrains();
     };
 
+    const sortTrainsAsc = () => {
+      // 升序排序
+      trainList.value.sort((a, b) => {
+        return a._time.localeCompare(b._time);
+      });
+    };
+
+    const sortTrainsDesc = () => {
+      // 降序排序
+      trainList.value.sort((a, b) => {
+        return b._time.localeCompare(a._time);
+      });
+    };
+
     return {  
       stationName,
       trainNumber,
@@ -146,7 +171,9 @@ export default defineComponent({
       toggleDepart,
       toggleArrive,
       queryTrains,
-      refreshTrains
+      refreshTrains,
+      sortTrainsAsc,
+      sortTrainsDesc
     };
   }
 });

@@ -17,13 +17,15 @@
         </div>
         <div class="form-group">
           <label for="password">密码</label>
-          <input type="password" id="password" v-model="registerForm.password" @input="validatePassword" placeholder="请输入密码" required />
-          <p v-if="registerForm.passwordValidationMessage" class="error-message">{{ registerForm.passwordValidationMessage }}</p>
+          <input type="password" id="password" v-model="registerForm.password" @input="validatePassword"
+            placeholder="请输入密码" required />
+          <p v-if="registerForm.passwordValidationMessage" class="error-message">{{
+            registerForm.passwordValidationMessage }}</p>
         </div>
         <div class="form-group">
           <label for="confirm-password">确认密码</label>
           <input type="password" id="confirm-password" v-model="registerForm.confirmPassword" placeholder="请确认密码"
-          @input="checkPasswords" required />
+            @input="checkPasswords" required />
           <p v-if="registerForm.passwordError" class="error-message">{{ registerForm.passwordError }}</p>
         </div>
         <p v-if="registerForm.errorMessage" class="error-message">{{ registerForm.errorMessage }}</p>
@@ -37,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
@@ -69,21 +71,21 @@ const handleRegister = () => {
     .then(response => {
       // 注册成功
       console.log(response.data);
-      router.push('/'); // 注册成功后跳转到主页 Todo: 注册成功应该与登录成功有同样的鉴权标识
+      router.push('/'); // 注册成功后跳转到主页 TODO: 注册成功应该与登录成功有同样的鉴权标识
     })
     .catch(error => {
-      // Todo: 错误处理还需完善
+      // TODO: 错误处理还需完善
       if (error.response) {
         console.log(error)
         switch (error.response.status) {
           case 400:
-          registerForm.value.errorMessage = '注册失败，请检查输入的内容';
+            registerForm.value.errorMessage = '注册失败，请检查输入的内容';
             break;
           case 409:
-          registerForm.value.errorMessage = '手机号已被注册';
+            registerForm.value.errorMessage = '手机号已被注册';
             break;
           default:
-          registerForm.value.errorMessage = '注册页面出错';
+            registerForm.value.errorMessage = '注册页面出错';
         }
       }
     });
@@ -222,7 +224,7 @@ const checkPasswords = () => {
   /* 悬停时更深的蓝色 */
 }
 
-.error-message{
+.error-message {
   color: red;
 }
 </style>

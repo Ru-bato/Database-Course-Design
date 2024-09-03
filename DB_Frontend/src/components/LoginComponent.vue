@@ -76,9 +76,10 @@ export default {
           <input type="password" id="password" v-model="password" placeholder="请输入密码" required />
         </div>
         <button type="submit" class="btn btn-primary">登录</button>
+        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
         <div class="extra-options">
           <router-link :to="{ name: 'Register' }" class="btn">注册</router-link>
-          <router-link :to="{ name: 'Forgot' }" class="btn">忘记密码</router-link>
+          <router-link :to="{ name: 'VerifyIdentity' }" class="btn">忘记密码</router-link>
         </div>
       </form>
     </div>
@@ -96,7 +97,7 @@ const errorMessage = ref('');
 const router = useRouter();
 
 const login = () => {
-  axios.post('http://localhost:5000/api/login', {
+  axios.post('http://localhost:5000/api/login/login', {
     Phone_Number: userTel.value,
     Password: password.value
   })
@@ -106,7 +107,6 @@ const login = () => {
       const userId = response.data.data.user_ID;
       if (userId) {
         alert(userId);
-        // localStorage.setItem('User_ID', userId);
         localStorage.setItem('User_ID', userId);
         console.log('登陆成功');
         router.push('/'); // 重定向到首页
@@ -236,5 +236,9 @@ const login = () => {
   /* color: #5cc6b4; */
   color: #357ABD;
   /* 悬停时更深的蓝色 */
+}
+
+.error-message{
+  color: red;
 }
 </style>

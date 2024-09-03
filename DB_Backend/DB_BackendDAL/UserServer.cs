@@ -111,5 +111,39 @@ namespace DB_Backend.DB_BackendDAL
             }
             return UID;
         }
+        public static void UpdatePassword(string User_ID, string New_Password)
+        {
+            // 更改信息
+            try
+            {
+                using (OracleConnection connection = new OracleConnection(conStr))
+                {
+                    connection.Open();
+                    OracleCommand command = connection.CreateCommand();
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "UPDATE USERSTEST SET password=:password " +
+                        " where user_id=:user_id";
+                    command.Parameters.Clear();
+                    command.Parameters.Add("password", OracleDbType.Varchar2, New_Password, ParameterDirection.Input);
+                    command.Parameters.Add("user_id", OracleDbType.Varchar2, User_ID, ParameterDirection.Input);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (OracleException ex)
+                    {
+                        Console.WriteLine("修改密码出错，错误码" + ex.ErrorCode.ToString());
+
+                        throw;
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // 处理异常
+                Console.WriteLine(ex.ToString());
+            }
+        }
     }
 }
