@@ -38,7 +38,7 @@ namespace test2.Controllers
 
         // 根据乘车人姓名和身份证号查找关联的用户，并返回用户信息
         [HttpPost("FindUserByPassengerDetails")]
-        public IActionResult FindUserByPassengerDetails(string passengerName, string idNumber)
+        public IActionResult FindUserByPassengerDetails(string userid,string passengerName, string idNumber)
         {
             try
             {
@@ -46,6 +46,9 @@ namespace test2.Controllers
                 if (passengers == null || passengers.Count == 0)
                     return NotFound("No user found matching the provided passenger details.");
                 var user = _userManager.GetUserById(passengers.First().User_id);// 返回找到的用户信息
+                if(user==null)
+                    return BadRequest($"Error finding user");
+                CreateUserPassenger(user.User_id, userid, passengerName, idNumber);
                 return Ok(user);
             }
             catch (Exception ex)
