@@ -57,6 +57,12 @@ namespace DB_BackendBLL
 
             _passengerServer.DeletePassenger(passengerId);
         }
+
+        // 根据乘车人姓名和身份证号获取乘车人信息
+        public List<Passenger> GetPassengersByNameAndId(string passengerName, string idNumber)
+        {
+            return _passengerServer.GetPassengersByNameAndId(passengerName, idNumber);
+        }
     }
 }
 

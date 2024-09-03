@@ -128,6 +128,35 @@ namespace DB_BackendDAL
                 }
             }
         }
+
+        // 根据乘车人姓名和身份证号获取乘车人信息
+        public List<Passenger> GetPassengersByNameAndId(string passengerName, string idNumber)
+        {
+            List<Passenger> passengers = new List<Passenger>();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("SELECT * FROM Passenger WHERE Passenger_name = :Passenger_name AND Id_number = :Id_number", connection))
+                {
+                    command.Parameters.Add(new OracleParameter("Passenger_name", passengerName));
+                    command.Parameters.Add(new OracleParameter("Id_number", idNumber));
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            passengers.Add(new Passenger
+                            {
+                                passenger_id = reader["passenger_id"].ToString(),
+                                User_id = reader["User_id"].ToString(),
+                                Passenger_name = reader["Passenger_name"].ToString(),
+                                Id_number = reader["Id_number"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            return passengers;
+        }
     }
 }
 

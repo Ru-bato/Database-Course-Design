@@ -1,6 +1,5 @@
 ﻿using DB_BackendBLL;
 using DB_BackendModel;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace test2.Controllers
@@ -22,7 +21,8 @@ namespace test2.Controllers
             _passengerManager = passengerManager;
         }
 
-        [HttpPost("CreatePassenger")]//创建乘车人，需要用户提供passenger表
+        // 创建乘车人
+        [HttpPost("CreatePassenger")]
         public IActionResult CreatePassenger(Passenger passenger)
         {
             try
@@ -32,28 +32,69 @@ namespace test2.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Error creating passenger: {ex.Message}");
             }
         }
 
-        
+        // 根据乘车人姓名和身份证号查找关联的用户，并返回用户信息
+        [HttpPost("FindUserByPassengerDetails")]
+        public IActionResult FindUserByPassengerDetails(string passengerName, string idNumber)
+        {
+            try
+            {
+                var passengers = _passengerManager.GetPassengersByNameAndId(passengerName, idNumber);
+                if (passengers == null || passengers.Count == 0)
+                    return NotFound("No user found matching the provided passenger details.");
+                var user = _userManager.GetUserById(passengers.First().User_id);// 返回找到的用户信息
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error finding user: {ex.Message}");
+            }
+        }
 
-        [HttpGet("GetPassenger/{id}")]//根据passenger_id得到passenger的所有信息
+        // 根据用户信息和乘车人信息创建新的乘车人
+        [HttpPost("CreateUserPassenger")]
+        public IActionResult CreateUserPassenger(string passengerId, string userId, string passengerName, string idNumber)
+        {
+            try
+            {
+                Passenger passenger = new Passenger
+                {
+                    passenger_id = passengerId,
+                    User_id = userId,
+                    Passenger_name = passengerName,
+                    Id_number = idNumber
+                };
+                _passengerManager.CreatePassenger(passenger);
+                return Ok("Passenger created successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating passenger: {ex.Message}");
+            }
+        }
+
+        // 根据乘车人ID获取乘车人信息
+        [HttpGet("GetPassenger/{id}")]
         public IActionResult GetPassenger(string id)
         {
             try
             {
                 var passenger = _passengerManager.GetPassengerById(id);
-                if (passenger == null) return NotFound("Passenger not found.");
+                if (passenger == null)
+                    return NotFound("Passenger not found.");
                 return Ok(passenger);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Error fetching passenger: {ex.Message}");
             }
         }
 
-        [HttpPut("UpdatePassenger")]//更新passenger乘客信息，但需要提供passenger表
+        // 更新乘车人信息
+        [HttpPut("UpdatePassenger")]
         public IActionResult UpdatePassenger(Passenger passenger)
         {
             try
@@ -63,35 +104,34 @@ namespace test2.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Error updating passenger: {ex.Message}");
             }
         }
 
-        [HttpPut("UpdateUserPassenger")]//修改用户已有的乘车人，调用上述程序
-        public IActionResult UpdateUserPassenger(string passengerid, string userid, string passengername, string idnumber)
+        // 根据用户ID和乘车人ID更新乘车人信息
+        [HttpPut("UpdateUserPassenger")]
+        public IActionResult UpdateUserPassenger(string passengerId, string userId, string passengerName, string idNumber)
         {
             try
             {
-
                 Passenger passenger = new Passenger
                 {
-                    passenger_id = passengerid,
-                    User_id = userid,
-                    Passenger_name=passengername,
-                    Id_number=idnumber
-
+                    passenger_id = passengerId,
+                    User_id = userId,
+                    Passenger_name = passengerName,
+                    Id_number = idNumber
                 };
                 _passengerManager.UpdatePassenger(passenger);
                 return Ok("Passenger updated successfully.");
-
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Error updating passenger: {ex.Message}");
             }
         }
 
-        [HttpDelete("DeletePassenger/{id}")]//根据passenger_id删除对应的passenger项
+        // 根据乘车人ID删除乘车人信息
+        [HttpDelete("DeletePassenger/{id}")]
         public IActionResult DeletePassenger(string id)
         {
             try
@@ -101,11 +141,12 @@ namespace test2.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Error deleting passenger: {ex.Message}");
             }
         }
 
-        [HttpGet("GetPassengersByUserId/{userId}")]//将User_id下的Passenger项以一个新的表的形式全部输出
+        // 根据用户ID获取所有乘车人信息
+        [HttpGet("GetPassengersByUserId/{userId}")]
         public IActionResult GetPassengersByUserId(string userId)
         {
             try
@@ -117,9 +158,8 @@ namespace test2.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Error fetching passengers: {ex.Message}");
             }
         }
     }
 }
-
