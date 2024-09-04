@@ -1,0 +1,48 @@
+using Microsoft.EntityFrameworkCore;
+using DB_Backend.DB_BackendDAL;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
+//builder.Services.AddScoped<Glue.Controllers.FileHelper>();
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<MyTicketDbContext>(options =>
+    options.UseOracle(builder.Configuration.GetConnectionString("OracleDbConnection")));
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseRouting();
+
+//app.UseHttpsRedirection();
+app.UseCors("AllowAll"); // 使用 CORS 策略
+app.UseStaticFiles(); // 允许前端访问后端服务器的静态资源
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

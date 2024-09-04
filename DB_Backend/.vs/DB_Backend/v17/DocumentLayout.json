@@ -1,0 +1,140 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|d:\\vs\\oracle_car\\database-course-design-main\\db_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|d:\\vs\\oracle_car\\database-course-design-main\\db_backend\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|d:\\vs\\oracle_car\\database-course-design-main\\db_backend\\controllers\\myordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\myordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|d:\\vs\\oracle_car\\database-course-design-main\\db_backend\\controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|d:\\vs\\oracle_car\\database-course-design-main\\db_backend\\db_backendmodel\\mytickettrainmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\mytickettrainmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|d:\\vs\\oracle_car\\database-course-design-main\\db_backend\\db_backendmodel\\traininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\traininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T14:53:50.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyTicketController.cs",
+              "DocumentMoniker": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\Controllers\\MyTicketController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MyTicketController.cs",
+              "ToolTip": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\Controllers\\MyTicketController.cs",
+              "RelativeToolTip": "Controllers\\MyTicketController.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAswEYAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T14:52:25.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MyTicketTrainModel.cs",
+              "DocumentMoniker": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\DB_BackendModel\\MyTicketTrainModel.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\MyTicketTrainModel.cs",
+              "ToolTip": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\DB_BackendModel\\MyTicketTrainModel.cs",
+              "RelativeToolTip": "DB_BackendModel\\MyTicketTrainModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T14:33:44.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TrainInfo.cs",
+              "DocumentMoniker": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\DB_BackendModel\\TrainInfo.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\TrainInfo.cs",
+              "ToolTip": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\DB_BackendModel\\TrainInfo.cs",
+              "RelativeToolTip": "DB_BackendModel\\TrainInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T14:33:38.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminOrdersController.cs",
+              "DocumentMoniker": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\Controllers\\AdminOrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminOrdersController.cs",
+              "ToolTip": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\Controllers\\AdminOrdersController.cs",
+              "RelativeToolTip": "Controllers\\AdminOrdersController.cs",
+              "ViewState": "AQIAAKQAAAAAAAAAAAAcwLQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T14:32:44.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyOrderController.cs",
+              "DocumentMoniker": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\Controllers\\MyOrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MyOrderController.cs",
+              "ToolTip": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\Controllers\\MyOrderController.cs",
+              "RelativeToolTip": "Controllers\\MyOrderController.cs",
+              "ViewState": "AQIAANgAAAAAAAAAAAAswNUAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T14:31:36.182Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
