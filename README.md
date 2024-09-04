@@ -14,4 +14,5 @@ import PersonalPage from '@/views/PersonalPage.vue'
 { path: '/personal', name: 'PersonalPage', component: PersonalPage}
 ```
 
-后端位于文件夹DB_Backend中，已经在昨天与其他功能完成了合并
+后端位于文件夹DB_Backend的test2文件夹中，已经在与其他功能完成了合并。
+如果只想要阅读个人主页相关的后端代码，请移步至zhcUser_new branch的test2文件夹
