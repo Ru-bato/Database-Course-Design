@@ -37,7 +37,9 @@ namespace DB_Backend.Controllers
                                         DepartureStation = train.Departure_station,
                                         ArrivalStation = train.Arrival_station,
                                         DepartureTime = train.Departure_time,
-                                        ArriveTime = train.Arrival_time
+                                        ArriveTime = train.Arrival_time,
+                                        Price = train.Price,
+                                        Remaining_tickets = train.Remaining_tickets,
                                     };
 
                     return Ok(ruleCodes);
@@ -68,7 +70,9 @@ namespace DB_Backend.Controllers
                                         DepartureStation = train.Departure_station,
                                         ArrivalStation = train.Arrival_station,
                                         DepartureTime = train.Departure_time,
-                                        ArriveTime = train.Arrival_time
+                                        ArriveTime = train.Arrival_time,
+                                        Price = train.Price,
+                                        Remaining_tickets = train.Remaining_tickets,
                                     };
 
                     return Ok(ruleCodes);
@@ -81,7 +85,7 @@ namespace DB_Backend.Controllers
         }
 
         [HttpPost("AddTrain")]
-        public IActionResult Add(string t_id, string d_station, string a_station, string d_time, string a_time)
+        public IActionResult Add(string t_id, string d_station, string a_station, string d_time, string a_time, double price, double remain_tickets)
         {
             using (OracleConnection connection = new OracleConnection(conStr))
             {
@@ -91,7 +95,9 @@ namespace DB_Backend.Controllers
                     Departure_station = d_station,
                     Arrival_station = a_station,
                     Departure_time = d_time,
-                    Arrival_time = a_time
+                    Arrival_time = a_time,
+                    Price = price,
+                    Remaining_tickets = remain_tickets,
                 };
                 try
                 {
@@ -108,7 +114,7 @@ namespace DB_Backend.Controllers
         }
 
         [HttpPut("updateTrain")]
-        public IActionResult Upadta(string t_id, string d_station, string a_station, string d_time, string a_time)
+        public IActionResult Upadta(string t_id, string d_station, string a_station, string d_time, string a_time, double price, double remain_tickets)
         {
             using (OracleConnection connection = new OracleConnection(conStr))
             {
@@ -129,7 +135,8 @@ namespace DB_Backend.Controllers
                     train.Arrival_time = a_time;
                     train.Departure_time = d_time;
                     train.Arrival_station = a_station;
-
+                    train.Price = price;
+                    train.Remaining_tickets = remain_tickets;
                     _dbContext.SaveChanges();
                     return Ok(train);
                 }

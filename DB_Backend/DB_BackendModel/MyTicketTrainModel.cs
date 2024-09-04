@@ -11,6 +11,9 @@ namespace DB_Backend.DB_BackendModel
         [Column("DEPARTURE_TIME")] public string? Departure_time { get; set; }
         [Column("ARRIVAL_TIME")] public string? Arrival_time { get; set; }
 
+        [Column("PRICE")] public double? Price { get; set; }
+
+        [Column("REMAINING_TICKETS")] public double? Remaining_tickets { get; set; }
         public Train() { }
     }
 }
