@@ -61,8 +61,11 @@ namespace DB_Backend.DB_BackendDAL
                     command.Parameters.Add(new OracleParameter("Username", user.Username));
                     command.Parameters.Add(new OracleParameter("Password", user.Password));
                     command.Parameters.Add(new OracleParameter("Id_number", user.ID_Number));
-                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student));
-                    command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
+                    //command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    // 将布尔值转换为数据库中的数值
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? 1 : 0));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? 1 : 0));
                     command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_Number));
                     command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_Interval));
 
@@ -77,7 +80,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("SELECT * FROM USERSTEST WHERE User_id = :User_id", connection))
+                using (var command = new OracleCommand("SELECT * FROM Users WHERE User_id = :User_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("User_id", userId));
                     using (var reader = command.ExecuteReader())
@@ -113,8 +116,11 @@ namespace DB_Backend.DB_BackendDAL
                     command.Parameters.Add(new OracleParameter("Username", user.Username));
                     command.Parameters.Add(new OracleParameter("Password", user.Password));
                     command.Parameters.Add(new OracleParameter("Id_number", user.ID_Number));
-                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student));
-                    command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
+                    //command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    // 将布尔值转换为数据库中的数值
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? 1 : 0));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? 1 : 0));
                     command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_Number));
                     command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_Interval));
                     command.Parameters.Add(new OracleParameter("User_id", user.User_ID));

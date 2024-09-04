@@ -24,22 +24,49 @@ namespace DB_Backend.DB_BackendDAL
             return connection;
         }
 
+        // 通用方法：执行查询
+        public DataTable ExecuteQuery(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                OracleCommand command = new OracleCommand(query, connection);
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                DataTable resultTable = new DataTable();
+                connection.Open();
+                adapter.Fill(resultTable);
+                return resultTable;
+            }
+        }
+
+        // 通用方法：执行非查询（如INSERT, UPDATE, DELETE）
+        public int ExecuteNonQuery(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                OracleCommand command = new OracleCommand(query, connection);
+                connection.Open();
+                return command.ExecuteNonQuery();
+            }
+        }
+
         // 创建订单
         public void CreateOrder(Orderlist order)
         {
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("INSERT INTO Orders (Order_id, User_id, Train_id, Orderstatus, Price, Passenger_id, Ticket_type) VALUES (:Order_id, :User_id, :Train_id, :Orderstatus, :Price, :Passenger_id, :Ticket_type)", connection))
+                using (var command = new OracleCommand("INSERT INTO ORDERLIST (Order_id, User_id, Train_id, Order_status, Price, Passenger_id, Ticket_type) VALUES (:Order_id, :User_id, :Train_id, :Order_status, :Price, :Passenger_id, :Ticket_type)", connection))
                 {
+                    // 为每个参数添加值
                     command.Parameters.Add(new OracleParameter("Order_id", order.Order_id));
                     command.Parameters.Add(new OracleParameter("User_id", order.User_id));
                     command.Parameters.Add(new OracleParameter("Train_id", order.Train_id));
-                    command.Parameters.Add(new OracleParameter("Orderstatus", order.Orderstatus));
-                    command.Parameters.Add(new OracleParameter("Price", order.Price));
+                    command.Parameters.Add(new OracleParameter("Order_status", order.Order_Status));
+                    command.Parameters.Add(new OracleParameter("Price", order.Price)); // 这里的 double 类型将自动转换为 Oracle 的 NUMBER 类型
                     command.Parameters.Add(new OracleParameter("Passenger_id", order.passenger_id));
                     command.Parameters.Add(new OracleParameter("Ticket_type", order.ticket_type));
 
+                    // 执行插入命令
                     command.ExecuteNonQuery();
                 }
             }
@@ -51,7 +78,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("SELECT * FROM Orders WHERE Order_id = :Order_id", connection))
+                using (var command = new OracleCommand("SELECT * FROM ORDERLIST WHERE Order_id = :Order_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("Order_id", orderId));
                     using (var reader = command.ExecuteReader())
@@ -63,8 +90,8 @@ namespace DB_Backend.DB_BackendDAL
                                 Order_id = reader["Order_id"].ToString(),
                                 User_id = reader["User_id"].ToString(),
                                 Train_id = reader["Train_id"].ToString(),
-                                Orderstatus = reader["Orderstatus"].ToString(),
-                                Price = reader["Price"].ToString(),
+                                Order_Status = reader["Order_status"].ToString(),
+                                Price = Convert.ToDouble(reader["Price"]), // 将 Price 从 NUMBER 转换为 double
                                 passenger_id = reader["Passenger_id"].ToString(),
                                 ticket_type = reader["Ticket_type"].ToString()
                             };
@@ -83,7 +110,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("SELECT * FROM Orders WHERE User_id = :User_id", connection))
+                using (var command = new OracleCommand("SELECT * FROM ORDERLIST WHERE User_id = :User_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("User_id", userId));
 
@@ -96,8 +123,8 @@ namespace DB_Backend.DB_BackendDAL
                                 Order_id = reader["Order_id"].ToString(),
                                 User_id = reader["User_id"].ToString(),
                                 Train_id = reader["Train_id"].ToString(),
-                                Orderstatus = reader["Orderstatus"].ToString(),
-                                Price = reader["Price"].ToString(),
+                                Order_Status = reader["Order_status"].ToString(),
+                                Price = Convert.ToDouble(reader["Price"]), // 将 Price 从 NUMBER 转换为 double
                                 passenger_id = reader["Passenger_id"].ToString(),
                                 ticket_type = reader["Ticket_type"].ToString()
                             });
@@ -114,11 +141,11 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("UPDATE Orders SET User_id = :User_id, Train_id = :Train_id, Orderstatus = :Orderstatus, Price = :Price, Passenger_id = :Passenger_id, Ticket_type = :Ticket_type WHERE Order_id = :Order_id", connection))
+                using (var command = new OracleCommand("UPDATE ORDERLIST SET User_id = :User_id, Train_id = :Train_id, Order_status = :Order_status, Price = :Price, Passenger_id = :Passenger_id, Ticket_type = :Ticket_type WHERE Order_id = :Order_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("User_id", order.User_id));
                     command.Parameters.Add(new OracleParameter("Train_id", order.Train_id));
-                    command.Parameters.Add(new OracleParameter("Orderstatus", order.Orderstatus));
+                    command.Parameters.Add(new OracleParameter("Order_status", order.Order_Status));
                     command.Parameters.Add(new OracleParameter("Price", order.Price));
                     command.Parameters.Add(new OracleParameter("Passenger_id", order.passenger_id));
                     command.Parameters.Add(new OracleParameter("Ticket_type", order.ticket_type));
@@ -135,7 +162,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("DELETE FROM Orders WHERE Order_id = :Order_id", connection))
+                using (var command = new OracleCommand("DELETE FROM ORDERLIST WHERE Order_id = :Order_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("Order_id", orderId));
                     command.ExecuteNonQuery();

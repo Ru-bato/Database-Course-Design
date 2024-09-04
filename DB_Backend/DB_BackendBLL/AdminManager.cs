@@ -1,5 +1,5 @@
-﻿using DB_Backend.DB_BackendModel;
-using DB_Backend.DB_BackendDAL;
+﻿using DB_Backend.DB_BackendDAL;
+using DB_Backend.DB_BackendModel;
 using System;
 
 namespace DB_Backend.DB_BackendBLL

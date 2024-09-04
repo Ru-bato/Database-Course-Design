@@ -22,6 +22,31 @@ namespace DB_Backend.DB_BackendDAL
             return connection;
         }
 
+        // 通用方法：执行查询
+        public DataTable ExecuteQuery(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                OracleCommand command = new OracleCommand(query, connection);
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                DataTable resultTable = new DataTable();
+                connection.Open();
+                adapter.Fill(resultTable);
+                return resultTable;
+            }
+        }
+
+        // 通用方法：执行非查询（如INSERT, UPDATE, DELETE）
+        public int ExecuteNonQuery(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                OracleCommand command = new OracleCommand(query, connection);
+                connection.Open();
+                return command.ExecuteNonQuery();
+            }
+        }
+
         // 创建乘车人
         public void CreatePassenger(Passenger passenger)
         {
@@ -129,34 +154,39 @@ namespace DB_Backend.DB_BackendDAL
             }
         }
 
-        // 根据乘车人姓名和身份证号获取乘车人信息
-        public List<Passenger> GetPassengersByNameAndId(string passengerName, string idNumber)
+        // 根据乘车人姓名和身份证号获取用户信息
+        public User? GetUserByNameAndId(string username, string idNumber)
         {
-            List<Passenger> passengers = new List<Passenger>();
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("SELECT * FROM Passenger WHERE Passenger_name = :Passenger_name AND Id_number = :Id_number", connection))
+                using (var command = new OracleCommand("SELECT * FROM Users WHERE Username = :Username AND Id_number = :Id_number", connection))
                 {
-                    command.Parameters.Add(new OracleParameter("Passenger_name", passengerName));
+                    command.Parameters.Add(new OracleParameter("Username", username));
                     command.Parameters.Add(new OracleParameter("Id_number", idNumber));
+
                     using (var reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
+                        if (reader.Read())
                         {
-                            passengers.Add(new Passenger
+                            return new User
                             {
-                                passenger_id = reader["passenger_id"].ToString(),
-                                User_id = reader["User_id"].ToString(),
-                                Passenger_name = reader["Passenger_name"].ToString(),
-                                Id_number = reader["Id_number"].ToString()
-                            });
+                                User_ID = reader["User_id"].ToString(),
+                                Username = reader["Username"].ToString(),
+                                Password = reader["Password"].ToString(),
+                                ID_Number = reader["Id_number"].ToString(),
+                                Is_Student = Convert.ToBoolean(reader["Is_student"]),
+                                Status = Convert.ToBoolean(reader["Status"]),
+                                Phone_Number = reader["Phone_number"].ToString(),
+                                Riding_Interval = reader["Riding_interval"].ToString()
+                            };
                         }
                     }
                 }
             }
-            return passengers;
+            return null;
         }
+
     }
 }
 

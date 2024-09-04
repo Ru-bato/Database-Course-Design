@@ -48,6 +48,18 @@ namespace DB_Backend.Controllers
             }
         }
 
+        // 哈希密码
+        public string HashSecretString(string plainString)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(plainString);
+        }
+
+        // 验证密码
+        public bool VerifySecretString(string plainString, string hashedString)
+        {
+            return BCrypt.Net.BCrypt.Verify(plainString, hashedString);
+        }
+
         static string ComputeSHA256Hash(string input)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -80,8 +92,17 @@ namespace DB_Backend.Controllers
             string password = loginFormat.Password;
             Console.WriteLine("Login: " + phoneNumber + " " + password);
             User candidate = UserManager.Login(phoneNumber);
-            //TODO: password = ComputeSHA256Hash(password);
-            if (candidate.Password != password)
+            if (candidate.User_ID == "-1")
+            {
+                Console.WriteLine("用户不存在");
+                return Unauthorized(new { code = -3, message = "用户不存在" });
+            }
+            //else if (!VerifySecretString(password, candidate.Password))
+            //{
+            //    Console.WriteLine("密码错误，请重新输入");
+            //    return Unauthorized(new { code = -1, message = "密码错误，请重新输入" });
+            //}
+            else if (password != candidate.Password)
             {
                 Console.WriteLine("密码错误，请重新输入");
                 return Unauthorized(new { code = -1, message = "密码错误，请重新输入" });
@@ -90,11 +111,6 @@ namespace DB_Backend.Controllers
             {
                 Console.WriteLine("账号已被封禁，请等待解禁");
                 return Unauthorized(new { code = -2, message = "账号已被封禁，请等待解禁" });
-            }
-            else if (candidate.User_ID == "-1")
-            {
-                Console.WriteLine("用户不存在");
-                return Unauthorized(new { code = -3, message = "用户不存在" });
             }
             else
             {
