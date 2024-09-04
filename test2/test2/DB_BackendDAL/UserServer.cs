@@ -61,8 +61,11 @@ namespace DB_BackendDAL
                     command.Parameters.Add(new OracleParameter("Username", user.Username));
                     command.Parameters.Add(new OracleParameter("Password", user.Password));
                     command.Parameters.Add(new OracleParameter("Id_number", user.Id_number));
-                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
-                    command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
+                    //command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    // 将布尔值转换为数据库中的数值
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_student ? 1 : 0));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? 1 : 0));
                     command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_number));
                     command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_interval));
 
@@ -113,8 +116,11 @@ namespace DB_BackendDAL
                     command.Parameters.Add(new OracleParameter("Username", user.Username));
                     command.Parameters.Add(new OracleParameter("Password", user.Password));
                     command.Parameters.Add(new OracleParameter("Id_number", user.Id_number));
-                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
-                    command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
+                    //command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    // 将布尔值转换为数据库中的数值
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_student ? 1 : 0));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? 1 : 0));
                     command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_number));
                     command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_interval));
                     command.Parameters.Add(new OracleParameter("User_id", user.User_id));

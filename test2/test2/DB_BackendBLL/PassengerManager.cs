@@ -59,10 +59,11 @@ namespace DB_BackendBLL
         }
 
         // 根据乘车人姓名和身份证号获取乘车人信息
-        public List<Passenger> GetPassengersByNameAndId(string passengerName, string idNumber)
+        public User? GetPassengersByNameAndId(string passengerName, string idNumber)
         {
-            return _passengerServer.GetPassengersByNameAndId(passengerName, idNumber);
+            return _passengerServer.GetUserByNameAndId(passengerName, idNumber);
         }
+
     }
 }
 

@@ -42,12 +42,9 @@ namespace test2.Controllers
         {
             try
             {
-                var passengers = _passengerManager.GetPassengersByNameAndId(passengerName, idNumber);
-                if (passengers == null || passengers.Count == 0)
-                    return NotFound("No user found matching the provided passenger details.");
-                var user = _userManager.GetUserById(passengers.First().User_id);// 返回找到的用户信息
+                var user = _passengerManager.GetPassengersByNameAndId(passengerName, idNumber);
                 if(user==null)
-                    return BadRequest($"Error finding user");
+                    return NotFound("No user found matching the provided passenger details.");
                 CreateUserPassenger(user.User_id, userid, passengerName, idNumber);
                 return Ok(user);
             }

@@ -66,7 +66,7 @@ namespace test2.Controllers
         }
 
         [HttpPut("UpdateUserOrder")]//修改用户已有的订单，调用上述程序
-        public IActionResult UpdateUserOrder(string orderid, string userid, string trainid, string orderstatus, string price, string passengerid, string tickettype)
+        public IActionResult UpdateUserOrder(string orderid, string userid, string trainid, string order_status, double price, string passengerid, string tickettype)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace test2.Controllers
                     Order_id = orderid,
                     User_id = userid,
                     Train_id = trainid,
-                    Orderstatus = orderstatus,
+                    Order_status = order_status,
                     Price = price,
                     passenger_id = passengerid,
                     ticket_type = tickettype,
@@ -106,14 +106,14 @@ namespace test2.Controllers
             }
         }
 
-        [HttpGet("GetPassengersByUserId/{userId}")]//由用户的id得到订单的信息
+        [HttpGet("GetOrderssByUserId/{userId}")]//由用户的id得到订单的信息
         public IActionResult GetOrdersByUserId(string userId)
         {
             try
             {
                 var orders = _orderManager.GetOrdersByUserId(userId);
                 if (orders == null || orders.Count == 0)
-                    return NotFound("No passengers found for the given user ID.");
+                    return NotFound("No orders found for the given user ID.");
                 return Ok(orders);
             }
             catch (Exception ex)

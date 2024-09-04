@@ -24,6 +24,31 @@ namespace DB_BackendDAL
             return connection;
         }
 
+            // 通用方法：执行查询
+            public DataTable ExecuteQuery(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                OracleCommand command = new OracleCommand(query, connection);
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                DataTable resultTable = new DataTable();
+                connection.Open();
+                adapter.Fill(resultTable);
+                return resultTable;
+            }
+        }
+
+        // 通用方法：执行非查询（如INSERT, UPDATE, DELETE）
+        public int ExecuteNonQuery(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                OracleCommand command = new OracleCommand(query, connection);
+                connection.Open();
+                return command.ExecuteNonQuery();
+            }
+        }
+
         // 创建管理员
         public void CreateAdmin(Admin admin)
         {
