@@ -77,7 +77,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("SELECT * FROM Users WHERE User_id = :User_id", connection))
+                using (var command = new OracleCommand("SELECT * FROM USERSTEST WHERE User_id = :User_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("User_id", userId));
                     using (var reader = command.ExecuteReader())

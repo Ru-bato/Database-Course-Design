@@ -141,5 +141,37 @@ namespace DB_Backend.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("GetCurrentUserInfo/{id}")]
+        public IActionResult GetCurrentUserInfo(string id)
+        {
+            try
+            {
+                Console.WriteLine(1);
+                var user = _userManager.GetUserById(id);
+                if (user == null) return NotFound("User not found.");
+                Console.WriteLine(2);
+                if (user != null)
+                {
+                    var responseData = new
+                    {
+                        data = new
+                        {
+                            Username = user.Username,
+                            Phone_Number = user.Phone_Number,
+                        }
+                    };
+                    return Ok(responseData);
+                }
+                else
+                {
+                    Console.WriteLine("用户不存在");
+                    return Unauthorized(new { code = -3, message = "用户不存在" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

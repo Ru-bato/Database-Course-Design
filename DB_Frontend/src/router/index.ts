@@ -14,6 +14,7 @@ import StationPage from '@/views/StationPage.vue'
 import Index from '@/views/IndexPage.vue'
 import VerifyIdentityPage from '@/views/VerifyIdentityPage.vue'
 import ResetPasswordPage from '@/views/ResetPasswordPage.vue'
+import PersonalPage from '@/views/PersonalPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', name: 'Home', component: Home },
@@ -32,7 +33,8 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/waitOrder', name: 'WaitOrder', component: WaitOrder, meta: { requiresAuth: true } },
   { path: '/ticketsQuestions', name: 'TicketsQuestions', component: TicketsQuestions },
   { path: '/stationPage', name: 'StationPage', component: StationPage },
-  { path: '/index', name: 'Index', component: Index }
+  { path: '/index', name: 'Index', component: Index },
+  { path: '/personal', name: 'PersonalPage', component: PersonalPage, meta: { requiresAuth: true } }
 ]
 
 const router = createRouter({
