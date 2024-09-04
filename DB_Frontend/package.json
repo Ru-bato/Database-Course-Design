@@ -17,10 +17,13 @@
     "ant-design-vue": "^4.2.3",
     "axios": "^1.7.2",
     "element-plus": "^2.8.1",
+    "flatpickr": "^4.6.13",
+    "pinyin": "^4.0.0-alpha.2",
+    "segmentit": "^2.0.3",
     "store": "^2.0.12",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3",
-    "vuex": "^4.1.0"
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

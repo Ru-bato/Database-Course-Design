@@ -3,7 +3,7 @@
     <h2>已支付订单</h2>
 
     <!-- Date range picker -->
-    <div class="date-picker">
+    <!--<div class="date-picker">
       <div class="date-picker-inner">
         <label for="start-date">起始日期:</label>
         <input type="date" id="start-date" v-model="startDate" />
@@ -11,16 +11,16 @@
         <input type="date" id="end-date" v-model="endDate" />
         <button @click="filterByDate">筛选</button>
       </div>
-    </div>
+    </div> -->
 
     <!-- Order list -->
-    <div v-if="filteredOrders.length === 0" class="no-orders">
+    <div v-if="paginatedOrders.length === 0" class="no-orders">
       <div class="order-card">
         <p>你目前没有订单</p>
       </div>
     </div>
     <div v-else>
-      <div v-for="order in filteredOrders" :key="order.orderId" class="order-card">
+      <div v-for="order in paginatedOrders" :key="order.orderId" class="order-card">
         <div class="order-header">
           <h3>订单号: {{ order.orderId }}</h3>
           <!-- 状态显示为中文 -->
@@ -68,15 +68,22 @@
         </div>
         <div class="order-actions">
           <button @click="handleChangeTicket(order.orderId)">改签</button>
-          <button @click="handleCancelOrder(order.orderId)">取消订单</button>
+          <button @click="confirmCancelOrder(order.orderId)">取消订单</button>
         </div>
       </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button @click="prevPage" :disabled="currentPage === 1">上一页</button>
+      <span>{{ currentPage }} / {{ totalPages }}</span>
+      <button @click="nextPage" :disabled="currentPage === totalPages">下一页</button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
 
 interface Order {
@@ -99,13 +106,15 @@ export default {
     const startDate = ref<string>('');
     const endDate = ref<string>('');
     const filteredOrders = ref<Order[]>([]);
-
-    const userId = '0001'; // 需要组长去调整
+    const userId = localStorage.getItem('User_ID');
+    const currentPage = ref(1);
+    const pageSize = ref(2); // 每页显示的订单数量
 
     const fetchOrders = () => {
-      axios.get(`http://localhost:5138/api/MyOrder/GetMyPaidOrder?cust=${userId}`)
+      console.log(`http://localhost:5000/api/MyOrder/GetMyPaidOrder?cust=${userId}`);
+      axios.get(`http://localhost:5000/api/MyOrder/GetMyPaidOrder?cust=${userId}`)
         .then(response => {
-          orders.value = response.data;
+          orders.value = response.data.sort((a: Order, b: Order) => b.orderId.localeCompare(a.orderId));
           applyFilters();
         })
         .catch(error => {
@@ -119,10 +128,33 @@ export default {
                             (!endDate.value || new Date(order.departureTime) <= new Date(endDate.value));
         return matchesDate;
       });
+      currentPage.value = 1; // 重置到第一页
     };
 
     const filterByDate = () => {
       applyFilters();
+    };
+
+    const paginatedOrders = computed(() => {
+      const start = (currentPage.value - 1) * pageSize.value;
+      const end = start + pageSize.value;
+      return filteredOrders.value.slice(start, end);
+    });
+
+    const totalPages = computed(() => {
+      return Math.ceil(filteredOrders.value.length / pageSize.value);
+    });
+
+    const prevPage = () => {
+      if (currentPage.value > 1) {
+        currentPage.value--;
+      }
+    };
+
+    const nextPage = () => {
+      if (currentPage.value < totalPages.value) {
+        currentPage.value++;
+      }
     };
 
     // 将状态映射到中文标签
@@ -147,16 +179,19 @@ export default {
       console.log('改签订单:', orderId);
     };
 
-    const handlePay = (orderId: string) => {
-      console.log('支付订单:', orderId);
+    const confirmCancelOrder = (orderId: string) => {
+      if (window.confirm('确定要取消订单吗？')) {
+        cancelOrder(orderId);
+      }
     };
 
-    const handleWaitlistStatus = (orderId: string) => {
-      console.log('查看候补情况:', orderId);
-    };
-
-    const handleCancelOrder = (orderId: string) => {
-      console.log('取消订单:', orderId);
+    const cancelOrder = async (orderId: string) => {
+      try {
+        await axios.delete(`http://localhost:5000/api/MyTicket/DeleteMyTicket?o_id=${orderId}`);
+        fetchOrders(); // 重新获取订单列表
+      } catch (error) {
+        console.error('Error canceling order:', error);
+      }
     };
 
     onMounted(() => {
@@ -165,6 +200,7 @@ export default {
 
     return {
       filteredOrders,
+      paginatedOrders,
       startDate,
       endDate,
       filterByDate,
@@ -173,9 +209,11 @@ export default {
       getTicketTypeLabel,
       getMapUrl,
       handleChangeTicket,
-      handlePay,
-      handleWaitlistStatus,
-      handleCancelOrder,
+      confirmCancelOrder,
+      currentPage,
+      totalPages,
+      prevPage,
+      nextPage,
     };
   }
 };
@@ -357,5 +395,36 @@ h2 {
 .station-link.arrival {
   color: #28a745;
   border-color: #28a745;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-size: 14px;
 }
 </style>

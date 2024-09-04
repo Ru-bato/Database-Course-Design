@@ -1,15 +1,17 @@
-import { createRouter, createWebHistory, type RouteRecordRaw} from 'vue-router'
-import Home from '../views/Home.vue';
-import Login from '../views/Login.vue';
-import Booking from '../views/Booking.vue';
-import LoginPage from '../views/TestLoginPage.vue';
-import RegisterPage from '../views/TestRegisterPage.vue';
-import MyTickets from '../views/MyTickets.vue';
-import PaidOrder from '../views/PaidOrder.vue';
-import UnpaidOrder from '../views/UnpaidOrder.vue';
-import WaitOrder from '../views/WaitOrder.vue';
-import TrainManagement from '../views/TrainManagement.vue';
-
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import Home from '@/views/HomeView.vue'
+// import Booking from '@/views/Booking.vue'
+import Login from '@/views/LoginPage.vue'
+import Register from '@/views/RegisterPage.vue'
+import OrdersList from '@/views/OrdersList.vue'
+import MyTickets from '@/views/MyTickets.vue'
+import Forgot from '@/views/ForgotPasswordPage.vue'
+import PaidOrder from '@/views/PaidOrder.vue'
+import UnpaidOrder from '@/views/UnpaidOrder.vue'
+import WaitOrder from '@/views/WaitOrder.vue'
+import TicketsQuestions from '@/views/TicketsQuestions.vue'
+import StationPage from '@/views/StationPage.vue'
+import Index from '@/views/IndexPage.vue'
 
 // const router = createRouter({
 //   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,19 +34,24 @@ import TrainManagement from '../views/TrainManagement.vue';
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', name: 'Home', component: Home },
-  { path: '/login', name: 'Login', component: LoginPage },
-  { path: '/register', name: 'Register', component: RegisterPage },
-  { path: '/booking', name: 'Booking', component: Booking },
+  { path: '/login', name: 'Login', component: Login },
+  { path: '/register', name: 'Register', component: Register },
+  { path: '/forgot', name: 'Forgot', component: Forgot },
+  { path: '/order', name: 'OrdersList', component: OrdersList },
   { path: '/ticket', name: 'MyTickets', component: MyTickets },
-  { path: '/paidorder', name: 'PaidOrder', component: PaidOrder },
-  { path: '/unpaidorder', name: 'UnpaidOrder', component: UnpaidOrder },
-  { path: '/waitorder', name: 'WaitOrder', component: WaitOrder },
-  { path: '/trainmanagement', name: 'TrainManagement', component: TrainManagement },
-];
+  { path: '/paidOrder', name: 'PaidOrder', component: PaidOrder },
+  { path: '/unpaidOrder', name: 'UnpaidOrder', component: UnpaidOrder },
+  { path: '/waitOrder', name: 'WaitOrder', component: WaitOrder },
+  { path: '/ticketsQuestions', name: 'TicketsQuestions', component: TicketsQuestions },
+  { path: '/stationPage', name: 'StationPage', component: StationPage },
+  { path: '/index', name: 'Index', component: Index }
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
-});
+  routes
+})
+
+// Todo: 添加路由守卫
 
 export default router

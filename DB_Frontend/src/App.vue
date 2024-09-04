@@ -18,7 +18,7 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   padding: 0;
-  /* max-width: 1536px; */
-  /* margin: 0; */
+  max-width: 1536px;
+  margin: 0;
 }
 </style>

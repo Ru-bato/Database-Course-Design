@@ -1,15 +1,15 @@
 <template>
     <div>
-      <Login />
+      <Forgot />
     </div>
   </template>
   
   <script lang="ts">
-  import Login from '../components/TestLogin.vue';
+  import Forgot from '@/components/ForgotPasswordComponent.vue';
   
   export default {
     components: {
-      Login
+      Forgot
     }
   };
   </script>

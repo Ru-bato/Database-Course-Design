@@ -2721,19 +2721,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\86156\\.nuget\\packages\\": {}
+    "C:\\Users\\chen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\DB_Backend.csproj",
+      "projectUniqueName": "D:\\Grade2_Summer\\DB-SUMMER\\9-4\\Database-Course-Design-main\\DB_Backend\\DB_Backend.csproj",
       "projectName": "DB_Backend",
-      "projectPath": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\DB_Backend.csproj",
-      "packagesPath": "C:\\Users\\86156\\.nuget\\packages\\",
-      "outputPath": "D:\\vs\\oracle_car\\Database-Course-Design-main\\DB_Backend\\obj\\",
+      "projectPath": "D:\\Grade2_Summer\\DB-SUMMER\\9-4\\Database-Course-Design-main\\DB_Backend\\DB_Backend.csproj",
+      "packagesPath": "C:\\Users\\chen\\.nuget\\packages\\",
+      "outputPath": "D:\\Grade2_Summer\\DB-SUMMER\\9-4\\Database-Course-Design-main\\DB_Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\86156\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2812,15 +2812,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[8.0.7, 8.0.7]"
+            "version": "[8.0.8, 8.0.8]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[8.0.7, 8.0.7]"
+            "version": "[8.0.8, 8.0.8]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[8.0.7, 8.0.7]"
+            "version": "[8.0.8, 8.0.8]"
           }
         ],
         "frameworkReferences": {
@@ -2831,7 +2831,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -85,7 +85,7 @@ namespace DB_Backend.Controllers
         }
 
         [HttpPost("AddTrain")]
-        public IActionResult Add(string t_id, string d_station, string a_station, string d_time, string a_time, string price, string remain_tickets)
+        public IActionResult Add(string t_id, string d_station, string a_station, string d_time, string a_time, double price, double remain_tickets)
         {
             using (OracleConnection connection = new OracleConnection(conStr))
             {
@@ -114,7 +114,7 @@ namespace DB_Backend.Controllers
         }
 
         [HttpPut("updateTrain")]
-        public IActionResult Upadta(string t_id, string d_station, string a_station, string d_time, string a_time, string price, string remain_tickets)
+        public IActionResult Upadta(string t_id, string d_station, string a_station, string d_time, string a_time, double price, double remain_tickets)
         {
             using (OracleConnection connection = new OracleConnection(conStr))
             {

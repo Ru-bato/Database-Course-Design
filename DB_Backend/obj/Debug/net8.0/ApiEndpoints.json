@@ -1,0 +1,401 @@
+[
+  {
+    "ContainingType": "DB_Backend.Controllers.AdminOrdersController",
+    "Method": "Add",
+    "RelativePath": "api/AdminOrders/AddTrain",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "t_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "d_station",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "a_station",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "d_time",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "a_time",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "price",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "remain_tickets",
+        "Type": "System.Double",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.AdminOrdersController",
+    "Method": "Delete",
+    "RelativePath": "api/AdminOrders/deleteTrain",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "t_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.AdminOrdersController",
+    "Method": "Get",
+    "RelativePath": "api/AdminOrders/GetAllOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.AdminOrdersController",
+    "Method": "GetOne",
+    "RelativePath": "api/AdminOrders/GetOneTrain",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "t_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.AdminOrdersController",
+    "Method": "Upadta",
+    "RelativePath": "api/AdminOrders/updateTrain",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "t_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "d_station",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "a_station",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "d_time",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "a_time",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "price",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "remain_tickets",
+        "Type": "System.Double",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginFormat",
+        "Type": "DB_Backend.Controllers.LoginController\u002BLoginFormat",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.MyOrderController",
+    "Method": "DeleteUnpaidOrder",
+    "RelativePath": "api/MyOrder/DeleteUnpaidOrder",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "o_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.MyOrderController",
+    "Method": "DeleteWaitOrder",
+    "RelativePath": "api/MyOrder/DeleteWaitOrder",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "o_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.MyOrderController",
+    "Method": "Get",
+    "RelativePath": "api/MyOrder/GetMyAllOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.MyOrderController",
+    "Method": "GetPaid",
+    "RelativePath": "api/MyOrder/GetMyPaidOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.MyOrderController",
+    "Method": "GetUnpaid",
+    "RelativePath": "api/MyOrder/GetMyUnpaidOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.MyOrderController",
+    "Method": "GetWait",
+    "RelativePath": "api/MyOrder/GetMyWaitOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.MyTicketController",
+    "Method": "DeleteMyTicket",
+    "RelativePath": "api/MyTicket/DeleteMyTicket",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "o_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.MyTicketController",
+    "Method": "Get",
+    "RelativePath": "api/MyTicket/GetMyTicket",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.RegisterController",
+    "Method": "Register",
+    "RelativePath": "api/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerModel",
+        "Type": "DB_Backend.Controllers.RegisterController\u002BRegisterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.ScreenController",
+    "Method": "SearchTrainsByArrivalStation",
+    "RelativePath": "api/Screen/arrival",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DB_Backend.DB_BackendModel.QueryTrainModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.ScreenController",
+    "Method": "SearchTrainsByDepatureStation",
+    "RelativePath": "api/Screen/departure",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DB_Backend.DB_BackendModel.QueryTrainModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.StationsController",
+    "Method": "GetStationsNames",
+    "RelativePath": "api/Stations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.StationsController",
+    "Method": "SearchStationByKW",
+    "RelativePath": "api/Stations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DB_Backend.DB_BackendModel.CitySearchModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.QuestionController",
+    "Method": "GetQuestion",
+    "RelativePath": "Question",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.QuestionController",
+    "Method": "PostQuestion",
+    "RelativePath": "Question",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DB_Backend.Controllers.QuestionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DB_Backend.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DB_Backend.WeatherForecast, DB_Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
