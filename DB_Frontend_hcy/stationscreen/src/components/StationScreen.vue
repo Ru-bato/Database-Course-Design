@@ -31,32 +31,33 @@
 
       <div class="train-list-bd">
       <!-- 车次列表 -->
-        <div v-for="train in trainList" :key="train.number" class="train-result-item">
-          <div class="train-number">
-            <div class="train-number-info">{{ train.number }}</div>
-          </div>
-          <div class="train-station">
-            <div class="train-station-info">{{ train.station }}</div>
-          </div>
-          <div class="train-time">
-            <div class="train-time-info">{{ train._time }}</div>
-          </div>
-          <div class="train-check">
-            <div class="train-check-info">{{ train.check }}</div>
-          </div>
-          <div class="train-status">
-          <div :class="`train-status-info ${train.status === '停止检票' ? 'train-status-info-red' :
-                                            train.status === '正在检票' ? 'train-status-info-green' :
-                                            train.status === '正在候车' ? 'train-status-info-gray' : 
-                                            train.status === '正点' ? 'train-status-info-green' : 
-                                            train.status === '晚点' ? 'train-status-info-red' : ''}`">
-          {{ train.status }}</div>
+        <div v-if="trainList.length > 0">
+          <div v-for="train in trainList" :key="train.number" class="train-result-item">
+            <div class="train-number">
+              <div class="train-number-info">{{ train.number }}</div>
+            </div>
+            <div class="train-station">
+              <div class="train-station-info">{{ train.station }}</div>
+            </div>
+            <div class="train-time">
+              <div class="train-time-info">{{ train._time }}</div>
+            </div>
+            <div class="train-check">
+              <div class="train-check-info">{{ train.check }}</div>
+            </div>
+            <div class="train-status">
+              <div :class="`train-status-info ${train.status === '停止检票' ? 'train-status-info-red' :
+                                              train.status === '正在检票' ? 'train-status-info-green' :
+                                              train.status === '正在候车' ? 'train-status-info-gray' : 
+                                              train.status === '正点' ? 'train-status-info-green' : 
+                                              train.status === '晚点' ? 'train-status-info-red' : ''}`">
+              {{ train.status }}</div>
+            </div>
           </div>
         </div>
 
-        <div v-if="!trainList.length" class="no-train" id="no_filter_train">
+        <div v-else class="no-train" id="no_filter_train">
         <!-- 无结果页面 -->
-          <span class="icon">&#xe653;</span>
           <p class="no-train-text">没有查询到符合条件的车次！</p>
         </div>
       </div>
@@ -308,7 +309,6 @@ export default defineComponent ({
 /* --------------- No Train Styles ---------------*/
 
 .no-train {
-  display: none;
   width: 420px;
   margin: 20px auto;
 }
