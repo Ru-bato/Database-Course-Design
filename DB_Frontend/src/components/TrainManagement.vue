@@ -11,6 +11,8 @@
             <th>到达站</th>
             <th>出发时间</th>
             <th>到达时间</th>
+            <th>价格</th>
+            <th>剩余票数</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -21,6 +23,8 @@
             <td>{{ train.arrivalStation }}</td>
             <td>{{ train.departureTime }}</td>
             <td>{{ train.arriveTime }}</td>
+            <td>{{ train.price }}</td>
+            <td>{{ train.remaining_tickets }}</td>
             <td>
               <button class="edit" @click="editTrain(train)">编辑</button>
               <button class="delete" @click="confirmDelete(train.trainId)">删除</button>
@@ -38,6 +42,8 @@
           <label>到达站: <input type="text" v-model="editingTrain.arrivalStation" required /></label><br />
           <label>出发时间: <input type="text" v-model="editingTrain.departureTime" required /></label><br />
           <label>到达时间: <input type="text" v-model="editingTrain.arriveTime" required /></label><br />
+          <label>价格: <input type="text" v-model="editingTrain.price" required /></label><br />
+          <label>剩余票数: <input type="text" v-model="editingTrain.remaining_tickets" required /></label><br />
           <button type="submit" class="update">更新</button>
           <button @click="cancelEdit" class="cancel">取消</button>
         </form>
@@ -51,6 +57,8 @@
         <label>到达站: <input type="text" v-model="newTrain.arrivalStation" required /></label><br />
         <label>出发时间: <input type="text" v-model="newTrain.departureTime" required /></label><br />
         <label>到达时间: <input type="text" v-model="newTrain.arriveTime" required /></label><br />
+        <label>价格: <input type="text" v-model="newTrain.price" required /></label><br />
+        <label>剩余票数: <input type="text" v-model="newTrain.remaining_tickets" required /></label><br />
         <button type="submit" class="add">新增</button>
       </form>
     </div>
@@ -67,6 +75,8 @@ interface Train {
   arrivalStation: string;
   departureTime: string;
   arriveTime: string;
+  price: string;
+  remaining_tickets: string;
 }
 
 export default defineComponent({
@@ -79,12 +89,14 @@ export default defineComponent({
       departureStation: '',
       arrivalStation: '',
       departureTime: '',
-      arriveTime: ''
+      arriveTime: '',
+      price: '',
+      remaining_tickets: ''
     });
 
     const fetchTrains = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/AdminOrders/GetAllTrain');
+        const response = await axios.get('http://localhost:5000/api/AdminOrders/GetAllOrders');
         trains.value = response.data;
       } catch (error) {
         console.error('Failed to fetch trains', error);
@@ -120,6 +132,8 @@ export default defineComponent({
               a_station: editingTrain.value.arrivalStation,
               d_time: editingTrain.value.departureTime,
               a_time: editingTrain.value.arriveTime,
+              price: editingTrain.value.price,
+              remain_tickets: editingTrain.value.remaining_tickets
             },
           });
           fetchTrains();
@@ -143,6 +157,8 @@ export default defineComponent({
             a_station: newTrain.value.arrivalStation,
             d_time: newTrain.value.departureTime,
             a_time: newTrain.value.arriveTime,
+            price: newTrain.value.price,
+            remain_tickets: newTrain.value.remaining_tickets
           },
         });
         fetchTrains();
@@ -151,7 +167,9 @@ export default defineComponent({
           departureStation: '',
           arrivalStation: '',
           departureTime: '',
-          arriveTime: ''
+          arriveTime: '',
+          price: '',
+          remaining_tickets: ''
         };
       } catch (error) {
         console.error('Failed to add train', error);
@@ -290,12 +308,22 @@ input[type="text"]:disabled {
 
 /* 调整特定列的宽度 */
 th:nth-child(1), td:nth-child(1) {
-  width: 15%; /* 调整火车ID列的宽度 */
+  width: 10%; /* 调整火车ID列的宽度 */
 }
 
 th:nth-child(2), td:nth-child(2),
 th:nth-child(3), td:nth-child(3) {
-  width: 25%; /* 调整出发站和到达站列的宽度 */
+  width: 15%; /* 调整出发站和到达站列的宽度 */
+}
+
+th:nth-child(4), td:nth-child(4),
+th:nth-child(5), td:nth-child(5) {
+  width: 15%; /* 调整出发时间和到达时间列的宽度 */
+}
+
+th:nth-child(6), td:nth-child(6),
+th:nth-child(7), td:nth-child(7) {
+  width: 10%; /* 调整价格和剩余票数列的宽度 */
 }
 
 /* 编辑表单的悬浮样式 */
