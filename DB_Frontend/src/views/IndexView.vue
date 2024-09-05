@@ -477,11 +477,25 @@
                         search_manager.dropdown_manager = dropdown_manager;
                     }
                 }
+            },
+            test() {
+                console.log('test');
+                axio.post('http://localhost:5000/tickets/search',{
+                    DepartureStation:'北京北',
+                    ArrivalStation:'南京'
+                })
+                .then(response=>{
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
             }
-        
         },
         mounted(){
             this.init();
+            console.log('init');
+            this.test();
         }
     }
 </script>

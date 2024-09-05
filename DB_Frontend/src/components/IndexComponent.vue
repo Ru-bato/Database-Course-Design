@@ -478,7 +478,6 @@
                     }
                 }
             }
-        
         },
         mounted(){
             this.init();
