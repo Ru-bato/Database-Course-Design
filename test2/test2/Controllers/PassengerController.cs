@@ -99,6 +99,9 @@ namespace test2.Controllers
         {
             try
             {
+                var user = _passengerManager.GetPassengersByNameAndId(passenger.Passenger_name, passenger.Id_number);
+                if (user == null)
+                    return NotFound("No user found matching the provided passenger details.");
                 _passengerManager.UpdatePassenger(passenger);
                 return Ok("Passenger updated successfully.");
             }
