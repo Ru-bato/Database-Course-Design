@@ -16,3 +16,11 @@ import PersonalPage from '@/views/PersonalPage.vue'
 
 后端位于文件夹DB_Backend的test2文件夹中，已经在与其他功能完成了合并。
 如果只想要阅读个人主页相关的后端代码，请移步至zhcUser_new branch的test2文件夹
+
+9.5更新：
+
+1.根据后端更改了部分数据类型
+
+2.修改了查询订单的方式（order_id->user_id）
+
+3.恢复了添加订单的功能
