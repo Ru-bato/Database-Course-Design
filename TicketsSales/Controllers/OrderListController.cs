@@ -13,10 +13,17 @@ namespace DB_Backend.Controllers
     [Route("[controller]")]
     public class OrderListController : Controller
     {
-        [HttpPost]
+        [HttpPost("TotalTickets")]
         public IActionResult TotalTickets([FromBody] TicketTypeRequest request)
         {
             int sum= OrderListManager.TotalTickets(request.TicketType);
+            return Ok(sum);
+        }
+
+        [HttpPost("TotalMoney")]
+        public IActionResult TotalMoney([FromBody] TicketTypeRequest request)
+        {
+            int sum = OrderListManager.TotalMoney(request.TicketType);
             return Ok(sum);
         }
     }
