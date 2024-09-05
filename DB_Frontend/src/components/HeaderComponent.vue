@@ -1,3 +1,93 @@
+<script lang="ts" setup>
+import { ref, reactive, watch } from 'vue';
+import router from '@/router';
+import axios from 'axios';
+
+// 定义响应式状态
+const activeDropdown = ref<string | null>(null);
+const searchQuery = ref('');
+const suggestions = ref<string[]>([]);
+const questions = ref<string[]>([]);
+const answers = ref<string[]>([]);
+const dialogVisible = ref(false);
+const answer = ref('');
+
+// 监视器（watcher）
+watch(searchQuery, (newQuery) => {
+  if (newQuery) {
+    fetchSuggestions(newQuery);
+  } else {
+    suggestions.value = [];
+    questions.value = [];
+    answers.value = [];
+  }
+});
+
+// 方法
+const toggleDropdown = (menu: string) => {
+  activeDropdown.value = activeDropdown.value === menu ? null : menu;
+};
+
+const showAnswer = () => {
+  // 暂存并跳转页面
+  localStorage.setItem('searchQuery', searchQuery.value);
+  router.push({ name: 'TicketsQuestions' });
+};
+
+const fetchSuggestions = async (query: string) => {
+  try {
+    const request = { QuestionSearch: query };
+    const response = await axios.post('http://localhost:5000/Question', request, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    suggestions.value = response.data.questions;
+    questions.value = response.data.questions;
+    answers.value = response.data.answers;
+  } catch (error) {
+    console.error('Error fetching suggestions:', error);
+  }
+};
+
+const selectSuggestion = (suggestion: string) => {
+  searchQuery.value = suggestion;
+  suggestions.value = []; // 选择后清空联想词
+};
+
+const getQuestionBackend = async () => {
+  try {
+    const response = await axios.get('http://localhost:5000/Question');
+    processQuestions(response.data); // 处理数据并填充数组
+    console.log('response', response.data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+const getCombinedArray = (index: number) => {
+  // 检查索引是否在有效范围内
+  if (index < 0 || index >= questions.value.length || index >= answers.value.length) {
+    return []; // 返回空数组表示无效索引
+  }
+
+  // 获取问题和答案数组
+  const qList = questions.value[index];
+  const aList = answers.value[index];
+
+  // 如果 questions 或 answers 为 null 或 undefined，则返回空数组
+  if (!Array.isArray(qList) || !Array.isArray(aList)) {
+    return [];
+  }
+
+  // 确保 answers 数组的长度与 questions 数组匹配
+  return qList.map((question, i) => ({
+    question: question,
+    answer: aList[i] || '', // 确保不会超出范围
+  }));
+};
+</script>
+
 <template>
   <div class="header" role="banner">
     <div class="wrapper">
@@ -46,97 +136,7 @@
   </div>
 </template>
 
-<script>
-import router from '@/router';
-import axios from 'axios';
 
-export default {
-  data() {
-    return {
-      activeDropdown: null,
-      searchQuery: '',
-      suggestions: [],
-      questions: [],
-      answers: [],
-      dialogVisible: false,
-      answer: '',
-    };
-  },
-  watch: {
-    searchQuery(newQuery) {
-      if (newQuery) {
-        this.fetchSuggestions(newQuery);
-      } else {
-        this.suggestions = [];
-        this.questions = [];
-        this.answers = [];
-      }
-    }
-  },
-  methods: {
-    toggleDropdown(menu) {
-      this.activeDropdown = this.activeDropdown === menu ? null : menu;
-    },
-    showAnswer() {
-      // 暂存并跳转页面
-      localStorage.setItem('searchQuery', this.searchQuery);
-      router.push({name: 'TicketsQuestions'});
-    },
-    async fetchSuggestions(query) {
-      try {
-        const request = { QuestionSearch: query };
-        const response = await axios.post('http://localhost:5000/Question', request, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        this.suggestions = response.data.questions;
-        this.questions = response.data.questions;
-        this.answers = response.data.answers;
-      } catch (error) {
-        console.error('Error fetching suggestions:', error);
-      }
-    },
-    selectSuggestion(suggestion) {
-      this.searchQuery = suggestion;
-      this.suggestions = []; // 选择后清空联想词
-    },
-    async getQuestionBackend() {
-      try {
-        const response = await axios.get('http://localhost:5000/Question');
-        this.processQuestions(response.data);  // 处理数据并填充数组
-        console.log("response", response.data);
-        console.log("this.textArray", this.textArray);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-
-    },
-    getCombinedArray(index) {
-      // 检查索引是否在有效范围内
-      if (index < 0 || index >= this.textArray.length || index >= this.answerArray.length) {
-        return []; // 返回空数组表示无效索引
-      }
-
-      // 获取问题和答案数组
-      const questions = this.textArray[index];
-      const answers = this.answerArray[index];
-
-      // 如果 questions 或 answers 为 null 或 undefined，则返回空数组
-      if (!Array.isArray(questions) || !Array.isArray(answers)) {
-        return [];
-      }
-
-      // 确保 answers 数组的长度与 questions 数组匹配
-      return questions.map((question, i) => ({
-        question: question,
-        answer: answers[i] || ''  // 确保不会超出范围
-      }));
-    },
-
-  }
-};
-</script>
 
 <style scoped>
 @import "../assets/header_style.css";

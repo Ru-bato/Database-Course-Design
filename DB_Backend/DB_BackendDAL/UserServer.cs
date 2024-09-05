@@ -55,7 +55,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("INSERT INTO Users (User_id, Username, Password, Id_number, Is_student, Status, Phone_number, Riding_interval) VALUES (:User_id, :Username, :Password, :Id_number, :Is_student, :Status, :Phone_number, :Riding_interval)", connection))
+                using (var command = new OracleCommand("INSERT INTO USERSTEST (User_id, Username, Password, Id_number, Is_student, Status, Phone_number, Riding_interval) VALUES (:User_id, :Username, :Password, :Id_number, :Is_student, :Status, :Phone_number, :Riding_interval)", connection))
                 {
                     command.Parameters.Add(new OracleParameter("User_id", user.User_ID));
                     command.Parameters.Add(new OracleParameter("Username", user.Username));
@@ -64,8 +64,8 @@ namespace DB_Backend.DB_BackendDAL
                     //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
                     //command.Parameters.Add(new OracleParameter("Status", user.Status));
                     // 将布尔值转换为数据库中的数值
-                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? 1 : 0));
-                    command.Parameters.Add(new OracleParameter("Status", user.Status ? 1 : 0));
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? "T" : "F"));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? "T" : "F" ));
                     command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_Number));
                     command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_Interval));
 
@@ -80,7 +80,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("SELECT * FROM Users WHERE User_id = :User_id", connection))
+                using (var command = new OracleCommand("SELECT * FROM USERSTEST WHERE User_id = :User_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("User_id", userId));
                     using (var reader = command.ExecuteReader())
@@ -93,8 +93,8 @@ namespace DB_Backend.DB_BackendDAL
                                 Username = reader["Username"].ToString(),
                                 Password = reader["Password"].ToString(),
                                 ID_Number = reader["Id_number"].ToString(),
-                                Is_Student = Convert.ToBoolean(reader["Is_student"]),
-                                Status = Convert.ToBoolean(reader["Status"]),
+                                Is_Student = reader["Is_student"].ToString() == "Y",
+                                Status = reader["Status"].ToString() == "Y",
                                 Phone_Number = reader["Phone_number"].ToString(),
                                 Riding_Interval = reader["Riding_interval"].ToString()
                             };
@@ -111,7 +111,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("UPDATE Users SET Username = :Username, Password = :Password, Id_number = :Id_number, Is_student = :Is_student, Status = :Status, Phone_number = :Phone_number, Riding_interval = :Riding_interval WHERE User_id = :User_id", connection))
+                using (var command = new OracleCommand("UPDATE USERSTEST SET Username = :Username, Password = :Password, Id_number = :Id_number, Is_student = :Is_student, Status = :Status, Phone_number = :Phone_number, Riding_interval = :Riding_interval WHERE User_id = :User_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("Username", user.Username));
                     command.Parameters.Add(new OracleParameter("Password", user.Password));
@@ -119,8 +119,8 @@ namespace DB_Backend.DB_BackendDAL
                     //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
                     //command.Parameters.Add(new OracleParameter("Status", user.Status));
                     // 将布尔值转换为数据库中的数值
-                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? 1 : 0));
-                    command.Parameters.Add(new OracleParameter("Status", user.Status ? 1 : 0));
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? "T" : "F"));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? "T" : "F"));
                     command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_Number));
                     command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_Interval));
                     command.Parameters.Add(new OracleParameter("User_id", user.User_ID));
@@ -136,7 +136,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("DELETE FROM Users WHERE User_id = :User_id", connection))
+                using (var command = new OracleCommand("DELETE FROM USERSTEST WHERE User_id = :User_id", connection))
                 {
                     command.Parameters.Add(new OracleParameter("User_id", userId));
                     command.ExecuteNonQuery();
@@ -152,7 +152,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("SELECT * FROM Users", connection))
+                using (var command = new OracleCommand("SELECT * FROM USERSTEST", connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
@@ -164,8 +164,8 @@ namespace DB_Backend.DB_BackendDAL
                                 Username = reader["Username"].ToString(),
                                 Password = reader["Password"].ToString(),
                                 ID_Number = reader["Id_number"].ToString(),
-                                Is_Student = Convert.ToBoolean(reader["Is_student"]),
-                                Status = Convert.ToBoolean(reader["Status"]),
+                                Is_Student = reader["Is_student"].ToString() == "Y",
+                                Status = reader["Status"].ToString() == "Y",
                                 Phone_Number = reader["Phone_number"].ToString(),
                                 Riding_Interval = reader["Riding_interval"].ToString(),
                             };
@@ -198,7 +198,7 @@ namespace DB_Backend.DB_BackendDAL
                 command.CommandText = "SELECT * FROM USERSTEST WHERE Phone_Number = :tel";
                 command.Parameters.Clear();
                 command.Parameters.Add("tel", OracleDbType.Varchar2, Tel, ParameterDirection.Input);
-                Console.WriteLine("Tel = " +  Tel);
+                Console.WriteLine("Tel = " + Tel);
                 try
                 {
                     OracleDataReader reader = command.ExecuteReader();

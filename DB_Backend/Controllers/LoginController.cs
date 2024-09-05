@@ -60,26 +60,26 @@ namespace DB_Backend.Controllers
             return BCrypt.Net.BCrypt.Verify(plainString, hashedString);
         }
 
-        static string ComputeSHA256Hash(string input)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                // 将输入字符串转换为字节数组
-                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+        //static string ComputeSHA256Hash(string input)
+        //{
+        //    using (SHA256 sha256 = SHA256.Create())
+        //    {
+        //        // 将输入字符串转换为字节数组
+        //        byte[] inputBytes = Encoding.UTF8.GetBytes(input);
 
-                // 计算哈希值
-                byte[] hashBytes = sha256.ComputeHash(inputBytes);
+        //        // 计算哈希值
+        //        byte[] hashBytes = sha256.ComputeHash(inputBytes);
 
-                // 将字节数组转换为十六进制字符串
-                StringBuilder stringBuilder = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    stringBuilder.Append(hashBytes[i].ToString("x2")); // 使用 "x2" 格式将字节转换为两位十六进制
-                }
+        //        // 将字节数组转换为十六进制字符串
+        //        StringBuilder stringBuilder = new StringBuilder();
+        //        for (int i = 0; i < hashBytes.Length; i++)
+        //        {
+        //            stringBuilder.Append(hashBytes[i].ToString("x2")); // 使用 "x2" 格式将字节转换为两位十六进制
+        //        }
 
-                return stringBuilder.ToString();
-            }
-        }
+        //        return stringBuilder.ToString();
+        //    }
+        //}
         /// <summary>
         /// 登录接口，使用手机号登录
         /// </summary>

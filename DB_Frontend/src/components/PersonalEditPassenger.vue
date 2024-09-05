@@ -13,8 +13,8 @@
       </thead>
       <tbody>
         <tr v-for="(passenger, index) in passengers" :key="passenger.passenger_id">
-          <td>{{ passenger.Passenger_name }}</td>
-          <td>{{ passenger.Id_number }}</td>
+          <td>{{ passenger.passenger_name }}</td>
+          <td>{{ passenger.id_number }}</td>
           <td>
             <button @click="editPassenger(index)">编辑</button>
             <button @click="deletePassenger(passenger.passenger_id)">删除</button>
@@ -84,6 +84,8 @@ export default defineComponent({
 
         const response = await axios.get<Passenger[]>(`http://localhost:5000/api/Passenger/GetPassengersByUserId/${userId}`);
         passengers.value = response.data;
+        console.log('response',response);
+        console.log(passengers.value[0]);
       } catch (error) {
         console.error('获取乘车人信息时出错:', error);
       }

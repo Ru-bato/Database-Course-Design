@@ -141,5 +141,26 @@ namespace DB_Backend.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost("GetCurrentUserInfo")]//查询用户信息，判断是否为管理员
+        public IActionResult GetCurrentUserInfo(string id)
+        {
+            try
+            {
+                // 查询用户信息
+                var user = _userManager.GetUserById(id);
+                if (user == null) return NotFound("User not found.");
+
+                var response = new
+                {
+                    Username = user.Username,
+                    Phone_Number = user.Phone_Number,
+                };
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

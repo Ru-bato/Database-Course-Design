@@ -160,7 +160,7 @@ namespace DB_Backend.DB_BackendDAL
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new OracleCommand("SELECT * FROM Users WHERE Username = :Username AND Id_number = :Id_number", connection))
+                using (var command = new OracleCommand("SELECT * FROM USERSTEST WHERE Username = :Username AND Id_number = :Id_number", connection))
                 {
                     command.Parameters.Add(new OracleParameter("Username", username));
                     command.Parameters.Add(new OracleParameter("Id_number", idNumber));

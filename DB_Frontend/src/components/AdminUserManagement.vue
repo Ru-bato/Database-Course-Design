@@ -12,13 +12,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" :key="user.User_id">
-          <td>{{ user.User_id }}</td>
-          <td>{{ user.Username }}</td>
-          <td>{{ user.Status ? '正常' : '封禁' }}</td>
+        <tr v-for="user in users" :key="user.User_ID">
+          <td>{{ user.user_ID }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.status ? '正常' : '封禁' }}</td>
           <td>
             <button @click="editUser(user)">编辑</button>
-            <button @click="deleteUser(user.User_id)">删除</button>
+            <button @click="deleteUser(user.User_ID)">删除</button>
             <button @click="toggleUserStatus(user)">{{ user.Status ? '封禁' : '解封' }}</button>
           </td>
         </tr>
@@ -30,7 +30,7 @@
       <div class="modal-content">
         <h4>添加新用户</h4>
         <label>ID:</label>
-        <input v-model="newUser.User_id" placeholder="输入用户ID">
+        <input v-model="newUser.User_ID" placeholder="输入用户ID">
         <br>
         <label>名称:</label>
         <input v-model="newUser.Username" placeholder="输入用户名称">
@@ -64,7 +64,7 @@ import axios from 'axios';
 
 // 定义用户接口
 interface User {
-  User_id: string;
+  User_ID: string;
   Username: string;
   Password: string;
   Id_number: string;
@@ -80,7 +80,7 @@ export default defineComponent({
     const users = ref<User[]>([]);
     const showAddUserModal = ref<boolean>(false);
     const newUser = ref<User>({
-      User_id: '',
+      User_ID: '',
       Username: '',
       Password: '',
       Id_number: '',
@@ -93,6 +93,7 @@ export default defineComponent({
     const fetchUsers = async () => {
       try {
         const response = await axios.get<string[]>('http://localhost:5000/api/Admin/GetAllUserIds');
+        console.log(response.data);
         const userIds = response.data;
         userIds.forEach(id => getUser(id));
       } catch (error) {
@@ -103,8 +104,10 @@ export default defineComponent({
     const getUser = async (id: string) => {
       try {
         const response = await axios.get<{ User: User }>(`http://localhost:5000/api/User/GetUser/${id}`);
-        const user = response.data.User;
+        console.log(response);
+        const user = response.data.user;
         users.value.push(user);
+        console.log(users);
       } catch (error) {
         console.error("获取用户信息失败：", error);
       }
@@ -124,7 +127,7 @@ export default defineComponent({
     const toggleUserStatus = async (user: User) => {
       const newStatus = !user.Status;
       try {
-        const response = await axios.put<string>(`http://localhost:5000/api/Admin/ProhibitUserLogin/${user.User_id}`, null, { params: { status: newStatus } });
+        const response = await axios.put<string>(`http://localhost:5000/api/Admin/ProhibitUserLogin/${user.User_ID}`, null, { params: { status: newStatus } });
         alert(response.data);
         user.Status = newStatus; // 更新前端状态
       } catch (error) {
