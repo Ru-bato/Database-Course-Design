@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Project\\DB_Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|e:\\project\\db_backend\\controllers\\foodservercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|solutionrelative:controllers\\foodservercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|e:\\project\\db_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|e:\\project\\db_backend\\db_backendbll\\foodservermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|solutionrelative:db_backendbll\\foodservermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|e:\\project\\db_backend\\db_backenddal\\foodserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|solutionrelative:db_backenddal\\foodserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|e:\\project\\db_backend\\db_backenddal\\dbserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60ED5FD6-8FE1-44A4-BC62-08DBAD30E9F4}|DB_Backend.csproj|solutionrelative:db_backenddal\\dbserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Project\\DB_Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Project\\DB_Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAnwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T15:31:42.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FoodServerManager.cs",
+              "DocumentMoniker": "E:\\Project\\DB_Backend\\DB_BackendBLL\\FoodServerManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\FoodServerManager.cs",
+              "ToolTip": "E:\\Project\\DB_Backend\\DB_BackendBLL\\FoodServerManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\FoodServerManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T09:11:44.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FoodServerController.cs",
+              "DocumentMoniker": "E:\\Project\\DB_Backend\\Controllers\\FoodServerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FoodServerController.cs",
+              "ToolTip": "E:\\Project\\DB_Backend\\Controllers\\FoodServerController.cs",
+              "RelativeToolTip": "Controllers\\FoodServerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T09:14:45.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DBServer.cs",
+              "DocumentMoniker": "E:\\Project\\DB_Backend\\DB_BackendDAL\\DBServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\DBServer.cs",
+              "ToolTip": "E:\\Project\\DB_Backend\\DB_BackendDAL\\DBServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\DBServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T12:03:14.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FoodServer.cs",
+              "DocumentMoniker": "E:\\Project\\DB_Backend\\DB_BackendDAL\\FoodServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\FoodServer.cs",
+              "ToolTip": "E:\\Project\\DB_Backend\\DB_BackendDAL\\FoodServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\FoodServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T09:12:07.121Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
