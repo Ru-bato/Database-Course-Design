@@ -13,9 +13,9 @@
       </thead>
       <tbody>
         <tr v-for="user in users" :key="user.User_ID">
-          <td>{{ user.user_ID }}</td>
-          <td>{{ user.username }}</td>
-          <td>{{ user.status ? '正常' : '封禁' }}</td>
+          <td>{{ user.User_ID }}</td>
+          <td>{{ user.Username }}</td>
+          <td>{{ user.Status ? '正常' : '封禁' }}</td>
           <td>
             <button @click="editUser(user)">编辑</button>
             <button @click="deleteUser(user.User_ID)">删除</button>
@@ -92,6 +92,8 @@ export default defineComponent({
 
     const fetchUsers = async () => {
       try {
+        //每次获取用户列表清空users数组避免重复
+        users.value=[];
         const response = await axios.get<string[]>('http://localhost:5000/api/Admin/GetAllUserIds');
         console.log(response.data);
         const userIds = response.data;
