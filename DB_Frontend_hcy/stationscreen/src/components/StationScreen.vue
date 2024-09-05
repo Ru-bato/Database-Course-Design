@@ -1,101 +1,141 @@
-<template>
-  <div class="train-show-box">
-  <!-- 车次展示 -->
-    <div class="train-result-box">
-      <div class="train-result-hd">
-      <!-- 表头 -->
-        <div class="train-result-titlist titlist-controller">
-          <div class="train-number">车次</div>
-          <div class="train-station">{{ tableTitle.stationType }}</div>
-          <div class="train-time">
-            {{ tableTitle.timeType }}
-            <span class="btn-sort">
-              <i
-                class="sort-top"
-                :class="{ active: isAscActive }"
-                attr-code="trainTime"
-                @click="toggleSort(true)"
-              ></i>
-              <i
-                class="sort-down"
-                :class="{ active: !isAscActive }"
-                attr-code="trainTime"
-                @click="toggleSort(false)"
-              ></i>
-            </span>
-          </div>
-          <div class="train-check">{{ tableTitle.checkType }}</div>
-          <div class="train-status">状态</div>
-        </div>
-      </div>
+<template>  
+  <div class="train-show-box">  
+    <!-- 车次展示 -->  
+    <div class="train-result-box">  
+      <div class="train-result-hd">  
+        <!-- 表头 -->  
+        <div class="train-result-titlist titlist-controller">  
+          <div class="train-number">车次</div>  
+          <div class="train-station">{{ tableTitle.stationType }}</div>  
+          <div class="train-time">  
+            {{ tableTitle.timeType }}  
+            <span class="btn-sort">  
+              <i  
+                class="sort-top"  
+                :class="{ active: isAscActive }"  
+                attr-code="trainTime"  
+                @click="toggleSort(true)"  
+              ></i>  
+              <i  
+                class="sort-down"  
+                :class="{ active: !isAscActive }"  
+                attr-code="trainTime"  
+                @click="toggleSort(false)"  
+              ></i>  
+            </span>  
+          </div>  
+          <div class="train-check">{{ tableTitle.checkType }}</div>  
+          <div class="train-status">状态</div>  
+        </div>  
+      </div>  
 
-      <div class="train-list-bd">
-      <!-- 车次列表 -->
-        <div v-if="trainList.length > 0">
-          <div v-for="train in trainList" :key="train.number" class="train-result-item">
-            <div class="train-number">
-              <div class="train-number-info">{{ train.number }}</div>
-            </div>
-            <div class="train-station">
-              <div class="train-station-info">{{ train.station }}</div>
-            </div>
-            <div class="train-time">
-              <div class="train-time-info">{{ train._time }}</div>
-            </div>
-            <div class="train-check">
-              <div class="train-check-info">{{ train.check }}</div>
-            </div>
-            <div class="train-status">
-              <div :class="`train-status-info ${train.status === '停止检票' ? 'train-status-info-red' :
-                                              train.status === '正在检票' ? 'train-status-info-green' :
-                                              train.status === '正在候车' ? 'train-status-info-gray' : 
-                                              train.status === '正点' ? 'train-status-info-green' : 
-                                              train.status === '晚点' ? 'train-status-info-red' : ''}`">
-              {{ train.status }}</div>
-            </div>
-          </div>
-        </div>
+      <div class="train-list-bd">  
+        <!-- 车次列表 -->  
+        <div v-if="paginatedTrainList.length > 0">  
+          <div v-for="train in paginatedTrainList" :key="train.number" class="train-result-item">  
+            <div class="train-number">  
+              <div class="train-number-info">{{ train.number }}</div>  
+            </div>  
+            <div class="train-station">  
+              <div class="train-station-info">{{ train.station }}</div>  
+            </div>  
+            <div class="train-time">  
+              <div class="train-time-info">{{ train._time }}</div>  
+            </div>  
+            <div class="train-check">  
+              <div class="train-check-info">{{ train.check }}</div>  
+            </div>  
+            <div class="train-status">  
+              <div :class="`train-status-info ${getStatusClass(train.status)}`">  
+                {{ train.status }}  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
 
-        <div v-else class="no-train" id="no_filter_train">
-        <!-- 无结果页面 -->
-          <p class="no-train-text">没有查询到符合条件的车次！</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
+        <div v-else class="no-train" id="no_filter_train">  
+          <!-- 无结果页面 -->  
+          <p class="no-train-text">没有查询到符合条件的车次！</p>  
+        </div>  
+      </div>  
+    </div>   
+  </div>  
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { Train } from './StationSearch.vue';
+  <!-- 分页组件 -->  
+  <div class="pagination">  
+    <button @click="prevPage" class="btn" :disabled="currentPage === 1">上一页</button>  
+    <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>  
+    <button @click="nextPage" class="btn" :disabled="currentPage === totalPages">下一页</button>  
+  </div> 
+</template>  
 
-export default defineComponent ({
-  props: {
-    tableTitle: {type: Object, required: true},
-    trainList: {type: Array as () => Train[], required: true},
+<script lang="ts">  
+import { defineComponent, ref, computed } from 'vue';  
+import { Train } from './StationSearch.vue';  
 
-    sortTrainsAsc: {type: Function, required: true},
-    sortTrainsDesc: {type: Function, required: true},
-  },
-  setup(props) {
-    const isAscActive = ref(true); // 默认为升序
+export default defineComponent({  
+  props: {  
+    tableTitle: { type: Object, required: true },  
+    trainList: { type: Array as () => Train[], required: true },  
+    sortTrainsAsc: { type: Function, required: true },  
+    sortTrainsDesc: { type: Function, required: true },  
+  },  
+  setup(props) {  
+    const isAscActive = ref(true); // 默认为升序  
+    const currentPage = ref(1);  
+    const itemsPerPage = 5; // 每页显示的车次数量  
 
-    const toggleSort = (isAsc: boolean) => {
-      isAscActive.value = isAsc; // 更新排序状态
-      if (isAsc) {
-        props.sortTrainsAsc();
-      } else {
-        props.sortTrainsDesc();
-      }
-    };
+    const totalPages = computed(() => {  
+      return Math.ceil(props.trainList.length / itemsPerPage);  
+    });  
 
-    return {
-      isAscActive,
-      toggleSort
-    }
-  }
-});
-</script>
+    const paginatedTrainList = computed(() => {  
+      const start = (currentPage.value - 1) * itemsPerPage;  
+      return props.trainList.slice(start, start + itemsPerPage);  
+    });  
+
+    const toggleSort = (isAsc: boolean) => {  
+      isAscActive.value = isAsc; // 更新排序状态  
+      if (isAsc) {  
+        props.sortTrainsAsc();  
+      } else {  
+        props.sortTrainsDesc();  
+      }  
+    };  
+
+    const nextPage = () => {  
+      if (currentPage.value < totalPages.value) {  
+        currentPage.value++;  
+      }  
+    };  
+
+    const prevPage = () => {  
+      if (currentPage.value > 1) {  
+        currentPage.value--;  
+      }  
+    };  
+
+    const getStatusClass = (status: string) => {  
+      return status === '停止检票' ? 'train-status-info-red' :  
+             status === '正在检票' ? 'train-status-info-green' :  
+             status === '正在候车' ? 'train-status-info-gray' :  
+             status === '正点' ? 'train-status-info-green' :  
+             status === '晚点' ? 'train-status-info-red' : '';  
+    };  
+
+    return {  
+      isAscActive,  
+      toggleSort,  
+      currentPage,  
+      totalPages,  
+      paginatedTrainList,  
+      nextPage,  
+      prevPage,  
+      getStatusClass,  
+    };  
+  }  
+});  
+</script>  
 
 <style scoped>
 /* --------------- Show Box Styles ---------------*/
@@ -162,6 +202,12 @@ export default defineComponent ({
   line-height: 40px;
   overflow: hidden;
   color: #666;
+}
+
+.btn {
+  margin-right: 6px;
+  margin-left: 6px;
+  position: relative;
 }
 
 .btn-sort {
@@ -327,4 +373,8 @@ export default defineComponent ({
 .no-train .no-train-text {
   transform: translateX(-20px) translateY(-8px);
 }
+
+.pagination {  
+  margin-top: 20px;  
+}  
 </style>
