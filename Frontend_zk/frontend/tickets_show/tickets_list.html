@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="default_style.css">
+    <link rel="stylesheet" type="text/css" href="header_style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="tickets_style.css"> -->
+
+</head>
+
+<body>
+    <!-- 整个页面 -->
+    <div id="layout">
+        <!-- 包括上方搜索栏和导航页 -->
+        
+        <!--  车票列表显示 -->
+        <div id="app">
+            <!-- 一级标题，铁路车票展示 -->
+            <h1>铁路车票展示</h1>
+
+            <label for="startStation">出发站:</label>
+            <input list="startChoices" id="startStation" placeholder="请选择出发站">
+            <datalist id="startChoices">
+                <option value="北京">
+                <option value="上海">
+                <option value="广州">
+                <option value="深圳">
+                <option value="杭州">
+                    <!-- 这里可以添加更多选项 -->
+            </datalist>
+
+
+            <label for="endStation">终点站:</label>
+            <input list="endChoices" id="endStation" placeholder="请选择终点站">
+            <datalist id="endChoices">
+                <option value="北京">
+                <option value="上海">
+                <option value="广州">
+                <option value="深圳">
+                <option value="杭州">
+                <option value="哈尔滨">
+                    <!-- 这里可以添加更多选项 -->
+            </datalist>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date">
+            <button id="searchButton">Search</button>
+            <table id="ticketTable">
+                <thead>
+                    <tr>
+                        <th>Train Number</th>
+                        <th>Departure Time</th>
+                        <th>Arrival Time</th>
+                        <th>Duration</th>
+                        <th>Business Class</th>
+                        <th>First Class</th>
+                        <th>Second Class</th>
+                        <th>Other</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ticket rows will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+        <!-- 车票列表显示结束 -->
+    </div>
+    <script src="app.js" defer></script>
+
+</body>
+
+<body>
+
+</body>
+<script type="module" src="app.js" defer>
+    // 获取所有带有下拉菜单的菜单项
+    var navItems = document.querySelectorAll('.nav-item, .menu-nav-hd');
+
+    // 遍历每个菜单项，添加点击事件监听器
+    navItems.forEach(function (item) {
+        var link = item.querySelector('.nav-hd, .menu-nav-hd'); // 获取菜单项中的链接
+        var dropdown = item.querySelector('.nav-dropdown, .menu-dropdown'); // 获取下拉菜单
+
+        // 添加点击事件监听器
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // 阻止链接默认行为
+
+            // 切换下拉菜单的显示状态
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</html>

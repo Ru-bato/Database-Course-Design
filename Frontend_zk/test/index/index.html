@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>星"济"铁路</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css文件 -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.net/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- ts文件 -->
+    <script src="index.js"></script>
+</head>
+<body>
+    <div>
+        <!-- 页面头部 -->
+        <div class="header">
+            <iframe src="../header/index_main.html" width="100%" frameborder="0"></iframe>
+        </div>
+
+        <!-- 轮播图以及搜索框 -->
+        <div class="section-1">
+            <!-- 轮播图容器 -->
+            <div class="slides-container">
+                <!-- 图像 -->
+                <div class="slides-list">
+                    <img src="assets/images/slide1.jpg" alt="slide1">
+                    <img src="assets/images/slide2.jpg" alt="slide2">
+                    <img src="assets/images/slide3.jpg" alt="slide3">
+                </div>
+                <!-- 下方按钮 -->
+                <ul class="circles-list">
+                    <li class="circle active" data-n="0"></li>
+                    <li class="circle" data-n="1"></li>
+                    <li class="circle" data-n="2"></li>
+                </ul>
+            </div>
+            <!-- 搜索框 -->
+            <div class="search-container">
+                <div class="search-list">
+                    <div class="search-item">
+                        <label>始发站</label>
+                        <div class="input-container">
+                            <i class="icon ion-log-in"></i>
+                            <input type="text" id="from">
+                        </div>
+                    </div>
+                    <div class="search-item">
+                        <label>终点站</label>
+                        <div class="input-container">
+                            <i class="icon ion-log-out"></i>
+                            <input type="text" id="to">
+                        </div>
+                    </div>
+                    <div class="search-item">
+                        <label>出发日期</label>
+                        <div class="input-container">
+                            <i class="icon ion-android-calendar"></i>
+                            <input type="text" id="time">
+                        </div>
+                    </div>
+                    <div class="search-item">
+                        <div class="check-item">
+                            <label>学生</label>
+                            <input type="checkbox" id="student">
+                        </div>
+                        <div class="check-item">
+                            <label>中转</label>
+                            <input type="checkbox" id="round">
+                        </div>
+                    </div>
+                    <div class="submit-container">
+                        <button id="submit">查询车票<span></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下拉选择框 -->
+        <div class="dropdown-container">
+            <div class="city-chose">
+                <ul class="header">
+                    <li data-n="0" class="chose active">常用</li>
+                    <li data-n="1" class="chose">A~E</li>
+                    <li data-n="2" class="chose">F~J</li>
+                    <li data-n="3" class="chose">K~O</li>
+                    <li data-n="4" class="chose">P~T</li>
+                    <li data-n="5" class="chose">U~Z</li>
+                </ul>
+                <ul class="body">
+                </ul>
+            </div>
+            <div class="city-search"></div>
+        </div>
+
+        <!-- 页面尾部 -->
+        <div class="footer">
+            尾部
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>铁路购票系统</title>
+</head>
+<body>
+    <form id="searchForm">
+        <input type="text" id="startStation" placeholder="起点" required>
+        <input type="text" id="endStation" placeholder="终点" required>
+        <input type="date" id="departureDate" required>
+        <button type="submit">搜索</button>
+    </form>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const startStation = document.getElementById('startStation').value;
+            const endStation = document.getElementById('endStation').value;
+            const departureDate = document.getElementById('departureDate').value;
+            
+            // 构建目标 URL 并附加查询参数
+            const url = `receive.html?start=${encodeURIComponent(startStation)}&end=${encodeURIComponent(endStation)}&date=${encodeURIComponent(departureDate)}`;
+            
+            // 跳转到结果页面
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>车票结果</title>
+</head>
+<body>
+    <div id="ticketResults"></div>
+
+    <script>
+        // 函数用于解析 URL 查询参数
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const start = params.get('start');
+            const end = params.get('end');
+            const date = params.get('date');
+
+            return { start, end, date };
+        }
+
+        // 使用参数获取数据并显示
+        document.addEventListener('DOMContentLoaded', function() {
+            const { start, end, date } = getQueryParams();
+            
+            // 在此处执行根据参数获取车票数据的逻辑
+            document.getElementById('ticketResults').innerHTML = 
+                `起点: ${start}, 终点: ${end}, 出发日期: ${date}`;
+        });
+    </script>
+</body>
+</html>

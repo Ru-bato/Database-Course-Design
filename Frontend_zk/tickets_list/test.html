@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Ticket Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 一级标题，铁路车票展示 -->
+        <h1>铁路车票展示</h1>  
+
+        <label for="startStation">出发站:</label>
+        <input list="startChoices" id="startStation" placeholder="请选择出发站">
+        <datalist id="startChoices">
+            <option value="北京">
+            <option value="上海">
+            <option value="广州">
+            <option value="深圳">
+            <option value="杭州">
+            <!-- 这里可以添加更多选项 -->
+        </datalist>
+          
+
+        <label for="endStation">终点站:</label>
+        <input list="endChoices" id="endStation" placeholder="请选择终点站">
+        <datalist id="endChoices">
+            <option value="北京">
+            <option value="上海">
+            <option value="广州">
+            <option value="深圳">
+            <option value="杭州">
+            <option value="哈尔滨">
+            <!-- 这里可以添加更多选项 -->
+        </datalist>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date">
+        <button id="searchButton">Search</button>
+        <table id="ticketTable">
+            <thead>
+                <tr>
+                    <th>Train Number</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Duration</th>
+                    <th>Business Class</th>
+                    <th>First Class</th>
+                    <th>Second Class</th>
+                    <th>Other</th>
+                    <th>Book</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ticket rows will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>
