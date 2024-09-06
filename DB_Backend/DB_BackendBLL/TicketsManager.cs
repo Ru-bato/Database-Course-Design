@@ -7,11 +7,15 @@ namespace DB_Backend.DB_BackendBLL
 {
     public class TicketsManager
     {
-
+        /// <summary>
+        /// 搜索车票处理函数(非中转)
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public static List<TicketsSearchResponseModel> SearchTickets(TicketsSearchModel model) 
         {
             List<TicketsSearchResponseModel> responses = [];
-            DataTable dt = TicketsServer.SearchTickets(model);
+            DataTable dt = TicketsServer.SearchTickets(model,false);
             foreach (DataRow dr in dt.Rows)
             {
                 TicketsSearchResponseModel response = TicketsSearchResponseModel.ExtractModel(dr);
@@ -21,6 +25,29 @@ namespace DB_Backend.DB_BackendBLL
             return responses;
         }
 
+        /// <summary>
+        /// 搜索车票处理函数(中转)
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static List<TicketsSearchResponseModel_middle> SearchTicketsMiddle(TicketsSearchModel model)
+        {
+            List<TicketsSearchResponseModel_middle> responses = [];
+            DataTable dt = TicketsServer.SearchTickets(model,true);
+            foreach (DataRow dr in dt.Rows)
+            {
+                TicketsSearchResponseModel_middle response = TicketsSearchResponseModel_middle.ExtractModel(dr);
+                responses.Add(response);
+            }
+
+            return responses;
+        }
+
+        /// <summary>
+        /// 获取乘车人处理函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public static PassengerResponseModel GetPassenger(PassengerGetModle model)
         {
             DataTable dt =TicketsServer.GetPassenger(model);
@@ -29,16 +56,40 @@ namespace DB_Backend.DB_BackendBLL
             return response;
         }
 
-        public static TicketsResponseModel BuyTickets(TicketsBuyModel model)
+        /// <summary>
+        /// 减少车票处理函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static TicketsResponseModel ReduceTickets(TicketsReduceModel model)
         {
             TicketsResponseModel response = new TicketsResponseModel
             {
-                Is_success = TicketsServer.BuyTickets(model)
+                Is_success = TicketsServer.ReduceTickets(model)
             };
 
             return response;
         }
 
+        /// <summary>
+        /// 创建订单处理函数
+        /// </summary>
+        /// <returns></returns>
+        public static TicketsResponseModel CreateOrder(CreateOrderModel model)
+        {
+            TicketsResponseModel response = new TicketsResponseModel
+            {
+                Is_success = TicketsServer.CreateOrder(model)
+            };
+
+            return response;
+        }
+
+        /// <summary>
+        /// 退票处理函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public static TicketsResponseModel RefundTickets(TicketsRefundModel model)
         {
             TicketsResponseModel response = new TicketsResponseModel
@@ -49,6 +100,11 @@ namespace DB_Backend.DB_BackendBLL
             return response;
         }
 
+        /// <summary>
+        /// 改签处理函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public static TicketsSearchModel ChangeTickets(TicketsChangeModel model)
         {
             DataTable dt = TicketsServer.ChangeTickets(model);

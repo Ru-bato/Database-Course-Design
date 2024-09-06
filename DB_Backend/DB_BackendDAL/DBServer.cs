@@ -7,7 +7,12 @@ namespace DB_Backend.DB_backendDAL
     {
         public static readonly string conStr = "User Id=system;Password=Db_12306;Data Source=//47.100.21.14:1521/orcl;";
 
-        // 含参数查询
+        /// <summary>
+        /// 含参数查询
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static DataTable FetchData(string sql, Dictionary<string, object>? parameters = null)
         {
             DataTable dt = new DataTable();
@@ -46,7 +51,12 @@ namespace DB_Backend.DB_backendDAL
             return dt;
         }
 
-        // 含参数修改
+        /// <summary>
+        /// 含参数修改
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static bool ModifyDB(string sql, Dictionary<string, object>? parameters = null)
         {
             bool is_success = false;

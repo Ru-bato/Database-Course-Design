@@ -8,27 +8,45 @@ namespace DB_Backend.DB_BackendDAL
 {
     public class TicketsServer
     {   
-        public static DataTable SearchTickets(TicketsSearchModel model)
+        /// <summary>
+        /// 搜索车票数据访问函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static DataTable SearchTickets(TicketsSearchModel model,bool middle =false)
         {
             if (string.IsNullOrEmpty(model.DepartureStation)|| string.IsNullOrEmpty(model.ArrivalStation))
             {
                 throw new ArgumentException("Query cannot be null or empty");
             }
 
-            string sql = @"SELECT t.TRAIN_ID,t.PRICE,t.REMAINING_TICKETS,ts1.DEPARTURE_TIME,ts2.ARRIVAL_TIME
+            string sql = @"SELECT t.TRAIN_ID AS TRAIN_ID,
+                                  :departureStation AS DEPARTURE_STATION,
+                                  :arrivalStation AS ARRIVAL_STATION,
+                                  ts1.DEPARTURE_TIME AS DEPARTURE_TIME,
+                                  ts2.ARRIVAL_TIME AS ARRIVAL_TIME,
+                                  t.PRICE AS PRICE,
+                                  t.REMAINING_TICKETS AS TICKETS_NUM,
                            FROM TRAIN t
                            JOIN TRAINSTATION ts1 ON t.TRAIN_ID = ts1.TRAIN_ID
                            JOIN TRAINSTATION ts2 ON t.TRAIN_ID = ts2.TRAIN_ID
                            JOIN STATION s1 ON ts1.STATION_ID = s1.STATION_ID
                            JOIN STATION s2 ON ts2.STATION_ID = s2.STATION_ID
-                           WHERE s1.STATION_NAME = :departureStation
+                           WHERE t.DEPARTURE_TIME LIKE :date
+                             AND s1.STATION_NAME = :departureStation
                              AND s2.STATION_NAME = :arrivalStation
                              AND TO_DATE(ts1.DEPARTURE_TIME, 'HH24:MI') < TO_DATE(ts2.ARRIVAL_TIME, 'HH24:MI')"
             ;
 
+            if (middle) {
+                    sql = @"";
+            }
+
             var parameters = new Dictionary<string, object> {
                 { ":departureStation",  model.DepartureStation },
-                { ":arrivalStation", model.ArrivalStation}
+                { ":arrivalStation", model.ArrivalStation},
+                { ":date",model.Date+"%"}
             };
 
             DataTable dt = DBServer.FetchData(sql, parameters);
@@ -36,6 +54,12 @@ namespace DB_Backend.DB_BackendDAL
             return dt;
         }
 
+        /// <summary>
+        /// 获取乘车人数据访问函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static DataTable GetPassenger(PassengerGetModle model)
         {
             if (string.IsNullOrEmpty(model.UserID))
@@ -44,12 +68,12 @@ namespace DB_Backend.DB_BackendDAL
             }
 
             string sql = @"SELECT u.USERNAME,u.IS_STUDENT,u.PHONE_NUMBER
-                           FROM USERS u,USERPASSENGER up
+                           FROM USERSTEST u,USERPASSENGER up
                            WHERE up.PASSENGER_ID = u.USER_ID
-                             AND up.USER_ID = :userId";
+                             AND up.USER_ID = :userID";
 
             var parameters = new Dictionary<string, object> {
-                { ":userId",  model.UserID }
+                { ":userID",  model.UserID }
             };
 
             DataTable dt = DBServer.FetchData(sql,parameters);
@@ -57,23 +81,76 @@ namespace DB_Backend.DB_BackendDAL
             return dt;
         }
 
-        public static bool BuyTickets(TicketsBuyModel model)
+        /// <summary>
+        /// 减少车票数据操作函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static bool ReduceTickets(TicketsReduceModel model)
         {
-            string sql= @"INSERT INTO ORDERLIST(ORDER_ID,USER_ID,TRAIN_ID,ORDER_STATUS,PRICE,TICKET_TYPE,PASSENGER_ID)
-                         VALUES(,:user_id,:train_id,,:price,,:passenger_id)";
+
+            string sql_trainID = "SELECT DISTINCT TRAIN_ID FROM ORDERLISET WHERE ORDER_ID = :orderID";
+            string trainID = DBServer.FetchData(sql_trainID).Rows[0]["TRAIN_ID"].ToString();
 
             var parameters = new Dictionary<string, object> {
-                { ":userId",  model.UserID },
-                { ":train_id", model.TrainID},
-                { ":price",model.Price},
-                { ":passenger_id",model.PassengerID}
+                { ":orderID",model.orderID},
+                { ":trainID",trainID}
             };
+
+            string sql = @"UPDATE ORDERLIST
+                           SET REMAINING_TICKETS = REMAINING_TICKETS -1
+                           WHERE TRAIN_ID = :trainID
+                             AND REMAINING_TICKETS > 0";
 
             return DBServer.ModifyDB(sql,parameters);
         }
 
+        /// <summary>
+        /// 创建订单数据操作函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static bool CreateOrder(CreateOrderModel model)
+        {
+            if (string.IsNullOrEmpty(model.UserID)||
+                string.IsNullOrEmpty(model.TrainID)||
+                string.IsNullOrEmpty(model.PassengerID)
+                ) {
+                throw new ArgumentException("Query cannot be null or empty");
+            }
+
+            string maxID_sql = "SELECT MAX(TO_NUMBER(ORDER_ID))+1 FROM ORDERLIST";
+            string orderID = "0" + DBServer.FetchData(maxID_sql).Rows[0]["ORDER_ID"].ToString();
+
+            var parameters = new Dictionary<string, object> {
+                { ":orderID", orderID },
+                { ":userID",  model.UserID },
+                { ":trainID",  model.TrainID },
+                { ":price",model.Price},
+                { ":passengerID",model.PassengerID}
+            };
+
+            string sql = @"SELECT MAX(TO_NUMBER(ID)) AS max_id FROM orderlist;
+                           v_new_id := LPAD(v_max_id + 1, 3, '0');
+                           INSERT INTO ORDERLIST(ORDER_ID,USER_ID,TRAIN_ID,ORDER_STATUS,PRICE,PRICE,PASSENGER_ID)
+                           VALUES(:orderID,:userID,:trainID,'unpaid',:price,:passengerID)";
+
+            return DBServer.ModifyDB(sql,parameters);
+        }
+
+        /// <summary>
+        /// 退票数据操作函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static bool RefundTickets(TicketsRefundModel model)
         {
+            if (string.IsNullOrEmpty(model.OrderId)) {
+                throw new ArgumentException("Query cannot be null or empty");
+            }
+
             string sql =@"DELETE FROM ORDERLIST
                           WHERE ORDER_ID =:orderId";
 
@@ -84,6 +161,11 @@ namespace DB_Backend.DB_BackendDAL
             return DBServer.ModifyDB(sql);
         }
 
+        /// <summary>
+        /// 改签数据操作函数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public static DataTable ChangeTickets(TicketsChangeModel model)
         {
             string sql = @"";
