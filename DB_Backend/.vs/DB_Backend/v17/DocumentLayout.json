@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\dbserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\tju\\2nd_2\\database-course-design\\db_backend\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\tju\\2nd_2\\database-course-design\\db_backend\\db_backenddal\\ticketsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\ticketsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\tju\\2nd_2\\database-course-design\\db_backend\\db_backendbll\\ticketsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\ticketsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\tju\\2nd_2\\database-course-design\\db_backend\\db_backenddal\\ticketsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\ticketsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\tju\\2nd_2\\database-course-design\\db_backend\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,13 +30,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TicketsController.cs",
               "DocumentMoniker": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\Controllers\\TicketsController.cs",
               "RelativeDocumentMoniker": "Controllers\\TicketsController.cs",
               "ToolTip": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\Controllers\\TicketsController.cs",
               "RelativeToolTip": "Controllers\\TicketsController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAmwCoAAAAJAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAqwAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T12:05:06.262Z",
               "EditorCaption": ""
@@ -49,20 +49,20 @@
               "RelativeDocumentMoniker": "DB_BackendBLL\\TicketsManager.cs",
               "ToolTip": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\TicketsManager.cs",
               "RelativeToolTip": "DB_BackendBLL\\TicketsManager.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAABfAAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAUwBYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T12:30:14.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "TicketsServer.cs",
               "DocumentMoniker": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\TicketsServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\TicketsServer.cs",
               "ToolTip": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\TicketsServer.cs",
               "RelativeToolTip": "DB_BackendDAL\\TicketsServer.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAxwEoAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T12:34:23.361Z",
               "EditorCaption": ""
@@ -75,10 +75,20 @@
               "RelativeDocumentMoniker": "DB_BackendDAL\\DBServer.cs",
               "ToolTip": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\DBServer.cs",
               "RelativeToolTip": "DB_BackendDAL\\DBServer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-05T11:19:02.459Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }

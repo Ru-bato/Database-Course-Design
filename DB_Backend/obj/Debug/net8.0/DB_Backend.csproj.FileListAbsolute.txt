@@ -50,6 +50,10 @@ E:\DataBase\Database-Course-Design\DB_Backend\bin\Debug\net8.0\Microsoft.EntityF
 E:\DataBase\Database-Course-Design\DB_Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 E:\DataBase\Database-Course-Design\DB_Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 E:\DataBase\Database-Course-Design\DB_Backend\bin\Debug\net8.0\Oracle.EntityFrameworkCore.dll
+<<<<<<< Updated upstream
+=======
+E:\DataBase\Database-Course-Design\DB_Backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+>>>>>>> Stashed changes
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\appsettings.Development.json
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\appsettings.json
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\DB_Backend.exe
@@ -57,6 +61,10 @@ E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\DB_Backend.deps.
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\DB_Backend.runtimeconfig.json
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\DB_Backend.dll
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\DB_Backend.pdb
+<<<<<<< Updated upstream
+=======
+E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+>>>>>>> Stashed changes
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 E:\TJU\2nd_2\Database-Course-Design\DB_Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
