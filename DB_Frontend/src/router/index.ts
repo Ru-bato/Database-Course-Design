@@ -12,6 +12,8 @@ import WaitOrder from '@/views/WaitOrder.vue'
 import TicketsQuestions from '@/views/TicketsQuestions.vue'
 import StationPage from '@/views/StationPage.vue'
 import Index from '@/views/IndexPage.vue'
+import TicketShow from '@/components/TicketShow.vue'
+import BuyTicket from '@/components/BuyTicket.vue'
 
 // const router = createRouter({
 //   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,7 +46,9 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/waitOrder', name: 'WaitOrder', component: WaitOrder },
   { path: '/ticketsQuestions', name: 'TicketsQuestions', component: TicketsQuestions },
   { path: '/stationPage', name: 'StationPage', component: StationPage },
-  { path: '/index', name: 'Index', component: Index }
+  { path: '/index', name: 'Index', component: Index },
+  { path: '/ticketShow', name: 'TicketShow', component: TicketShow },
+  { path: '/buyTicket', name: 'BuyTicket', component: BuyTicket}
 ]
 
 const router = createRouter({
