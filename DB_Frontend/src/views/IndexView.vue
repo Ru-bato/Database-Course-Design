@@ -167,7 +167,7 @@
     // 管理搜索框
     class searchManager {
         // 构造函数
-        constructor(container,router) {
+        constructor(container) {
             this.container = container;
             this.now_input = -1; // 当前输入框
             // 获取元素
@@ -180,7 +180,6 @@
             this.submit_btn = search_list.querySelector('#submit');
             this.err_from = search_list.querySelector('#fromErr');
             this.err_to = search_list.querySelector('#toErr');
-            this.router = router;
             this.addEventListener();
         }
 
@@ -230,16 +229,8 @@
                 const time = this.input_time.value;
                 const ifStudent = this.chk_student.checked;
                 const ifRound = this.chk_round.checked;
-                this.router.push({
-                    name:'StationPage',
-                    query: {
-                        from: from,
-                        to: to,
-                        time: time,
-                        ifStudent: ifStudent,
-                        ifRound: ifRound
-                    }
-                });
+                const url = `../tickets_show/tickets_list.html?from=${from}&to=${to}&time=${time}&ifStudent=${ifStudent}&ifRound=${ifRound}`;
+                window.location.href = url;
             }
         }
 
@@ -471,7 +462,7 @@
 
     export default {
         methods:{
-            init() {
+           init() {
                 const slide_container = document.querySelector('.slides-container');
                 if (slide_container) {
                     new slideManager(slide_container);
@@ -481,7 +472,7 @@
                     const dropdown_container = document.querySelector('.dropdown-container');
                     if (dropdown_container) {
                         const dropdown_manager = new dropdownManager(dropdown_container);
-                        const search_manager = new searchManager(search_container,this.$router);
+                        const search_manager = new searchManager(search_container);
                         dropdown_manager.search_manager = search_manager;
                         search_manager.dropdown_manager = dropdown_manager;
                     }
