@@ -5,7 +5,7 @@
         <h1>铁路车票列表</h1>
 
         <label for="startStation">出 发 城 市</label>
-        <input list="startChoices" id="startStation" placeholder="请选择始发站">
+        <input list="startChoices" id="startStation" placeholder="请选择始发站" v-model="from">
 
 
         <datalist class="datalist" id="startChoices">
@@ -29,7 +29,7 @@
 
 
         <label for="endStation">终 点 城 市</label>
-        <input list="endChoices" id="endStation" placeholder="请选择终点站">
+        <input list="endChoices" id="endStation" placeholder="请选择终点站" v-model="to">
 
         <datalist class="datalist" id="endChoices">
             <!-- <option v-for="city in arrivalCities" :key="city" :value="city" /> -->
@@ -52,28 +52,12 @@
 
         </datalist>
 
-
-
-
-
-
-
         <label for="date">出 发 日 期</label>
-        <input type="date" id="date">
+        <input type="date" id="date" v-model="date">
         <button id="searchButton" @click="fetchTickets">搜 索</button>
         <table id="ticketTable">
             <thead>
                 <tr>
-                    <!-- <th>车 次</th>
-                    <th>出 发 车 站</th>
-                    <th>到 达 车 站</th>
-                    <th>出 发 时 间</th>
-                    <th>到 达 时 间</th>
-                    <th>历 时</th>
-                    <th>票 价</th>
-                    <th>剩 余 票 数</th>
-                    <th>预 定</th> -->
-
                     <th @click="sortTable('trainId')">车 次 <span v-if="sortColumn === 'trainId'"
                             :class="{ 'sort-asc': sortOrder === 'asc', 'sort-desc': sortOrder === 'desc' }"></span>
                     </th>
@@ -148,8 +132,9 @@ export default defineComponent({
             sortOrder: 'asc',
             departureCities: [] as string[],
             arrivalCities: [] as string[],
-
-            
+            from:this.$route.query.from?.toString(),
+            to:this.$route.query.to?.toString(),
+            date : new Date().toISOString().split('T')[0]
         };
     },
 
@@ -158,13 +143,14 @@ export default defineComponent({
             from = this.$route.query.from?.toString();
             to = this.$route.query.to?.toString();
             date = this.$route.query.date?.toString();
+            
         },
-        BookClick(event: any){
+        BookClick(event:Ticket){
             this.$router.push({
                 name:'BuyTicket',
                 query: {
-                        trainID: '00001',
-                        price: 80,
+                        trainID: event.trainID,
+                        price: event.price,
                     }
             });
 
@@ -184,40 +170,7 @@ export default defineComponent({
                     });
 
                     console.log(response.data);
-              
-                    // const tickets:Ticket[] = [
-                    //     {
-                    //         trainID: "G101",
-                    //         departureStation: "Beijing",
-                    //         arrivalStation: "Shanghai",
-                    //         departureTime: "2024-09-07 08:00",
-                    //         arrivalTime: "2024-09-07 12:30",
-                    //         duration: "4h 30m",
-                    //         price: 560,
-                    //         ticketsNum: 100,
-                    //     },
-                    //     {
-                    //         trainID: "G102",
-                    //         departureStation: "Beijing",
-                    //         arrivalStation: "Guangzhou",
-                    //         departureTime: "2024-09-07 09:00",
-                    //         arrivalTime: "2024-09-07 16:00",
-                    //         duration: "7h 00m",
-                    //         price: 700,
-                    //         ticketsNum: 80,
-                    //     },
-                    //     {
-                    //         trainID: "D301",
-                    //         departureStation: "Shanghai",
-                    //         arrivalStation: "Hangzhou",
-                    //         departureTime: "2024-09-07 10:00",
-                    //         arrivalTime: "2024-09-07 11:00",
-                    //         duration: "1h 00m",
-                    //         price: 100,
-                    //         ticketsNum: 200,
-                    //     }
-                    // ]
-                    // this.tickets = tickets;
+            
                     
                     this.tickets = response.data;
                     console.log(this.tickets);
@@ -243,9 +196,29 @@ export default defineComponent({
                                 <td>${ticket.ticketsNum}</td>
 
                                 <td>
-                                <button class="book">Book</button>
+                                <button class="book">${ticket.ticketsNum===0?'候 补':'预 定'}</button>
                                 </td>`;
-                                row.querySelector('.book')?.addEventListener('click',this.BookClick);
+
+                            row.querySelector('.book')?.addEventListener('click', (event) => {
+                                
+                                this.$router.push({
+                                    name: 'BuyTicket', // 路由名称
+                                    query: {
+                                        trainID: ticket.trainID,
+                                        departureStation: ticket.departureStation,
+                                        arrivalStation: ticket.arrivalStation,
+                                        departureTime: ticket.departureTime,
+                                        arrivalTime: ticket.arrivalTime,
+                                        duration: ticket.duration,
+                                        price: ticket.price.toString(),
+                                        ticketsNum: ticket.ticketsNum.toString()
+                                    }
+                                });
+                            });
+                            row.querySelector('.book')?.addEventListener('click', (event) => {
+                                this.BookClick(ticket); // 将 ticket 传递给 BookClick 函数
+                            });
+                                // row.querySelector('.book')?.addEventListener('click',this.BookClick);
 
                             ticketTableBody.appendChild(row);
                         });
@@ -258,19 +231,9 @@ export default defineComponent({
             console.error('Error fetching tickets:', error);
             alert('An error occurred while fetching tickets.');
         }
+        
     },
-
-    // async fetchCities() {
-    //     try {
-    //         const response = await axios.get('http://localhost:5193/api/stations');
-    //         const cities = response.data;
-    //         cities.sort((a: string, b: string) => a.localeCompare(b));
-    //         this.departureCities = cities;
-    //         this.arrivalCities = cities; // 根据需要，你可以对不同的城市列表做不同处理
-    //     } catch (error) {
-    //         console.error('Failed to fetch cities', error);
-    //     }
-    // },
+    
 
     sortTable(column: string): void {
         if (this.sortColumn === column) {
@@ -354,20 +317,7 @@ body {
     text-align: center;
     vertical-align: middle;
 
-    /* margin-top: 500px;
-height: 600px;
-text-align: justify;
-background: #fff;
-padding: 20px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-overflow: auto;
-max-height: calc(100vh-600px);
-background-color: transparent;
-overflow-y: auto;
-font-weight: bold;
-margin: 0 auto;
-position: relative;
-width: 1200px; */
+    
 }
 
 table {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qMpykO4V1wQ=",
+  "dgSpecHash": "xqaSV8iN6u78E6Me9V6X8U0B+lBZd3aWTlRxCnyw7tZOJ0F7kvVWdcSnJH5sm6h+wsFfRo5m9v3j3csGxv4k9A==",
   "success": true,
   "projectFilePath": "F:\\GitHub\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj",
   "expectedPackageFiles": [
@@ -42,9 +42,9 @@
     "C:\\Users\\张凯\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
     "C:\\Users\\张凯\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\张凯\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
-    "C:\\Users\\张凯\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.8\\microsoft.netcore.app.runtime.win-x64.8.0.8.nupkg.sha512",
+    "C:\\Users\\张凯\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.8\\microsoft.aspnetcore.app.runtime.win-x64.8.0.8.nupkg.sha512",
     "C:\\Users\\张凯\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.8\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.8.nupkg.sha512",
-    "C:\\Users\\张凯\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.8\\microsoft.aspnetcore.app.runtime.win-x64.8.0.8.nupkg.sha512"
+    "C:\\Users\\张凯\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.8\\microsoft.netcore.app.runtime.win-x64.8.0.8.nupkg.sha512"
   ],
   "logs": [
     {
