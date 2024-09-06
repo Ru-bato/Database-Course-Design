@@ -197,6 +197,7 @@ namespace DB_Backend.DB_BackendModel
     /// ·乘车人姓名
     /// ·是否为学生
     /// ·电话号码
+    /// ·乘车人ID
     /// 
     /// 方法：
     /// ·ExtractModel
@@ -213,15 +214,16 @@ namespace DB_Backend.DB_BackendModel
 
         public string? PhoneNumber { set; get; }
 
-        public static PassengerResponseModel ExtractModel(DataTable dt) {
-            PassengerResponseModel response = new PassengerResponseModel();
+        public string? PassengerID {  set; get; }
 
-            foreach (DataRow dr in dt.Rows)
+        public static PassengerResponseModel ExtractModel(DataRow dr) {
+            PassengerResponseModel response = new PassengerResponseModel
             {
-                response.Name = dr["USERNAME"].ToString();
-                response.IsStudent = dr["IS_STUDENT"].ToString();
-                response.PhoneNumber = dr["PHONE_NUMBER"].ToString();
-            }
+                Name = dr["USERNAME"].ToString(),
+                IsStudent = dr["IS_STUDENT"].ToString(),
+                PhoneNumber = dr["PHONE_NUMBER"].ToString(),
+                PassengerID = dr["PASSENGER_ID"].ToString()
+            };
 
             return response;
         }
@@ -250,6 +252,7 @@ namespace DB_Backend.DB_BackendModel
     /// ·车次ID
     /// ·票价
     /// ·乘车人ID
+    /// ·车票类型
     /// 
     /// </summary>
     public class  CreateOrderModel
@@ -261,6 +264,8 @@ namespace DB_Backend.DB_BackendModel
         public int? Price { set; get; }
 
         public string? PassengerID { set; get; }
+
+        public string? TicketType {  set; get; }
     }
 
     /// <summary>

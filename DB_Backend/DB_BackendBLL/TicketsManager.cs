@@ -48,12 +48,17 @@ namespace DB_Backend.DB_BackendBLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static PassengerResponseModel GetPassenger(PassengerGetModle model)
+        public static List<PassengerResponseModel> GetPassenger(PassengerGetModle model)
         {
-            DataTable dt =TicketsServer.GetPassenger(model);
-            PassengerResponseModel response = PassengerResponseModel.ExtractModel(dt);
+            List<PassengerResponseModel> responses = [];
 
-            return response;
+            DataTable dt =TicketsServer.GetPassenger(model);
+            foreach (DataRow dr in dt.Rows) {
+                PassengerResponseModel response = PassengerResponseModel.ExtractModel(dr);
+                responses.Add(response);
+            }
+
+            return responses;
         }
 
         /// <summary>

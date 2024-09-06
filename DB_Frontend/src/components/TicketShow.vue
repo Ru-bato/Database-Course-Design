@@ -159,12 +159,12 @@ export default defineComponent({
             to = this.$route.query.to?.toString();
             date = this.$route.query.date?.toString();
         },
-        BookClick(){
+        BookClick(event: any){
             this.$router.push({
                 name:'BuyTicket',
                 query: {
                         trainID: '00001',
-                        price: 88,
+                        price: 80,
                     }
             });
 

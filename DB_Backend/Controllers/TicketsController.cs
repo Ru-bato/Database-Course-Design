@@ -23,7 +23,6 @@ namespace DB_Backend.Controllers
         [HttpPost("search")]
         public IActionResult SearchTickets([FromBody] TicketsSearchModel model)
         {
-            Console.WriteLine(model.DepartureStation);
             List<TicketsSearchResponseModel> response = TicketsManager.SearchTickets(model);
             return Ok(response);
         }
@@ -50,7 +49,7 @@ namespace DB_Backend.Controllers
         [HttpPost("getPassenger")]
         public IActionResult GetPassenger([FromBody] PassengerGetModle model)
         {
-            PassengerResponseModel response = TicketsManager.GetPassenger(model);
+            List<PassengerResponseModel> response = TicketsManager.GetPassenger(model);
             return Ok(response);
         }
 

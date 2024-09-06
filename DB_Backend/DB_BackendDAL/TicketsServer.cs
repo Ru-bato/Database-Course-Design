@@ -39,9 +39,9 @@ namespace DB_Backend.DB_BackendDAL
                               AND TO_DATE(ts1.DEPARTURE_TIME, 'HH24:MI') < TO_DATE(ts2.ARRIVAL_TIME, 'HH24:MI')";
 
             var parameters = new Dictionary<string, object> {
+                { ":mydate","%"+model.myDate+"%"},
                 { ":departureStation", model.DepartureStation},
                 { ":arrivalStation", model.ArrivalStation},
-                { ":mydate",model.myDate }
             };
 
             DataTable dt = DBServer.FetchData(sql, parameters);
@@ -62,10 +62,10 @@ namespace DB_Backend.DB_BackendDAL
                 throw new ArgumentException("Query cannot be null or empty");
             }
 
-            string sql = @"SELECT u.USERNAME,u.IS_STUDENT,u.PHONE_NUMBER
-                           FROM USERSTEST u,USERPASSENGER up
-                           WHERE up.PASSENGER_ID = u.USER_ID
-                             AND up.USER_ID = :userID";
+            string sql = @"SELECT u.USERNAME,u.IS_STUDENT,u.PHONE_NUMBER,u.USER_ID AS PASSENGER_ID
+                           FROM USERSTEST u,PASSENGER p
+                           WHERE p.PASSENGER_ID = u.USER_ID
+                             AND p.USER_ID = :userID";
 
             var parameters = new Dictionary<string, object> {
                 { ":userID",  model.UserID }
@@ -110,12 +110,13 @@ namespace DB_Backend.DB_BackendDAL
         {
             if (string.IsNullOrEmpty(model.UserID)||
                 string.IsNullOrEmpty(model.TrainID)||
-                string.IsNullOrEmpty(model.PassengerID)
+                string.IsNullOrEmpty(model.PassengerID)||
+                string.IsNullOrEmpty(model.TicketType)
                 ) {
                 throw new ArgumentException("Query cannot be null or empty");
             }
 
-            string maxID_sql = "SELECT MAX(TO_NUMBER(ORDER_ID))+1 FROM ORDERLIST";
+            string maxID_sql = "SELECT MAX(TO_NUMBER(ORDER_ID))+1 AS ORDER_ID FROM ORDERLIST";
             string orderID = "0" + DBServer.FetchData(maxID_sql).Rows[0]["ORDER_ID"].ToString();
 
             var parameters = new Dictionary<string, object> {
@@ -123,13 +124,12 @@ namespace DB_Backend.DB_BackendDAL
                 { ":userID",  model.UserID },
                 { ":trainID",  model.TrainID },
                 { ":price",model.Price},
-                { ":passengerID",model.PassengerID}
+                { ":ticketType",model.TicketType},
+                { ":passengerID",model.PassengerID},
             };
 
-            string sql = @"SELECT MAX(TO_NUMBER(ID)) AS max_id FROM orderlist;
-                           v_new_id := LPAD(v_max_id + 1, 3, '0');
-                           INSERT INTO ORDERLIST(ORDER_ID,USER_ID,TRAIN_ID,ORDER_STATUS,PRICE,PRICE,PASSENGER_ID)
-                           VALUES(:orderID,:userID,:trainID,'unpaid',:price,:passengerID)";
+            string sql = @"INSERT INTO ORDERLIST(ORDER_ID,USER_ID,TRAIN_ID,ORDER_STATUS,PRICE,TICKET_TYPE,PASSENGER_ID)
+                           VALUES(:orderID,:userID,:trainID,'unpaid',:price,:ticketType,:passengerID)";
 
             return DBServer.ModifyDB(sql,parameters);
         }
