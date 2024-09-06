@@ -23,6 +23,7 @@ namespace DB_Backend.Controllers
         [HttpPost("search")]
         public IActionResult SearchTickets([FromBody] TicketsSearchModel model)
         {
+            Console.WriteLine(model.DepartureStation);
             List<TicketsSearchResponseModel> response = TicketsManager.SearchTickets(model);
             return Ok(response);
         }

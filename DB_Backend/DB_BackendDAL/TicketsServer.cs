@@ -22,31 +22,26 @@ namespace DB_Backend.DB_BackendDAL
             }
 
             string sql = @"SELECT t.TRAIN_ID AS TRAIN_ID,
-                                  :departureStation AS DEPARTURE_STATION,
-                                  :arrivalStation AS ARRIVAL_STATION,
+                                  s1.STATION_NAME AS DEPARTURE_STATION,
+                                  s2.STATION_NAME AS ARRIVAL_STATION,
                                   ts1.DEPARTURE_TIME AS DEPARTURE_TIME,
                                   ts2.ARRIVAL_TIME AS ARRIVAL_TIME,
                                   t.PRICE AS PRICE,
-                                  t.REMAINING_TICKETS AS TICKETS_NUM,
-                           FROM TRAIN t
-                           JOIN TRAINSTATION ts1 ON t.TRAIN_ID = ts1.TRAIN_ID
-                           JOIN TRAINSTATION ts2 ON t.TRAIN_ID = ts2.TRAIN_ID
-                           JOIN STATION s1 ON ts1.STATION_ID = s1.STATION_ID
-                           JOIN STATION s2 ON ts2.STATION_ID = s2.STATION_ID
-                           WHERE t.DEPARTURE_TIME LIKE :date
-                             AND s1.STATION_NAME = :departureStation
-                             AND s2.STATION_NAME = :arrivalStation
-                             AND TO_DATE(ts1.DEPARTURE_TIME, 'HH24:MI') < TO_DATE(ts2.ARRIVAL_TIME, 'HH24:MI')"
-            ;
-
-            if (middle) {
-                    sql = @"";
-            }
+                                  t.REMAINING_TICKETS AS TICKETS_NUM
+                             FROM TRAIN t
+                             JOIN TRAINSTATION ts1 ON t.TRAIN_ID = ts1.TRAIN_ID
+                             JOIN TRAINSTATION ts2 ON t.TRAIN_ID = ts2.TRAIN_ID
+                             JOIN STATION s1 ON ts1.STATION_ID = s1.STATION_ID
+                             JOIN STATION s2 ON ts2.STATION_ID = s2.STATION_ID
+                            WHERE t.DEPARTURE_TIME LIKE :mydate
+                              AND s1.STATION_NAME = :departureStation
+                              AND s2.STATION_NAME = :arrivalStation
+                              AND TO_DATE(ts1.DEPARTURE_TIME, 'HH24:MI') < TO_DATE(ts2.ARRIVAL_TIME, 'HH24:MI')";
 
             var parameters = new Dictionary<string, object> {
-                { ":departureStation",  model.DepartureStation },
+                { ":departureStation", model.DepartureStation},
                 { ":arrivalStation", model.ArrivalStation},
-                { ":date",model.Date+"%"}
+                { ":mydate",model.myDate }
             };
 
             DataTable dt = DBServer.FetchData(sql, parameters);

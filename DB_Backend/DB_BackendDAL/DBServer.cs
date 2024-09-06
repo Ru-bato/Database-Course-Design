@@ -33,6 +33,8 @@ namespace DB_Backend.DB_backendDAL
                             foreach (var param in parameters)
                             {
                                 command.Parameters.Add(new OracleParameter(param.Key, param.Value));
+                                Console.WriteLine(param.Key);
+                                Console.WriteLine(param.Value);
                             }
                         }
 

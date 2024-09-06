@@ -228,6 +228,13 @@
                 const from = this.input_from.value;
                 const to = this.input_to.value;
                 const time = this.input_time.value;
+                const date = new Date(time);
+                // 提取年、月、日
+                const year = date.getFullYear();
+                const month = date.getMonth() + 1; // 月份是从0开始的，所以需要加1
+                const day = date.getDate();
+                // 格式化为 'YYYY/M/D'
+                const date_new = `${year}/${month}/${day}`;
                 const ifStudent = this.chk_student.checked;
                 const ifRound = this.chk_round.checked;
                 this.router.push({
@@ -235,9 +242,9 @@
                     query: {
                         from: from,
                         to: to,
-                        time: time,
-                        ifStudent: ifStudent,
-                        ifRound: ifRound
+                        date: date_new,
+                        isStudent: ifStudent,
+                        isRound: ifRound
                     }
                 });
             }
@@ -486,25 +493,10 @@
                         search_manager.dropdown_manager = dropdown_manager;
                     }
                 }
-            },
-            test() {
-                console.log('test');
-                axio.post('http://localhost:5000/tickets/search',{
-                    DepartureStation:'北京北',
-                    ArrivalStation:'南京'
-                })
-                .then(response=>{
-                    console.log(response.data);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
             }
         },
         mounted(){
             this.init();
-            console.log('init');
-            this.test();
         }
     }
 </script>

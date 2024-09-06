@@ -24,7 +24,7 @@ namespace DB_Backend.DB_BackendModel
 
         public string? ArrivalStation { set; get; }
 
-        public string? Date { set; get; }
+        public string? myDate { set; get; }
 
         public static TicketsSearchModel ExtractModel(DataRow dr)
         {

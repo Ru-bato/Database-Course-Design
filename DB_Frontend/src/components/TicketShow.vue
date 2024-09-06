@@ -119,9 +119,12 @@ import axios from 'axios';
 import { defineAsyncComponent, defineComponent, ref, onMounted } from 'vue';
 
 
-const baseUrl = 'http://localhost:5000/api/stations';
-const from = "beijing";
-const to = "shanghai";
+const baseUrl = 'http://localhost:5000/api/tickets/search';
+let from:string|undefined;
+let to:string|undefined;
+let date:string|undefined;
+let isStudent:boolean = false;
+const isRound:boolean = false;
 const searchButton = document.getElementById('searchButton');
 interface Ticket {
     trainID: string;
@@ -144,12 +147,18 @@ export default defineComponent({
             sortColumn: '',
             sortOrder: 'asc',
             departureCities: [] as string[],
-            arrivalCities: [] as string[]
+            arrivalCities: [] as string[],
 
+            
         };
     },
 
     methods: {
+        getDataFromIndex(){
+            from = this.$route.query.from?.toString();
+            to = this.$route.query.to?.toString();
+            date = this.$route.query.date?.toString();
+        },
         BookClick(){
             this.$router.push({
                 name:'BuyTicket',
@@ -163,50 +172,55 @@ export default defineComponent({
         async fetchTickets() {
                 try {
                     console.log('Sending request to backend with parameters:', {
-                        startStation: from,
-                        endStation: to,
-                        departureDate: new Date().toISOString().split('T')[0]
+                        departureStation: from,
+                        arrivalStation: to,
+                        myDate: date,
                     });
 
-                    const response = await axios.post(baseUrl, { params: {
-                        DepartureStation: from,
-                        ArrivalStation: to,
-                        departureDate: new Date().toISOString().split('T')[0] // 当前日期或其他逻辑    
-                    }});
+                    const response = await axios.post(baseUrl, {
+                        departureStation: from,
+                        arrivalStation: to,
+                        myDate:date// 当前日期或其他逻辑    
+                    });
+
+                    console.log(response.data);
               
-                    const tickets:Ticket[] = [
-                        {
-                            trainID: "G101",
-                            departureStation: "Beijing",
-                            arrivalStation: "Shanghai",
-                            departureTime: "2024-09-07 08:00",
-                            arrivalTime: "2024-09-07 12:30",
-                            duration: "4h 30m",
-                            price: 560,
-                            ticketsNum: 100,
-                        },
-                        {
-                            trainID: "G102",
-                            departureStation: "Beijing",
-                            arrivalStation: "Guangzhou",
-                            departureTime: "2024-09-07 09:00",
-                            arrivalTime: "2024-09-07 16:00",
-                            duration: "7h 00m",
-                            price: 700,
-                            ticketsNum: 80,
-                        },
-                        {
-                            trainID: "D301",
-                            departureStation: "Shanghai",
-                            arrivalStation: "Hangzhou",
-                            departureTime: "2024-09-07 10:00",
-                            arrivalTime: "2024-09-07 11:00",
-                            duration: "1h 00m",
-                            price: 100,
-                            ticketsNum: 200,
-                        }
-                    ]
+                    // const tickets:Ticket[] = [
+                    //     {
+                    //         trainID: "G101",
+                    //         departureStation: "Beijing",
+                    //         arrivalStation: "Shanghai",
+                    //         departureTime: "2024-09-07 08:00",
+                    //         arrivalTime: "2024-09-07 12:30",
+                    //         duration: "4h 30m",
+                    //         price: 560,
+                    //         ticketsNum: 100,
+                    //     },
+                    //     {
+                    //         trainID: "G102",
+                    //         departureStation: "Beijing",
+                    //         arrivalStation: "Guangzhou",
+                    //         departureTime: "2024-09-07 09:00",
+                    //         arrivalTime: "2024-09-07 16:00",
+                    //         duration: "7h 00m",
+                    //         price: 700,
+                    //         ticketsNum: 80,
+                    //     },
+                    //     {
+                    //         trainID: "D301",
+                    //         departureStation: "Shanghai",
+                    //         arrivalStation: "Hangzhou",
+                    //         departureTime: "2024-09-07 10:00",
+                    //         arrivalTime: "2024-09-07 11:00",
+                    //         duration: "1h 00m",
+                    //         price: 100,
+                    //         ticketsNum: 200,
+                    //     }
+                    // ]
                     // this.tickets = tickets;
+                    
+                    this.tickets = response.data;
+                    console.log(this.tickets);
                     this.sortTickets();
 
                     const ticketTableBody = document.querySelector('#ticketTable tbody');
@@ -215,7 +229,7 @@ export default defineComponent({
                         ticketTableBody.innerHTML = '';
 
                         // 插入新车票信息
-                        tickets.forEach((ticket: Ticket) => {
+                        this.tickets.forEach((ticket: Ticket) => {
                             const row = document.createElement('tr');
 
                             row.innerHTML = `
@@ -297,6 +311,7 @@ export default defineComponent({
 },
 
     mounted() {
+    this.getDataFromIndex();
     this.fetchTickets();
     // 点击搜索按钮时，也可以重新进行搜索
     if(searchButton) {
