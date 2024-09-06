@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj": {}
+    "F:\\GitHub\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj": {}
   },
   "projects": {
-    "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj": {
+    "F:\\GitHub\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj",
+        "projectUniqueName": "F:\\GitHub\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj",
         "projectName": "DB_Backend",
-        "projectPath": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj",
-        "packagesPath": "C:\\Users\\84619\\.nuget\\packages\\",
-        "outputPath": "E:\\TJU\\2nd_2\\Database-Course-Design\\DB_Backend\\obj\\",
+        "projectPath": "F:\\GitHub\\Database-Course-Design\\DB_Backend\\DB_Backend.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "F:\\GitHub\\Database-Course-Design\\DB_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\84619\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
