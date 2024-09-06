@@ -60,33 +60,51 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
 import axios from 'axios';
 
 export interface Passenger {
   name: string; // 名字
   isStudent: number; // 是否为学生
   phoneNumber: string; // 电话号码
+  passengerID: string; // 乘客的用户ID
 }
 
 export interface OrderDetails {
   name: string; // 乘客名字
   isChecked: boolean; // 是否选中
   ticketType: string; // 车票类型
+  passengerID: string; // 乘客的用户ID
+}
+
+export interface TicketDetails {
+  trainID: string;
+  price: string;
 }
 
 export default defineComponent({
   setup() {
-    const user_ID = localStorage.getItem('User_ID');
+    // const user_ID = localStorage.getItem('User_ID');
+    const user_ID = '8';
     const passengerList = ref<Passenger[]>([]);
 
     /* 测试数据
     passengerList.value = [
-            { name: '张三', isStudent: 1, phoneNumber: '13888888888' },
-            { name: '李四', isStudent: 0, phoneNumber: '15959595959' },
-            { name: '王五', isStudent: 1, phoneNumber: '17666666666' },
+            { name: '张三', isStudent: 1, phoneNumber: '13888888888', passengerID: '' },
+            { name: '李四', isStudent: 0, phoneNumber: '15959595959', passengerID: '' },
+            { name: '王五', isStudent: 1, phoneNumber: '17666666666', passengerID: '' },
             // 其他乘客...
         ];
     */
+
+    // 接受上一级页面数据
+    const route = useRoute();
+    const receivedData = ref<TicketDetails>({
+      trainID: '',
+      price: '',
+    });
+    receivedData.value.trainID = route.query.trainID as string;
+    receivedData.value.price = route.query.price as string;
 
     // 创建一个对象来存储每个乘客的选中状态  
     const checkedStatus = ref<{ [key: string]: boolean }>({});
@@ -137,9 +155,10 @@ export default defineComponent({
       .filter(passenger => checkedStatus.value[passenger.name]) // 过滤出 isChecked 为 true 的乘客 
       .map(passenger => {
         return {
-          name: passenger.name,
-          isChecked: checkedStatus.value[passenger.name],
-          ticketType: ticketTypes.value[passenger.name]
+          name: passenger.name as string,
+          isChecked: checkedStatus.value[passenger.name] as boolean,
+          ticketType: ticketTypes.value[passenger.name] as string,
+          passengerID: passenger.passengerID as string,
         };
       });
 
@@ -154,6 +173,10 @@ export default defineComponent({
           // 终止
         } else {
           // 后续处理
+          orderDetails.forEach(item => {
+            createOrder(item);
+          });
+          
           window.alert('订单提交成功！');
           console.log('订单详情:', orderDetails);
         }
@@ -162,12 +185,12 @@ export default defineComponent({
 
     // 获取该用户的常用乘车人
     const getPassengerList = async () => {
-      const url = 'http://localhost:5080/api/tickets/getPassenger';
+      const url = 'http://localhost:5000/api/tickets/getPassenger';
 
       passengerList.value = [];
 
       try {
-        const response = await axios.post(url, { query: user_ID });
+        const response = await axios.post(url, { userID: user_ID });
         if (response.data) {
           passengerList.value = response.data as Passenger[];
         } else {
@@ -179,19 +202,19 @@ export default defineComponent({
     };
 
     const createOrder = async (orderDetails: OrderDetails) => {
-      const url = 'http://localhost:5080/api/order/CreateOrder';
+      const url = 'http://localhost:5000/api/tickets/createOrder';
 
       const type = orderDetails.ticketType === '学生票' ? 'student' : 'adult';
 
       try {
         const response = await axios.post(url, {
-          User_id: user_ID,
-          Train_id: '00001',
-          Price: 666,
-          passenger_id: '2',
-          ticket_type: type
+          userID: user_ID,
+          trainID: receivedData.value.trainID,
+          price: receivedData.value.price,
+          passengerID: orderDetails.passengerID,
+          ticketType: type
         });
-        if (response.data === 'Order created successfully.') {
+        if (response.data) {
           window.alert('订单创建成功！');
         } else {
           window.alert('订单创建失败！');
@@ -213,6 +236,7 @@ export default defineComponent({
       handleCheckboxChange,
       handleTicketTypeChange,
       submitOrder,
+      createOrder,
       getPassengerList,
     };
   }
