@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { toggleDark } from "~/composables";
+// import { toggleDark } from "~/composables";
 </script>
 
 <template>
@@ -19,13 +19,13 @@ import { toggleDark } from "~/composables";
     </el-sub-menu>
     <el-menu-item index="3" disabled>Info</el-menu-item>
     <el-menu-item index="4">Orders</el-menu-item>
-    <el-menu-item h="full" @click="toggleDark()">
+    <!-- <el-menu-item h="full" @click="toggleDark()">
       <button
         class="border-none w-full bg-transparent cursor-pointer"
         style="height: var(--ep-menu-item-height)"
       >
         <i inline-flex i="dark:ep-moon ep-sunny" />
       </button>
-    </el-menu-item>
+    </el-menu-item> -->
   </el-menu>
 </template>

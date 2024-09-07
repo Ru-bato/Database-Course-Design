@@ -71,10 +71,9 @@ const handleRegister = () => {
     .then(response => {
       // 注册成功
       console.log(response.data);
-      router.push('/'); // 注册成功后跳转到主页 TODO: 注册成功应该与登录成功有同样的鉴权标识
+      router.push('/'); 
     })
     .catch(error => {
-      // TODO: 错误处理还需完善
       if (error.response) {
         console.log(error)
         switch (error.response.status) {

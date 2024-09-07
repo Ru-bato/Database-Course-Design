@@ -209,8 +209,8 @@ namespace DB_Backend.DB_BackendDAL
                         user.Password = reader["Password"].ToString();
                         user.Phone_Number = reader["Phone_Number"].ToString();
                         user.ID_Number = reader["ID_Number"].ToString();
-                        user.Is_Student = reader["Is_Student"].ToString() == "Y";
-                        user.Status = reader["Status"].ToString() == "Y";
+                        user.Is_Student = reader["Is_Student"].ToString() == "Y" || reader["Is_Student"].ToString() == "T";
+                        user.Status = reader["Status"].ToString() == "Y" || reader["Status"].ToString() == "T";
                         user.Riding_Interval = reader["Riding_Interval"].ToString();
                     }
                     if (user.User_ID == "-1")

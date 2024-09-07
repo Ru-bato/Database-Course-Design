@@ -26,13 +26,14 @@ export default {
   data() {
     return {
       navItems: [
-        { name: "首页" , route: "/"},
         // { name: "酒店" ,route: ""},
         // { name: "机票" ,route,},
-        { name: "购票" ,route:{name:'Index'}},
+        { name: "首页" ,route:{name:'Index'}},
         { name: "车站大屏",route:{name:'StationPage'} },
         // { name: "站车服务" },
-        { name: "我的车票",route:{name:'PaidOrder'} },
+        { name: "已购车票",route:{name:'PaidOrder'} },
+        { name: "候补车票",route:{name:'WaitOrder'} },
+        { name: "待支付车票",route:{name:'UnpaidOrder'} },
         { name: "个人主页", route:{name:'PersonalPage'} },
         { name: "常见问题",route:{name:'TicketsQuestions'} },
         

@@ -20,7 +20,8 @@ import myFoodComponent from '@/components/myFoodComponent.vue'
 import BuyTicketsPage from '@/views/BuyTicketsPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
-  { path: '/', name: 'Home', component: Home },
+  { path: '/', name: 'Index', component: Index, meta: { requiresAuth: true } },
+  // { path: '/', name: 'Home', component: Home },
   { path: '/login', name: 'Login', component: Login },
   { path: '/register', name: 'Register', component: Register },
   { path: '/verifyIdentity', name: 'VerifyIdentity', component: VerifyIdentityPage },
@@ -36,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/waitOrder', name: 'WaitOrder', component: WaitOrder, meta: { requiresAuth: true } },
   { path: '/ticketsQuestions', name: 'TicketsQuestions', component: TicketsQuestions },
   { path: '/stationPage', name: 'StationPage', component: StationPage },
-  { path: '/index', name: 'Index', component: Index, meta: { requiresAuth: true } },
+
   {
     path: '/personal',
     name: 'PersonalPage',

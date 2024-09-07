@@ -1,16 +1,6 @@
 <template>
   <div class="order-container">
     <h2>我的车票</h2>
-
-    <!-- Date range picker -->
-    <!--<div class="date-picker">
-      <label for="start-date">起始日期:</label>
-      <input type="date" id="start-date" v-model="startDate" />
-      <label for="end-date">结束日期:</label>
-      <input type="date" id="end-date" v-model="endDate" />
-      <button @click="filterByDate">筛选</button>
-    </div>-->
-
     <!-- Order list -->
     <div v-if="paginatedOrders.length === 0" class="no-orders">
       <p>你目前没有车票</p>

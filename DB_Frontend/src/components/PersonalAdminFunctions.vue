@@ -3,6 +3,7 @@
     <h2>管理员功能</h2>
     <button @click="showUserManagement">用户管理</button>
     <button @click="showOrderManagement">订单管理</button>
+    <button @click="showOrderStatistics">销量统计</button>
     <!-- 你可以根据需要添加更多管理员功能 -->
 
     <!-- 用户管理弹窗 -->
@@ -20,6 +21,15 @@
         <OrderManagement />
       </div>
     </div>
+
+    <!-- 销量统计弹窗 -->
+    <div v-if="showOrderStatisticsModal" class="mymodal">
+      <div class="modal-content">
+        <span class="myclose" @click="closeOrderStatistics">&times;</span>
+        <OrderListStatistic />
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -27,16 +37,19 @@
 import { defineComponent, ref } from 'vue';
 import UserManagement from './AdminUserManagement.vue';
 import OrderManagement from './AdminOrderManagement.vue';
+import OrderListStatistic from './OrderListStatistic.vue';
 
 export default defineComponent({
   name: 'AdminFunctions',
   components: {
     UserManagement,
-    OrderManagement
+    OrderManagement,
+    OrderListStatistic,
   },
   setup() {
     const showUserModal = ref<boolean>(false);
     const showOrderModal = ref<boolean>(false);
+    const showOrderStatisticsModal = ref<boolean>(false);
 
     const showUserManagement = () => {
       showUserModal.value = true;
@@ -54,13 +67,24 @@ export default defineComponent({
       showOrderModal.value = false;
     };
 
+    const showOrderStatistics = () => {
+      showOrderStatisticsModal.value = true;
+    };
+
+    const closeOrderStatistics = () => {
+      showOrderStatisticsModal.value = false;
+    };
+
     return {
       showUserModal,
       showOrderModal,
+      showOrderStatisticsModal,
       showUserManagement,
       closeUserModal,
       showOrderManagement,
-      closeOrderModal
+      closeOrderModal,
+      showOrderStatistics,
+      closeOrderStatistics,
     };
   }
 });
@@ -106,6 +130,7 @@ button:hover {
   width: 80%;
   max-width: 800px;
   position: relative;
+  text-align: center
 }
 
 .myclose {

@@ -73,15 +73,6 @@
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
                         </ul> -->
                     </li>
-                    <li id="chepiao" class="nav-item"><a class="nav-hd" href="/index">购票
-                            <!-- <div class="dropdown-arrow"></div> -->
-                        </a>
-                        <!-- <ul class="nav-dropdown">
-                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
-                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
-                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul> -->
-                    </li>
                     <li id="tuangoufuwu" class="nav-item"><a class="nav-hd" href="/stationPage">车站大屏
                             <!-- <div class="dropdown-arrow">
                             </div> -->
@@ -92,7 +83,27 @@
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
                         </ul> -->
                     </li>
-                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="/paidOrder">我的车票
+                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="/paidOrder">已购车票
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul> -->
+                    </li>
+                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="/WaitOrder">候补车票
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul> -->
+                    </li>
+                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="/UnpaidOrder">待支付车票
                             <!-- <div class="dropdown-arrow">
                             </div> -->
                         </a>

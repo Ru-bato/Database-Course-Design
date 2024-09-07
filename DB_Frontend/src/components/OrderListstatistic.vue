@@ -8,7 +8,7 @@
                 <el-radio label="1">成人</el-radio>
                 <el-radio label="2">学生</el-radio>
             </el-radio-group>
-            <el-button type="primary" @click="sendData">提交</el-button>
+            <el-button type="primary" @click="sendData" style="margin-left: 10px; margin-bottom: 7px;">提交</el-button>
 
             <el-table :data="state.tableData" border style="width: 100%">
                 <el-table-column prop="sales" label="销量" />
@@ -25,6 +25,7 @@ import { ref, reactive } from 'vue';
 import axios from 'axios';
 
 export default {
+    name: 'OrderStatistics',
     setup() {
         const selectedOption = ref(null);
         const state = reactive({
@@ -41,7 +42,7 @@ export default {
             }
 
             try {
-                const response = await axios.post('http://localhost:5097/OrderList', {
+                const response = await axios.post('http://localhost:5000/OrderList', {
                     TicketType: parseInt(selectedOption.value),
                 });
                 state.ticketsSum = response.data.ticketsSum;

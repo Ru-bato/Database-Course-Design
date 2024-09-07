@@ -11,7 +11,7 @@
             <div class="slides-container">
                 <!-- 图像 -->
                 <div class="slides-list">
-                    <img src='@/assets/slide1.jpg' alt="slide1">
+                    <img src='../assets/slide1.jpg' alt="slide1">
                     <img src='@/assets/slide2.jpg' alt="slide2">
                     <img src='@/assets/slide3.jpg' alt="slide3">
                 </div>
@@ -533,7 +533,7 @@ ul {
     position: relative;
     left: 0px;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     transition: 0.5s ease-in-out;
 }
 .section-1 .slides-container .slides-list img {
