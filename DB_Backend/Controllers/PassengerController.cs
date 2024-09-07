@@ -54,6 +54,26 @@ namespace DB_Backend.Controllers
             }
         }
 
+        // 根据乘车人姓名和身份证号查找关联的用户，并返回用户信息
+        [HttpPost("FindUserByPassengerID")]
+        public IActionResult FindUserByPassengerID([FromBody] QueryPassengerIDModel model)
+        {
+            try
+            {
+                Console.WriteLine("passengerName" + model.passengerName);
+                Console.WriteLine("idNumber" + model.idNumber);
+
+                var user = _passengerManager.GetPassengersByNameAndId(model.passengerName, model.idNumber);
+                if (user == null)
+                    return NotFound("No user found matching the provided passenger details.");
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error finding user: {ex.Message}");
+            }
+        }
+
         // 根据用户信息和乘车人信息创建新的乘车人
         [HttpPost("CreateUserPassenger")]
         public IActionResult CreateUserPassenger(string passengerId, string userId, string passengerName, string idNumber)

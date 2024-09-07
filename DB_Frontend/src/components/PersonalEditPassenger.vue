@@ -107,6 +107,7 @@ export default defineComponent({
     const deletePassenger = async (id: string) => {
       if (confirm('确定要删除这个乘车人吗？')) {
         try {
+          console.log('passengerid:', id);
           await axios.delete(`http://localhost:5000/api/Passenger/DeletePassenger/${id}`);
           alert('乘车人已删除！');
           loadPassengers(); // 刷新乘车人列表
@@ -124,10 +125,31 @@ export default defineComponent({
         return;
       }
 
+      let passengerUserId: string = ''; // 通过新增人的信息查找新增用户的用户id
+      try {
+        console.log('passengerName: ', form.value.Passenger_name);
+        console.log('idNumber:, ', form.value.Id_number);
+
+        const response = await axios.post('http://localhost:5000/api/Passenger/FindUserByPassengerID', {
+          passengerName: form.value.Passenger_name,
+          idNumber: form.value.Id_number,
+        });
+
+        console.log('API response:', response); // 调试输出
+
+        if (response.data) {
+          passengerUserId = response.data.user_ID as string;
+        } else {
+          console.log('passengerUserId: empty');
+        }
+      } catch (error) {
+        console.error('获取新增乘车人用户ID时出错: ', error);
+      }
+
       const passengerData: Passenger = {
         passenger_id: isEditing.value && currentEditIndex.value !== null
           ? passengers.value[currentEditIndex.value].passenger_id
-          : userId,  // 新增时 passenger_id 为User_id
+          : passengerUserId,  // 新增时 passenger_id 为 新增用户的User_id
         User_id: userId,
         Passenger_name: form.value.Passenger_name,
         Id_number: form.value.Id_number,

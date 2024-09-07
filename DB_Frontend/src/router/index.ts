@@ -1,11 +1,8 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import Home from '@/views/HomeView.vue'
-// import Booking from '@/views/Booking.vue'
 import Login from '@/views/LoginPage.vue'
 import Register from '@/views/RegisterPage.vue'
-// import OrdersList from '@/views/OrdersList.vue'
 import MyTickets from '@/views/MyTickets.vue'
-// import Forgot from '@/views/ForgotPasswordPage.vue'
 import PaidOrder from '@/views/PaidOrder.vue'
 import UnpaidOrder from '@/views/UnpaidOrder.vue'
 import WaitOrder from '@/views/WaitOrder.vue'
@@ -15,6 +12,12 @@ import Index from '@/views/IndexPage.vue'
 import VerifyIdentityPage from '@/views/VerifyIdentityPage.vue'
 import ResetPasswordPage from '@/views/ResetPasswordPage.vue'
 import PersonalPage from '@/views/PersonalPage.vue'
+import TickShowPage from '@/views/TickShowPage.vue'
+import OrderListPage from '@/views/OrderListPage.vue'
+import foodServerComponent from '../components/foodServerComponent.vue'
+import foodListComponent from '../components/foodListComponent.vue'
+import myFoodComponent from '@/components/myFoodComponent.vue'
+import BuyTicketsPage from '@/views/BuyTicketsPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', name: 'Home', component: Home },
@@ -33,8 +36,19 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/waitOrder', name: 'WaitOrder', component: WaitOrder, meta: { requiresAuth: true } },
   { path: '/ticketsQuestions', name: 'TicketsQuestions', component: TicketsQuestions },
   { path: '/stationPage', name: 'StationPage', component: StationPage },
-  { path: '/index', name: 'Index', component: Index },
-  { path: '/personal', name: 'PersonalPage', component: PersonalPage, meta: { requiresAuth: true } }
+  { path: '/index', name: 'Index', component: Index, meta: { requiresAuth: true } },
+  {
+    path: '/personal',
+    name: 'PersonalPage',
+    component: PersonalPage,
+    meta: { requiresAuth: true }
+  },
+  { path: '/ticketShow', name: 'TicketShow', component: TickShowPage },
+  { path: '/orderList', name: 'OrderList', component: OrderListPage },
+  { path: '/foodServer', name: 'FoodServer', component: foodServerComponent },
+  { path: '/foodList', name: 'FoodList', component: foodListComponent },
+  { path: '/myFood', name: 'MyFood', component: myFoodComponent },
+  { path: '/buyTickets', name: 'BuyTickets', component: BuyTicketsPage }
 ]
 
 const router = createRouter({

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, reactive, watch } from 'vue';
+import { ref, reactive, watch, onMounted } from 'vue';
 import router from '@/router';
 import axios from 'axios';
 
@@ -11,6 +11,13 @@ const questions = ref<string[]>([]);
 const answers = ref<string[]>([]);
 const dialogVisible = ref(false);
 const answer = ref('');
+const isLoggedIn = ref<boolean>(false);
+const username = ref<string>('');
+interface User {
+  username: string;
+  phone_Number: string;
+}
+
 
 // 监视器（watcher）
 watch(searchQuery, (newQuery) => {
@@ -23,9 +30,36 @@ watch(searchQuery, (newQuery) => {
   }
 });
 
+
+// 挂载后检查用户登录状态
+onMounted(() => {
+  const userId = localStorage.getItem('User_ID');
+  if (userId) {
+    isLoggedIn.value = true;
+    fetchUserInfo(userId);
+  }
+});
+
 // 方法
 const toggleDropdown = (menu: string) => {
   activeDropdown.value = activeDropdown.value === menu ? null : menu;
+};
+const user = ref<User | null>(null);
+const fetchUserInfo = async (userId:string) => {
+  try {
+    // 发送 POST 请求，传递用户 ID 参数
+    const response = await axios.post<User>('http://localhost:5000/api/User/GetCurrentUserInfo', null, {
+      params: {
+        id: userId
+      }
+    });
+
+    // 将响应的数据保存到 user 变量中
+    user.value = response.data;
+    console.log(user.value)
+;  } catch (error) {
+    console.error('获取用户信息失败：', error);
+  }
 };
 
 const showAnswer = () => {
@@ -86,6 +120,14 @@ const getCombinedArray = (index: number) => {
     answer: aList[i] || '', // 确保不会超出范围
   }));
 };
+// 挂载后检查用户登录状态
+onMounted(() => {
+  const userId = localStorage.getItem('User_ID');
+  if (userId) {
+    isLoggedIn.value = true;
+    username.value = localStorage.getItem('Username') || ''; // 假设用户名存储在localStorage中
+  }
+});
 </script>
 
 <template>
@@ -116,18 +158,24 @@ const getCombinedArray = (index: number) => {
             <li class="menu-line">|</li>
             <li class="menu-item menu-nav">
               <a href="#" class="menu-nav-hd" @click="toggleDropdown('myRail')">
-                <div class="dropdown-arrow"></div>我的星济铁路
+                <!-- <div class="dropdown-arrow"></div> -->
+                我的星济铁路
               </a>
-              <ul class="menu-dropdown" v-show="activeDropdown === 'myRail'">
+              <!-- <ul class="menu-dropdown" v-show="activeDropdown === 'myRail'">
                 <li><a class="menu-dropdown-item" href="#">子菜单项 1</a></li>
                 <li><a class="menu-dropdown-item" href="#">子菜单项 2</a></li>
                 <li><a class="menu-dropdown-item" href="#">子菜单项 3</a></li>
-              </ul>
+              </ul> -->
             </li>
             <li class="menu-line">|</li>
             <li id="header-login" class="menu-item menu-log">
-              <a href="#" class="menu-nav-hd">登录</a>
-              <a href="#" class="menu-nav-hd">注册</a>
+              <template v-if="isLoggedIn">
+                <span>你好, {{ user?.username }}</span>
+              </template>
+              <template v-else>
+                <a href="#" class="menu-nav-hd">登录</a>
+                <a href="#" class="menu-nav-hd">注册</a>
+              </template>
             </li>
           </ul>
         </div>
@@ -146,23 +194,23 @@ const getCombinedArray = (index: number) => {
 }
 
 .suggestions {
-    border: 1px solid #ccc;
-    border-top: none;
-    max-height: 200px;
-    overflow-y: auto;
-    background: white;
-    width: 100%;
-    z-index: 1000;
-    margin-top: 5px;
-    /* 调整联想框与搜索栏的间距 */
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  width: 100%;
+  z-index: 1000;
+  margin-top: 5px;
+  /* 调整联想框与搜索栏的间距 */
 }
 
 .suggestions div {
-    padding: 10px;
-    cursor: pointer;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .suggestions div:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 </style>

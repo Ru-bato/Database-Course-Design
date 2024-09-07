@@ -55,6 +55,8 @@ namespace DB_Backend.DB_BackendDAL
                 connection.Open();
                 using (var command = new OracleCommand("INSERT INTO Passengers (passenger_id, User_id, Passenger_name, Id_number) VALUES (:passenger_id, :User_id, :Passenger_name, :Id_number)", connection))
                 {
+                    Console.WriteLine("乘车人信息已添加!");
+
                     command.Parameters.Add(new OracleParameter("passenger_id", passenger.passenger_id));
                     command.Parameters.Add(new OracleParameter("User_id", passenger.User_id));
                     command.Parameters.Add(new OracleParameter("Passenger_name", passenger.Passenger_name));
@@ -175,8 +177,8 @@ namespace DB_Backend.DB_BackendDAL
                                 Username = reader["Username"].ToString(),
                                 Password = reader["Password"].ToString(),
                                 ID_Number = reader["Id_number"].ToString(),
-                                Is_Student = Convert.ToBoolean(reader["Is_student"]),
-                                Status = Convert.ToBoolean(reader["Status"]),
+                                Is_Student = reader["Is_student"].ToString() == "Y",
+                                Status = reader["Status"].ToString() == "Y",
                                 Phone_Number = reader["Phone_number"].ToString(),
                                 Riding_Interval = reader["Riding_interval"].ToString()
                             };

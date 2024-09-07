@@ -2,7 +2,7 @@
     <!-- 整个页面 -->
     <div id="layout">
         <!-- 包括上方搜索栏和导航页 -->
-        <div class="header" role="banner">
+        <div class="header" role="=banner">
             <!-- ::before -->
             <!-- 填充两侧，保证内容在中间 -->
             <div class="wrapper">
@@ -37,20 +37,26 @@
                             <li class="menu-line">|</li>
                             <li class="menu-item menu-nav">
                                 <a href="#" class="menu-nav-hd" aria-expanded="true">
-                                    <div class="dropdown-arrow">
-                                    </div>我的星济铁路
+                                    <!-- <div class="dropdown-arrow"> -->
+                                    <!-- </div> -->
+                                    我的星济铁路
                                 </a>
 
-                                <ul class="menu-dropdown">
+                                <!-- <ul class="menu-dropdown">
                                     <li><a class="menu-dropdown-item" href="#">子菜单项 1</a></li>
                                     <li><a class="menu-dropdown-item" href="#">子菜单项 2</a></li>
                                     <li><a class="menu-dropdown-item" href="#">子菜单项 3</a></li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li class="menu-line">|</li>
                             <li id="header-login" class="menu-item menu-log">
-                                <a href="#" class="menu-nav-hd">登录</a>
-                                <a href="#" class="menu-nav-hd">注册</a>
+                                <template v-if="isLoggedIn">
+                                    <span>你好, {{ user?.username }}</span>
+                                </template>
+                                <template v-else>
+                                    <a href="#" class="menu-nav-hd">登录</a>
+                                    <a href="#" class="menu-nav-hd">注册</a>
+                                </template>
                             </li>
                         </ul>
                     </div>
@@ -58,62 +64,74 @@
             </div>
             <div class="nav-box">
                 <ul class="nav">
-                    <li id="shouye" class="nav-item"><a class="nav-hd" href="#">首页<div class="dropdown-arrow"></div>
+                    <li id="shouye" class="nav-item"><a class="nav-hd" href="/">首页
+                            <!-- <div class="dropdown-arrow"></div> -->
                             <!-- 下拉箭头 --></a>
-                        <ul class="nav-dropdown">
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="chepiao" class="nav-item"><a class="nav-hd" href="#">车票<div class="dropdown-arrow"></div>
+                    <li id="chepiao" class="nav-item"><a class="nav-hd" href="/index">购票
+                            <!-- <div class="dropdown-arrow"></div> -->
                         </a>
-                        <ul class="nav-dropdown">
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="tuangoufuwu" class="nav-item"><a class="nav-hd" href="#">团购服务<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="tuangoufuwu" class="nav-item"><a class="nav-hd" href="/stationPage">车站大屏
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="#">站车服务<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="/paidOrder">我的车票
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="shanglvfuwu" class="nav-item"><a class="nav-hd" href="#">商旅服务<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="shanglvfuwu" class="nav-item"><a class="nav-hd" href="personal">个人主页
+                            <!-- <div class="dropdown-arrow"> -->
+                            <!-- </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="chuxingzhinan" class="nav-item"><a class="nav-hd" href="#">出行指南<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="chuxingzhinan" class="nav-item"><a class="nav-hd" href="/ticketsQuestions">常见问题
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="xinxichaxun" class="nav-item"><a class="nav-hd" href="#">信息查询<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <!-- <li id="xinxichaxun" class="nav-item"><a class="nav-hd" href="#">信息查询 -->
+                    <!-- <div class="dropdown-arrow">
+                            </div> -->
+                    <!-- </a> -->
+                    <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
-                    </li>
+                        </ul> -->
+                    <!-- </li> -->
                 </ul>
             </div>
         </div>
@@ -189,7 +207,7 @@
                         <div class="question" @click="toggleAnswer(index + 1, `answer1`)">
                             {{ index + 1 }}. {{ item.question }}
                         </div>
-                        <div :id="'answer1-' + (index + 1)" class="answer">
+                        <div :id="`answer1-${index + 1}`" class="answer">
                             {{ item.answer }}
                         </div>
                     </div>
@@ -260,10 +278,53 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 export default {
     name: 'RealTimeSearch',
+    setup() {
+        const user = ref(null);
+        const isLoggedIn = ref(false);
+
+        // 获取用户信息的方法
+        const fetchUserInfo = async (userId) => {
+            try {
+                // 发送 POST 请求，传递用户 ID 参数
+                const response = await axios.post('http://localhost:5000/api/User/GetCurrentUserInfo', null, {
+                    params: {
+                        id: userId,
+                    },
+                });
+
+                // 将响应的数据保存到 user 变量中
+                user.value = response.data;
+                isLoggedIn.value = true; // 设置用户为已登录状态
+                console.log(user.value);
+            } catch (error) {
+                console.error('获取用户信息失败：', error);
+            }
+        };
+
+        // 检查登录状态的方法
+        const checkLoginStatus = () => {
+            const userId = localStorage.getItem('User_ID');
+            if (userId) {
+                fetchUserInfo(userId); // 获取用户信息
+            }
+        };
+
+        // 在组件挂载时检查登录状态
+        onMounted(() => {
+            checkLoginStatus();
+        });
+
+        return {
+            user,
+            isLoggedIn,
+            fetchUserInfo,
+        };
+    },
     data() {
         return {
             oldIdName: "", // 如 ticket-info
@@ -291,22 +352,14 @@ export default {
     },
     methods: {
         showAnswer() {
-            console.log('here is showAnswer', this.searchQuery);
             // 这里可以根据 searchQuery 从 questions 和 answers 数组中获取对应的答案
             const questionIndex = this.questions.indexOf(this.searchQuery);
             if (questionIndex !== -1) {
                 this.answer = this.answers[questionIndex];
-                console.log(1);
             } else {
                 this.answer = '未找到答案';
-                console.log(2);
             }
-            console.log(this.answer);
-            // 使用 this.$nextTick 确保 DOM 在数据更新后才显示对话框
-            this.$nextTick(() => {
-                this.dialogVisible = true;
-            });
-            console.log('dialogVisible', this.dialogVisible);
+            this.dialogVisible = true;
         },
         async fetchSuggestions(query) {
             try {
@@ -392,7 +445,6 @@ export default {
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-
         },
         processQuestions(data) {
             // 获取最大 questionType 以初始化数组
@@ -443,30 +495,17 @@ export default {
         await this.getQuestionBackend();  // 确保在组件挂载时获取数据
         this.setupNavItems(); // 初始化导航项
         this.toggleMenu('ticket-menu', 'ticket-info', 'subtitle-1'); // 打开时默认显示车票信息
-        if (localStorage.getItem('searchQuery')) {
-            this.searchQuery = localStorage.getItem('searchQuery');
-            console.log(this.searchQuery);
-            await this.fetchSuggestions(this.searchQuery); // 确保fetchSuggestions完成
-            this.showAnswer();
-            localStorage.removeItem('searchQuery');
-        }
     },
 };
 </script>
 
-<style scoped>
+<style>
 /* 引入全局默认样式  */
-@import url("../assets/default_style.css");
+@import url("@/assets/default_style.css");
 /* 引入头部样式 */
-@import url("../assets/header_style.css");
+@import url("@/assets/header_style.css");
 /* 引入指南样式 */
-@import url("../assets/guide_style.css");
-
-
-#layout {
-    min-width: 100vw;
-    height: 100vh;
-}
+@import url("@/assets/guide_style.css");
 
 .suggestions {
     border: 1px solid #ccc;
@@ -487,5 +526,10 @@ export default {
 
 .suggestions div:hover {
     background-color: #f0f0f0;
+}
+
+#layout {
+    min-width: 100vw;
+    min-height: 100vh;
 }
 </style>

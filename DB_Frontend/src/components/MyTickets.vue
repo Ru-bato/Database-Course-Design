@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="order-actions">
-          <button class="orange-button">餐饮</button>
+          <button class="orange-button" @click="gotoFoodServer()">餐饮</button>
           <button class="blue-button" @click="confirmDelete(order.orderId)">退票</button>
         </div>
       </div>
@@ -69,6 +69,7 @@
 <script lang="ts">
 import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
+import router from '@/router';
 
 interface Order {
   orderId: string;
@@ -161,6 +162,10 @@ export default {
       }
     };
 
+    const gotoFoodServer=()=>{
+      router.push({name:'FoodServer'});
+    }
+
     onMounted(() => {
       fetchOrders();
     });
@@ -178,7 +183,8 @@ export default {
       totalPages,
       prevPage,
       nextPage,
-      confirmDelete
+      confirmDelete,
+      gotoFoodServer,
     };
   }
 };

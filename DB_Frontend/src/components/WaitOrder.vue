@@ -2,16 +2,28 @@
   <div class="order-container">
     <h2>候补订单</h2>
 
+    <!-- Date range picker -->
+    <div class="date-picker">
+      <div class="date-picker-inner">
+        <label for="start-date">起始日期:</label>
+        <input type="date" id="start-date" v-model="startDate" />
+        <label for="end-date">结束日期:</label>
+        <input type="date" id="end-date" v-model="endDate" />
+        <button @click="filterByDate">筛选</button>
+      </div>
+    </div>
+
     <!-- Order list -->
-    <div v-if="paginatedOrders.length === 0" class="no-orders">
+    <div v-if="filteredOrders.length === 0" class="no-orders">
       <div class="order-card">
         <p>你目前没有订单</p>
       </div>
     </div>
     <div v-else>
-      <div v-for="order in paginatedOrders" :key="order.orderId" class="order-card">
+      <div v-for="order in filteredOrders" :key="order.orderId" class="order-card">
         <div class="order-header">
           <h3>订单号: {{ order.orderId }}</h3>
+          <!-- 状态显示为中文 -->
           <span :class="['order-status', getStatusClass(order.orderStatus)]">{{ getStatusLabel(order.orderStatus) }}</span>
         </div>
         <div class="order-details">
@@ -55,23 +67,16 @@
           </div>
         </div>
         <div class="order-actions">
-          <button @click="handleWaitlistStatus(order.orderId)">候补情况</button>
+          <button @click="handleChangeTicket(order.orderId)">候补情况</button>
           <button @click="handleCancelOrder(order.orderId)">取消订单</button>
         </div>
       </div>
-    </div>
-
-    <!-- Pagination -->
-    <div class="pagination">
-      <button @click="prevPage" :disabled="currentPage === 1">上一页</button>
-      <span>{{ currentPage }} / {{ totalPages }}</span>
-      <button @click="nextPage" :disabled="currentPage === totalPages">下一页</button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 interface Order {
@@ -91,15 +96,15 @@ interface Order {
 export default {
   setup() {
     const orders = ref<Order[]>([]);
+    const startDate = ref<string>('');
+    const endDate = ref<string>('');
     const filteredOrders = ref<Order[]>([]);
     const userId = localStorage.getItem('User_ID');
-    const currentPage = ref(1);
-    const pageSize = ref(2); // 每页显示的订单数量
 
     const fetchOrders = () => {
       axios.get(`http://localhost:5000/api/MyOrder/GetMyWaitOrder?cust=${userId}`)
         .then(response => {
-          orders.value = response.data.sort((a: Order, b: Order) => b.orderId.localeCompare(a.orderId));
+          orders.value = response.data;
           applyFilters();
         })
         .catch(error => {
@@ -108,36 +113,23 @@ export default {
     };
 
     const applyFilters = () => {
-      filteredOrders.value = orders.value;
-      currentPage.value = 1; // 重置到第一页
+      filteredOrders.value = orders.value.filter(order => {
+        const matchesDate = (!startDate.value || new Date(order.departureTime) >= new Date(startDate.value)) &&
+                            (!endDate.value || new Date(order.departureTime) <= new Date(endDate.value));
+        return matchesDate;
+      });
     };
 
-    const paginatedOrders = computed(() => {
-      const start = (currentPage.value - 1) * pageSize.value;
-      const end = start + pageSize.value;
-      return filteredOrders.value.slice(start, end);
-    });
-
-    const totalPages = computed(() => {
-      return Math.ceil(filteredOrders.value.length / pageSize.value);
-    });
-
-    const prevPage = () => {
-      if (currentPage.value > 1) {
-        currentPage.value--;
-      }
+    const filterByDate = () => {
+      applyFilters();
     };
 
-    const nextPage = () => {
-      if (currentPage.value < totalPages.value) {
-        currentPage.value++;
-      }
-    };
-
+    // 将状态映射到中文标签
     const getStatusLabel = (status: string) => {
       return status === 'paid' ? '已支付' : status === 'unpaid' ? '未支付' : '候补';
     };
 
+    // 根据状态映射到相应的 CSS 类
     const getStatusClass = (status: string) => {
       return status === 'paid' ? 'completed' : status === 'unpaid' ? 'pending' : 'wait';
     };
@@ -150,21 +142,34 @@ export default {
       return `https://www.amap.com/search?query=${encodeURIComponent(station)}`;
     };
 
+    const handleChangeTicket = (orderId: string) => {
+      console.log('改签订单:', orderId);
+    };
+
+    const handlePay = (orderId: string) => {
+      console.log('支付订单:', orderId);
+    };
+
     const handleWaitlistStatus = (orderId: string) => {
       console.log('查看候补情况:', orderId);
     };
 
     const handleCancelOrder = (orderId: string) => {
-      if (window.confirm('确定要取消订单吗？')) {
-        axios.delete(`http://localhost:5000/api/MyOrder/DeleteWaitOrder?o_id=${orderId}`)
-          .then(response => {
-            console.log('订单已取消:', response.data);
-            fetchOrders(); // 重新获取订单列表
-          })
-          .catch(error => {
-            console.error('Error canceling order:', error);
-          });
-      }
+      axios.post('http://localhost:5000/api/tickets/refundTickets',{
+        OrderID:orderId,
+        IsPaid:false
+      })
+      .then(response =>{
+        console.log(response.data);
+        if(response.data === true){
+          console.log('取消订单成功:');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      })
+      console.log('取消订单:', orderId);
+      fetchOrders();
     };
 
     onMounted(() => {
@@ -173,17 +178,17 @@ export default {
 
     return {
       filteredOrders,
-      paginatedOrders,
+      startDate,
+      endDate,
+      filterByDate,
       getStatusLabel,
       getStatusClass,
       getTicketTypeLabel,
       getMapUrl,
+      handleChangeTicket,
+      handlePay,
       handleWaitlistStatus,
       handleCancelOrder,
-      currentPage,
-      totalPages,
-      prevPage,
-      nextPage,
     };
   }
 };
@@ -365,36 +370,5 @@ h2 {
 .station-link.arrival {
   color: #28a745;
   border-color: #28a745;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  margin: 0 5px;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.pagination button:disabled {
-  cursor: not-allowed;
-  background-color: #f9f9f9;
-}
-
-.pagination button:hover:not(:disabled) {
-  background-color: #f0f0f0;
-}
-
-.pagination span {
-  margin: 0 10px;
-  font-size: 14px;
 }
 </style>
