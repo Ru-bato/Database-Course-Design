@@ -153,6 +153,7 @@ export default {
         console.error('Error:', error);
       })
       console.log('支付订单:', orderId);
+      window.alert('订单支付成功！');
       fetchOrders();
     };
 
@@ -171,6 +172,7 @@ export default {
         console.error('Error:', error);
       })
       console.log('取消订单:', orderId);
+      window.alert('订单取消成功！');
       fetchOrders();
     };
 

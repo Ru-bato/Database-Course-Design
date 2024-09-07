@@ -118,7 +118,7 @@ const baseUrl = 'http://localhost:5000/api/tickets/search';
 let from: string | undefined;
 let to: string | undefined;
 let date: string | undefined;
-let isStudent: boolean = false;
+let isStudent: string | undefined;
 const isRound: boolean = false;
 const searchButton = document.getElementById('searchButton');
 interface Ticket {
@@ -145,7 +145,7 @@ export default defineComponent({
             arrivalCities: [] as string[],
             from: this.$route.query.from?.toString(),
             to: this.$route.query.to?.toString(),
-            date: new Date().toISOString().split('T')[0]
+            date: new Date().toISOString().split('T')[0],
         };
     },
 
@@ -154,7 +154,7 @@ export default defineComponent({
             from = this.$route.query.from?.toString();
             to = this.$route.query.to?.toString();
             date = this.$route.query.date?.toString();
-
+            isStudent = this.$route.query.isStudent?.toString();
         },
         BookClick(event: Ticket) {
             this.$router.push({
@@ -203,7 +203,7 @@ export default defineComponent({
                                 <td>${ticket.departureTime}</td>
                                 <td>${ticket.arrivalTime}</td>
                                 <td>${ticket.duration}</td>
-                                <td>${ticket.price}</td>
+                                <td>${isStudent ? ticket.price * 0.75 : ticket.price}</td>
                                 <td>${ticket.ticketsNum}</td>
 
                                 <td>
@@ -316,7 +316,8 @@ export default defineComponent({
 .ticket-table {
     width: 100%;
     max-width: 1200px;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 20px;
     margin-top: 20px;
     text-align: center;
 }
@@ -331,6 +332,10 @@ td {
 th {
     background-color: #007bff;
     color: white;
+}
+
+tr {
+    margin: 50px;
 }
 
 input {

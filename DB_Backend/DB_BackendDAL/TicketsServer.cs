@@ -63,7 +63,7 @@ namespace DB_Backend.DB_BackendDAL
             }
 
             string sql = @"SELECT u.USERNAME,u.IS_STUDENT,u.PHONE_NUMBER,u.USER_ID AS PASSENGER_ID
-                           FROM USERSTEST u,PASSENGER p
+                           FROM USERSTEST u,PASSENGERS p
                            WHERE p.PASSENGER_ID = u.USER_ID
                              AND p.USER_ID = :userID";
 
@@ -229,24 +229,24 @@ namespace DB_Backend.DB_BackendDAL
             {
                 TrainID = trainID
             };
-            if (ReduceOrAddTickets(Rmodel,reduce:true)) {
-                var parameters = new Dictionary<string, object> {
+            var parameters = new Dictionary<string, object> {
                     { ":trainID",trainID}
-                };
-                string sql = @"UPDATE ORDERLIST
-                               SET ORDER_STATUS = 'paid'
-                               WHERE ORDER_ID = (
+            };
+            string sql = @"UPDATE ORDERLIST
+                            SET ORDER_STATUS = 'paid'
+                            WHERE ORDER_ID = (
+                                SELECT ORDER_ID
+                                FROM (
                                     SELECT ORDER_ID
-                                    FROM (
-                                        SELECT ORDER_ID
-                                        FROM ORDERLIST
-                                        WHERE TRAIN_ID = :trainID
-                                        AND ORDER_STATUS = 'wait'
-                                        ORDER BY ORDER_ID
-                                    )
-                                    WHERE ROWNUM = 1
-                                )";
-                DBServer.ModifyDB(sql, parameters);
+                                    FROM ORDERLIST
+                                    WHERE TRAIN_ID = :trainID
+                                    AND ORDER_STATUS = 'wait'
+                                    ORDER BY ORDER_ID
+                                )
+                                WHERE ROWNUM = 1
+                            )";
+            if (DBServer.ModifyDB(sql, parameters)) {
+                ReduceOrAddTickets(Rmodel,reduce:true);
             }
 
             return ;

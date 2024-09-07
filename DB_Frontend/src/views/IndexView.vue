@@ -236,7 +236,6 @@
                 // 格式化为 'YYYY/M/D'
                 const date_new = `${year}/${month}/${day}`;
                 const ifStudent = this.chk_student.checked;
-                const ifRound = this.chk_round.checked;
                 this.router.push({
                     name:'TicketShow',
                     query: {
@@ -244,7 +243,6 @@
                         to: to,
                         date: date_new,
                         isStudent: ifStudent,
-                        isRound: ifRound
                     }
                 });
             }

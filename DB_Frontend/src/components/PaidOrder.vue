@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="order-actions">
-          <button @click="handleChangeTicket(order.orderId)">改签</button>
+          <!-- <button @click="handleChangeTicket(order.orderId)">改签</button> -->
           <button @click="handleCancelOrder(order.orderId)">取消订单</button>
         </div>
       </div>
@@ -167,6 +167,7 @@ export default {
         console.error('Error:', error);
       })
       console.log('取消订单:', orderId);
+      window.alert('取消订单成功！');
       fetchOrders();
     };
 

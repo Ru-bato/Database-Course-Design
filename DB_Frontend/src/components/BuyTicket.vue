@@ -52,7 +52,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 
 export interface Passenger {
@@ -72,6 +72,7 @@ export interface OrderDetails {
 export interface TicketDetails {
   trainID: string;
   price: string;
+  ticketsNum: string;
 }
 
 export default defineComponent({
@@ -91,12 +92,15 @@ export default defineComponent({
 
     // 接受上一级页面数据
     const route = useRoute();
+    const router = useRouter();
     const receivedData = ref<TicketDetails>({
       trainID: '',
       price: '',
+      ticketsNum: '',
     });
     receivedData.value.trainID = route.query.trainID as string;
     receivedData.value.price = route.query.price as string;
+    receivedData.value.ticketsNum = route.query.ticketsNum as string;
 
     // 创建一个对象来存储每个乘客的选中状态  
     const checkedStatus = ref<{ [key: string]: boolean }>({});
@@ -171,6 +175,8 @@ export default defineComponent({
           
           window.alert('订单提交成功！');
           console.log('订单详情:', orderDetails);
+
+          router.push({ name: 'UnpaidOrder' });
         }
       } 
     };
@@ -197,6 +203,8 @@ export default defineComponent({
       const url = 'http://localhost:5000/api/tickets/createOrder';
 
       const type = orderDetails.ticketType === '学生票' ? 'student' : 'adult';
+      const remainNum = parseInt(receivedData.value.ticketsNum);
+      const realPrice = type === 'student' ? (parseInt(receivedData.value.price) * 0.75).toString() : receivedData.value.price;
 
       try {
         const response = await axios.post(url, {
@@ -204,7 +212,8 @@ export default defineComponent({
           trainID: receivedData.value.trainID,
           price: receivedData.value.price,
           passengerID: orderDetails.passengerID,
-          ticketType: type
+          ticketType: type,
+          isWaiting: (remainNum > 0 ? false : true),
         });
         if (response.data) {
           window.alert('订单创建成功！');
