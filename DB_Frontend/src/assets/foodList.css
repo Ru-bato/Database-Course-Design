@@ -1,0 +1,57 @@
+#container {
+    padding: 20px;
+    display: flex;
+}
+
+.food-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjusts the spacing between items */
+}
+
+.food-item {
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row with spacing */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.food-image {
+    width: 150px; /* 设定宽度 */
+    height: 150px; /* 设定高度 */
+    object-fit: cover; /* 确保图片被裁剪以适应容器 */
+}
+
+.food-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-control button {
+    width: 30px;
+    height: 30px;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+}
+
+.submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    max-width: 300px; /* Optional: limit the button width */
+    margin-left: auto;
+    margin-right: auto;
+}

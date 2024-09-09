@@ -10,32 +10,97 @@ namespace DB_Backend.DB_BackendBLL
 {
     public class UserManager
     {
+        private readonly UserServer _userServer;
+
+        public UserManager(UserServer userServer)
+        {
+            _userServer = userServer;
+        }
+
+        // 创建用户
+        public void CreateUser(User user)
+        {
+            // 业务规则：用户名和密码不能为空
+            if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Password))
+            {
+                throw new ArgumentException("用户名和密码不能为空");
+            }
+
+            // 可以在这里添加更多的业务验证或数据处理
+            _userServer.CreateUser(user);
+        }
+
+        // 根据ID获取用户信息
+        public User? GetUserById(string userId)
+        {
+            if (string.IsNullOrWhiteSpace(userId))
+            {
+                throw new ArgumentException("用户ID不能为空");
+            }
+
+            return _userServer.GetUserById(userId);
+        }
+
+        // 更新用户信息
+        public void UpdateUser(User user)
+        {
+            // 业务规则：用户名和密码不能为空
+            if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Password))
+            {
+                throw new ArgumentException("用户名和密码不能为空");
+            }
+
+            _userServer.UpdateUser(user);
+        }
+
+        // 删除用户
+        public void DeleteUser(string userId)
+        {
+            if (string.IsNullOrWhiteSpace(userId))
+            {
+                throw new ArgumentException("用户ID不能为空");
+            }
+
+            _userServer.DeleteUser(userId);
+        }
+
+        // 获取所有用户的 User_id
+        public List<string> GetAllUserIds()
+        {
+            var users = _userServer.GetAllUsers();
+            return users.Select(u => u.User_ID).ToList();
+        }
+
         /// <summary>
         /// 在后端接收到密码后，进行哈希处理。为了增加安全性，使用一个强密码哈希算法。
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string ComputeSHA256Hash(string input) // Todo: 暂时不加盐
+        public static string ComputeSHA256Hash(string input) // TODO: 暂时不加盐
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                var saltedInput = input; // Todo: 暂时不加盐
+                var saltedInput = input; // TODO: 暂时不加盐
                 byte[] inputBytes = Encoding.UTF8.GetBytes(saltedInput);
                 byte[] hashBytes = sha256.ComputeHash(inputBytes);
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
             }
         }
         /// <summary>
-        /// 登录
+        /// 登录，这是一个通用接口，既能用于手机号+密码登录，又能用于手机号+身份证号验证身份
         /// </summary>
         /// <param name="Phone_Number"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        public static User Login(string Phone_Number, string Password)
+        public static User Login(string Phone_Number)
         {
             User candidate = UserServer.GetUserByTel(Phone_Number);
             return candidate;
         }
+        //public static User Verify(string Phone_Number, string ID_Number) 
+        //{ 
+        //    User candidate = UserServer.GetUserByVerify(Phone_Number, ID_Number);
+        //}
         /// <summary>
         /// 检验手机号格式是否合法
         /// </summary>
@@ -113,6 +178,20 @@ namespace DB_Backend.DB_BackendBLL
                 return -1;
             }
             return code;
+        }
+
+        public static int ChangePassword(string User_ID, string New_Password)
+        {
+            try
+            {
+                UserServer.UpdatePassword(User_ID, New_Password);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("密码修改失败，发生未知错误");
+                return -1;
+            }
+            return 0;
         }
     }
 }

@@ -11,7 +11,7 @@
                     <h1 class="logo" role="banner">
                         <!-- 链接跳转主页 -->
                         <a href="#">
-                            <img src="@/img/logo.png" alt="logo" style="height:50px">
+                            <img src="../img/logo.png" alt="logo" style="height:50px">
                         </a>
                     </h1>
                     <!-- logo的右侧部分，包括搜索条和右侧菜单 -->
@@ -30,27 +30,33 @@
                                 </div>
                             </div>
                             <button class="search-btn" @click="showAnswer"><img class="icon-search"
-                                    src="@/img/search.png" alt="search"></button>
+                                    src="../img/search.png" alt="search"></button>
                         </div>
                         <!-- 右侧菜单 -->
                         <ul class="header-menu">
                             <li class="menu-line">|</li>
                             <li class="menu-item menu-nav">
                                 <a href="#" class="menu-nav-hd" aria-expanded="true">
-                                    <div class="dropdown-arrow">
-                                    </div>我的星济铁路
+                                    <!-- <div class="dropdown-arrow"> -->
+                                    <!-- </div> -->
+                                    我的星济铁路
                                 </a>
 
-                                <ul class="menu-dropdown">
+                                <!-- <ul class="menu-dropdown">
                                     <li><a class="menu-dropdown-item" href="#">子菜单项 1</a></li>
                                     <li><a class="menu-dropdown-item" href="#">子菜单项 2</a></li>
                                     <li><a class="menu-dropdown-item" href="#">子菜单项 3</a></li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li class="menu-line">|</li>
                             <li id="header-login" class="menu-item menu-log">
-                                <a href="#" class="menu-nav-hd">登录</a>
-                                <a href="#" class="menu-nav-hd">注册</a>
+                                <template v-if="isLoggedIn">
+                                    <span>你好, {{ user?.username }}</span>
+                                </template>
+                                <template v-else>
+                                    <a href="#" class="menu-nav-hd">登录</a>
+                                    <a href="#" class="menu-nav-hd">注册</a>
+                                </template>
                             </li>
                         </ul>
                     </div>
@@ -58,62 +64,85 @@
             </div>
             <div class="nav-box">
                 <ul class="nav">
-                    <li id="shouye" class="nav-item"><a class="nav-hd" href="#">首页<div class="dropdown-arrow"></div>
+                    <li id="shouye" class="nav-item"><a class="nav-hd" href="/">首页
+                            <!-- <div class="dropdown-arrow"></div> -->
                             <!-- 下拉箭头 --></a>
-                        <ul class="nav-dropdown">
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="chepiao" class="nav-item"><a class="nav-hd" href="#">车票<div class="dropdown-arrow"></div>
+                    <li id="tuangoufuwu" class="nav-item"><a class="nav-hd" href="/stationPage">车站大屏
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
                         </a>
-                        <ul class="nav-dropdown">
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="tuangoufuwu" class="nav-item"><a class="nav-hd" href="#">团购服务<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="/paidOrder">已购车票
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="#">站车服务<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="/WaitOrder">候补车票
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="shanglvfuwu" class="nav-item"><a class="nav-hd" href="#">商旅服务<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="zhanchefuwu" class="nav-item"><a class="nav-hd" href="/UnpaidOrder">待支付车票
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="chuxingzhinan" class="nav-item"><a class="nav-hd" href="#">出行指南<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="shanglvfuwu" class="nav-item"><a class="nav-hd" href="personal">个人主页
+                            <!-- <div class="dropdown-arrow"> -->
+                            <!-- </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li id="xinxichaxun" class="nav-item"><a class="nav-hd" href="#">信息查询<div class="dropdown-arrow">
-                            </div></a>
-                        <ul class="nav-dropdown">
+                    <li id="chuxingzhinan" class="nav-item"><a class="nav-hd" href="/ticketsQuestions">常见问题
+                            <!-- <div class="dropdown-arrow">
+                            </div> -->
+                        </a>
+                        <!-- <ul class="nav-dropdown">
                             <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
                             <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
+                    <!-- <li id="xinxichaxun" class="nav-item"><a class="nav-hd" href="#">信息查询 -->
+                    <!-- <div class="dropdown-arrow">
+                            </div> -->
+                    <!-- </a> -->
+                    <!-- <ul class="nav-dropdown">
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 1</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 2</a></li>
+                            <li><a class="nav-dropdown-item" href="#">子菜单项 3</a></li>
+                        </ul> -->
+                    <!-- </li> -->
                 </ul>
             </div>
         </div>
@@ -260,10 +289,53 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 export default {
     name: 'RealTimeSearch',
+    setup() {
+        const user = ref(null);
+        const isLoggedIn = ref(false);
+
+        // 获取用户信息的方法
+        const fetchUserInfo = async (userId) => {
+            try {
+                // 发送 POST 请求，传递用户 ID 参数
+                const response = await axios.post('http://localhost:5000/api/User/GetCurrentUserInfo', null, {
+                    params: {
+                        id: userId,
+                    },
+                });
+
+                // 将响应的数据保存到 user 变量中
+                user.value = response.data;
+                isLoggedIn.value = true; // 设置用户为已登录状态
+                console.log(user.value);
+            } catch (error) {
+                console.error('获取用户信息失败：', error);
+            }
+        };
+
+        // 检查登录状态的方法
+        const checkLoginStatus = () => {
+            const userId = localStorage.getItem('User_ID');
+            if (userId) {
+                fetchUserInfo(userId); // 获取用户信息
+            }
+        };
+
+        // 在组件挂载时检查登录状态
+        onMounted(() => {
+            checkLoginStatus();
+        });
+
+        return {
+            user,
+            isLoggedIn,
+            fetchUserInfo,
+        };
+    },
     data() {
         return {
             oldIdName: "", // 如 ticket-info
@@ -384,8 +456,8 @@ export default {
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-
         },
+
         processQuestions(data) {
             // 获取最大 questionType 以初始化数组
             const maxType = Math.max(...data.map(q => q.questionType));
@@ -432,26 +504,35 @@ export default {
 
     },
     async mounted() {
-        await this.getQuestionBackend();  // 确保在组件挂载时获取数据
-        this.setupNavItems(); // 初始化导航项
-        this.toggleMenu('ticket-menu', 'ticket-info', 'subtitle-1'); // 打开时默认显示车票信息
+        // 1. 确保在组件挂载时获取数据
+        await this.getQuestionBackend();
+
+        // 2. 初始化导航项和默认显示内容
+        this.setupNavItems();
+        this.toggleMenu('ticket-menu', 'ticket-info', 'subtitle-1');
+
+        // 3. 如果 localStorage 中存在搜索查询，则按顺序处理
+        const searchQuery = localStorage.getItem('searchQuery');
+        if (searchQuery) {
+            this.searchQuery = searchQuery;  // 先获取并设置查询
+            console.log(this.searchQuery);
+            console.log(this.questions);
+            // while(this.questions.length == 0);
+            // 4. 之后调用 showAnswer()，确保执行顺序正确
+            // this.showAnswer();
+        }
     },
+
 };
 </script>
 
-<style scoped>
+<style>
 /* 引入全局默认样式  */
-@import url("../assets/default_style.css");
+@import url("@/assets/default_style.css");
 /* 引入头部样式 */
-@import url("../assets/header_style.css");
+@import url("@/assets/header_style.css");
 /* 引入指南样式 */
-@import url("../assets/guide_style.css");
-
-
-#layout{
-    min-width: 100vw;
-    height: 100vh;
-}
+@import url("@/assets/guide_style.css");
 
 .suggestions {
     border: 1px solid #ccc;
@@ -472,5 +553,10 @@ export default {
 
 .suggestions div:hover {
     background-color: #f0f0f0;
+}
+
+#layout {
+    min-width: 100vw;
+    min-height: 100vh;
 }
 </style>

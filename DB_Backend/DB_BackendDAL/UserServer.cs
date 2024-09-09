@@ -8,6 +8,176 @@ namespace DB_Backend.DB_BackendDAL
 {
     public class UserServer
     {
+        private readonly string _connectionString;
+
+        // 使用依赖注入 (DI) 来获取配置
+        public UserServer(IConfiguration configuration)
+        {
+            _connectionString = configuration.GetConnectionString("OracleDbConnection")
+                ?? throw new ArgumentNullException(nameof(_connectionString), "Connection string cannot be null.");
+        }
+
+        // 获取数据库连接
+        public OracleConnection GetConnection()
+        {
+            OracleConnection connection = new OracleConnection(_connectionString);
+            return connection;
+        }
+
+        // 通用方法：执行查询
+        public DataTable ExecuteQuery(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                OracleCommand command = new OracleCommand(query, connection);
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                DataTable resultTable = new DataTable();
+                connection.Open();
+                adapter.Fill(resultTable);
+                return resultTable;
+            }
+        }
+
+        // 通用方法：执行非查询（如INSERT, UPDATE, DELETE）
+        public int ExecuteNonQuery(string query)
+        {
+            using (var connection = GetConnection())
+            {
+                OracleCommand command = new OracleCommand(query, connection);
+                connection.Open();
+                return command.ExecuteNonQuery();
+            }
+        }
+
+        // 创建用户
+        public void CreateUser(User user)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("INSERT INTO USERSTEST (User_id, Username, Password, Id_number, Is_student, Status, Phone_number, Riding_interval) VALUES (:User_id, :Username, :Password, :Id_number, :Is_student, :Status, :Phone_number, :Riding_interval)", connection))
+                {
+                    command.Parameters.Add(new OracleParameter("User_id", user.User_ID));
+                    command.Parameters.Add(new OracleParameter("Username", user.Username));
+                    command.Parameters.Add(new OracleParameter("Password", user.Password));
+                    command.Parameters.Add(new OracleParameter("Id_number", user.ID_Number));
+                    //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
+                    //command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    // 将布尔值转换为数据库中的数值
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? "T" : "F"));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? "T" : "F" ));
+                    command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_Number));
+                    command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_Interval));
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // 读取用户信息
+        public User? GetUserById(string userId)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("SELECT * FROM USERSTEST WHERE User_id = :User_id", connection))
+                {
+                    command.Parameters.Add(new OracleParameter("User_id", userId));
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new User
+                            {
+                                User_ID = reader["User_id"].ToString(),
+                                Username = reader["Username"].ToString(),
+                                Password = reader["Password"].ToString(),
+                                ID_Number = reader["Id_number"].ToString(),
+                                Is_Student = reader["Is_student"].ToString() == "Y",
+                                Status = reader["Status"].ToString() == "Y",
+                                Phone_Number = reader["Phone_number"].ToString(),
+                                Riding_Interval = reader["Riding_interval"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        // 更新用户信息
+        public void UpdateUser(User user)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("UPDATE USERSTEST SET Username = :Username, Password = :Password, Id_number = :Id_number, Is_student = :Is_student, Status = :Status, Phone_number = :Phone_number, Riding_interval = :Riding_interval WHERE User_id = :User_id", connection))
+                {
+                    command.Parameters.Add(new OracleParameter("Username", user.Username));
+                    command.Parameters.Add(new OracleParameter("Password", user.Password));
+                    command.Parameters.Add(new OracleParameter("Id_number", user.ID_Number));
+                    //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
+                    //command.Parameters.Add(new OracleParameter("Status", user.Status));
+                    // 将布尔值转换为数据库中的数值
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? "Y" : "N"));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? "Y" : "N"));
+                    command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_Number));
+                    command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_Interval));
+                    command.Parameters.Add(new OracleParameter("User_id", user.User_ID));
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // 删除用户
+        public void DeleteUser(string userId)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("DELETE FROM USERSTEST WHERE User_id = :User_id", connection))
+                {
+                    command.Parameters.Add(new OracleParameter("User_id", userId));
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // 获取所有用户
+        public List<User> GetAllUsers()
+        {
+            var users = new List<User>();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new OracleCommand("SELECT * FROM USERSTEST", connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var user = new User
+                            {
+                                User_ID = reader["User_id"].ToString(),
+                                Username = reader["Username"].ToString(),
+                                Password = reader["Password"].ToString(),
+                                ID_Number = reader["Id_number"].ToString(),
+                                Is_Student = reader["Is_student"].ToString() == "Y",
+                                Status = reader["Status"].ToString() == "Y",
+                                Phone_Number = reader["Phone_number"].ToString(),
+                                Riding_Interval = reader["Riding_interval"].ToString(),
+                            };
+                            users.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return users;
+        }
+
         public static string conStr = AccommodateServer.conStr;
         public static User GetUserByTel(string Tel)
         {
@@ -28,7 +198,7 @@ namespace DB_Backend.DB_BackendDAL
                 command.CommandText = "SELECT * FROM USERSTEST WHERE Phone_Number = :tel";
                 command.Parameters.Clear();
                 command.Parameters.Add("tel", OracleDbType.Varchar2, Tel, ParameterDirection.Input);
-                Console.WriteLine("Tel = " +  Tel);
+                Console.WriteLine("Tel = " + Tel);
                 try
                 {
                     OracleDataReader reader = command.ExecuteReader();
@@ -39,8 +209,8 @@ namespace DB_Backend.DB_BackendDAL
                         user.Password = reader["Password"].ToString();
                         user.Phone_Number = reader["Phone_Number"].ToString();
                         user.ID_Number = reader["ID_Number"].ToString();
-                        user.Is_Student = reader["Is_Student"].ToString() == "Y";
-                        user.Status = reader["Status"].ToString() == "Y";
+                        user.Is_Student = reader["Is_Student"].ToString() == "Y" || reader["Is_Student"].ToString() == "T";
+                        user.Status = reader["Status"].ToString() == "Y" || reader["Status"].ToString() == "T";
                         user.Riding_Interval = reader["Riding_Interval"].ToString();
                     }
                     if (user.User_ID == "-1")
@@ -110,6 +280,40 @@ namespace DB_Backend.DB_BackendDAL
                 Console.WriteLine(ex.ToString());
             }
             return UID;
+        }
+        public static void UpdatePassword(string User_ID, string New_Password)
+        {
+            // 更改信息
+            try
+            {
+                using (OracleConnection connection = new OracleConnection(conStr))
+                {
+                    connection.Open();
+                    OracleCommand command = connection.CreateCommand();
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "UPDATE USERSTEST SET password=:password " +
+                        " where user_id=:user_id";
+                    command.Parameters.Clear();
+                    command.Parameters.Add("password", OracleDbType.Varchar2, New_Password, ParameterDirection.Input);
+                    command.Parameters.Add("user_id", OracleDbType.Varchar2, User_ID, ParameterDirection.Input);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (OracleException ex)
+                    {
+                        Console.WriteLine("修改密码出错，错误码" + ex.ErrorCode.ToString());
+
+                        throw;
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // 处理异常
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

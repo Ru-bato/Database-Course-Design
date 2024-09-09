@@ -1,11 +1,28 @@
-using Microsoft.EntityFrameworkCore;
 using DB_Backend.DB_BackendDAL;
+using DB_Backend.DB_BackendBLL;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+builder.Services.AddTransient<UserServer>();
+builder.Services.AddTransient<AdminServer>();
+builder.Services.AddTransient<OrderServer>();
+builder.Services.AddTransient<PassengerServer>();
+
+builder.Services.AddTransient<UserManager>();
+builder.Services.AddTransient<AdminManager>();
+builder.Services.AddTransient<OrderManager>();
+builder.Services.AddTransient<PassengerManager>();
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+//builder.Services.AddScoped<UserServer>();
+
 builder.Services.AddHttpContextAccessor();
 //builder.Services.AddScoped<Glue.Controllers.FileHelper>();
 

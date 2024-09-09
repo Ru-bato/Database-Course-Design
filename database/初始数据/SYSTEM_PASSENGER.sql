@@ -1,0 +1,11 @@
+create table PASSENGER
+(
+    PASSENGER_ID   VARCHAR2(50)  not null
+        primary key,
+    USER_ID        VARCHAR2(50)  not null,
+    PASSENGER_NAME VARCHAR2(100) not null,
+    ID_NUMBER      VARCHAR2(20)  not null
+)
+/
+
+INSERT INTO SYSTEM.PASSENGER (PASSENGER_ID, USER_ID, PASSENGER_NAME, ID_NUMBER) VALUES ('8', '2', '牟泳祯', '123456789123456789');

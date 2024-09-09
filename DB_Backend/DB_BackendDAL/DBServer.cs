@@ -74,6 +74,45 @@ namespace DB_Backend.DB_backendDAL
 
             return dt;
         }
-    }
+        /// <summary>
+        /// 含参数修改
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public static bool ModifyDB(string sql, Dictionary<string, object>? parameters = null)
+        {
+            bool is_success = false;
 
+            using (OracleConnection connection = new OracleConnection(conStr))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OracleCommand command = connection.CreateCommand())
+                    {
+                        command.CommandType = CommandType.Text;
+                        command.CommandText = sql;
+
+                        // 增加参数
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                            {
+                                command.Parameters.Add(new OracleParameter(param.Key, param.Value));
+                            }
+                        }
+
+                        int affectedRows = command.ExecuteNonQuery();
+                        is_success = affectedRows > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return is_success;
+        }
+    }
 }

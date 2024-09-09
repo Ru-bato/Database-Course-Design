@@ -1,67 +1,3 @@
-<!-- <template>
-  <div>
-    <h2>Login</h2>
-    <form @submit.prevent="login">
-      <div>
-        <label for="user_id">User ID:</label>
-        <input v-model="userId" id="user_id" type="text" required />
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input v-model="password" id="password" type="password" required />
-      </div>
-      <button type="submit">Login</button>
-    </form>
-    <p v-if="errorMessage">{{ errorMessage }}</p>
-  </div>
-</template>
-
-<script lang="ts">
-import { ref } from 'vue';
-import axios from 'axios';
-import { useRouter } from 'vue-router';
-
-export default {
-  setup() {
-    const userId = ref('');
-    const password = ref('');
-    const errorMessage = ref('');
-    const router = useRouter();
-
-    const login = () => {
-      axios.post('http://localhost:5000/api/login', {
-        User_ID: userId.value,
-        Password: password.value
-      })
-        .then(response => {
-          // Handle successful login
-          console.log(response.data);
-          router.push('/home'); // Redirect to a home page or dashboard
-        })
-        .catch(error => {
-          // Handle errors
-          if (error.response) {
-            switch (error.response.status) {
-              case 401:
-                errorMessage.value = 'Invalid credentials';
-                break;
-              default:
-                errorMessage.value = 'An error occurred';
-            }
-          }
-        });
-    };
-
-    return {
-      userId,
-      password,
-      errorMessage,
-      login
-    };
-  }
-};
-</script> -->
-
 <template>
   <div class="login-container">
     <div class="login-card">
@@ -76,9 +12,10 @@ export default {
           <input type="password" id="password" v-model="password" placeholder="请输入密码" required />
         </div>
         <button type="submit" class="btn btn-primary">登录</button>
+        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
         <div class="extra-options">
           <router-link :to="{ name: 'Register' }" class="btn">注册</router-link>
-          <router-link :to="{ name: 'Forgot' }" class="btn">忘记密码</router-link>
+          <router-link :to="{ name: 'VerifyIdentity' }" class="btn">忘记密码</router-link>
         </div>
       </form>
     </div>
@@ -96,7 +33,7 @@ const errorMessage = ref('');
 const router = useRouter();
 
 const login = () => {
-  axios.post('http://localhost:5000/api/login', {
+  axios.post('http://localhost:5000/api/login/login', {
     Phone_Number: userTel.value,
     Password: password.value
   })
@@ -105,8 +42,7 @@ const login = () => {
       console.log(response.data);
       const userId = response.data.data.user_ID;
       if (userId) {
-        alert(userId);
-        // localStorage.setItem('User_ID', userId);
+        // alert(userId);
         localStorage.setItem('User_ID', userId);
         console.log('登陆成功');
         router.push('/'); // 重定向到首页
@@ -236,5 +172,9 @@ const login = () => {
   /* color: #5cc6b4; */
   color: #357ABD;
   /* 悬停时更深的蓝色 */
+}
+
+.error-message{
+  color: red;
 }
 </style>

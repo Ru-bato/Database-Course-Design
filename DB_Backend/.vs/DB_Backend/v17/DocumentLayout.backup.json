@@ -3,136 +3,172 @@
   "WorkspaceRootPath": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\citysearchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\citysearchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\screencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\screencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\screenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\screenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\screenserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\screenserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\traininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\traininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\querytrainmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\querytrainmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\stationsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\stationsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\stationsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\stationsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\stationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\stationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\questionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\questionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\questionserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\questionserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\dbserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\dbserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\questionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\questionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\myordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\myordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\accommodateserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\accommodateserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\myticketmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\myticketmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\myticketdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\myticketdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\mytickettrainmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\mytickettrainmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\useradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\useradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\orderlistmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\orderlistmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\orderlistmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\orderlistmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\orderlistserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\orderlistserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\orderserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\orderserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\myticketdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\myticketdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\orderlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\orderlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\dbserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\dbserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\passengerserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\passengerserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\passengercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\passengercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\foodserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\foodserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\foodservermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\foodservermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\foodservercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\foodservercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\ticketsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\ticketsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\ticketsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\ticketsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\ticketsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\ticketsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\stationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\stationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\traininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\traininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\stationsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\stationsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\screenserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\screenserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\questionserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\questionserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\accommodateserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\accommodateserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\stationsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\stationsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\screenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\screenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\questionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendbll\\questionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\screencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\screencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\myordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\myordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\adminserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\adminserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\questionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\questionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -142,405 +178,496 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ScreenController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\ScreenController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ScreenController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\ScreenController.cs",
-              "RelativeToolTip": "Controllers\\ScreenController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T14:58:44.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CitySearchModel.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\CitySearchModel.cs",
-              "RelativeDocumentMoniker": "DB_BackendModel\\CitySearchModel.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\CitySearchModel.cs",
-              "RelativeToolTip": "DB_BackendModel\\CitySearchModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T13:58:50.392Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ScreenManager.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\ScreenManager.cs",
-              "RelativeDocumentMoniker": "DB_BackendBLL\\ScreenManager.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\ScreenManager.cs*",
-              "RelativeToolTip": "DB_BackendBLL\\ScreenManager.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T14:59:01.548Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ScreenServer.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\ScreenServer.cs",
-              "RelativeDocumentMoniker": "DB_BackendDAL\\ScreenServer.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\ScreenServer.cs",
-              "RelativeToolTip": "DB_BackendDAL\\ScreenServer.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T14:59:26.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TrainInfo.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\TrainInfo.cs",
-              "RelativeDocumentMoniker": "DB_BackendModel\\TrainInfo.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\TrainInfo.cs",
-              "RelativeToolTip": "DB_BackendModel\\TrainInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T15:00:37.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "QueryTrainModel.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\QueryTrainModel.cs",
-              "RelativeDocumentMoniker": "DB_BackendModel\\QueryTrainModel.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\QueryTrainModel.cs",
-              "RelativeToolTip": "DB_BackendModel\\QueryTrainModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T15:00:21.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StationsServer.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\StationsServer.cs",
-              "RelativeDocumentMoniker": "DB_BackendDAL\\StationsServer.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\StationsServer.cs",
-              "RelativeToolTip": "DB_BackendDAL\\StationsServer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAgwC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T13:58:27.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StationsManager.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\StationsManager.cs",
-              "RelativeDocumentMoniker": "DB_BackendBLL\\StationsManager.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\StationsManager.cs",
-              "RelativeToolTip": "DB_BackendBLL\\StationsManager.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAgwDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T13:57:55.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "StationsController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\StationsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\StationsController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\StationsController.cs",
-              "RelativeToolTip": "Controllers\\StationsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T13:57:28.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "QuestionModel.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\QuestionModel.cs",
-              "RelativeDocumentMoniker": "DB_BackendModel\\QuestionModel.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\QuestionModel.cs",
-              "RelativeToolTip": "DB_BackendModel\\QuestionModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T11:41:26.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "QuestionController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\QuestionController.cs",
-              "RelativeDocumentMoniker": "Controllers\\QuestionController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\QuestionController.cs",
-              "RelativeToolTip": "Controllers\\QuestionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T11:36:46.848Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "QuestionServer.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\QuestionServer.cs",
-              "RelativeDocumentMoniker": "DB_BackendDAL\\QuestionServer.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\QuestionServer.cs",
-              "RelativeToolTip": "DB_BackendDAL\\QuestionServer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T11:41:02.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DBServer.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\DBServer.cs",
-              "RelativeDocumentMoniker": "DB_BackendDAL\\DBServer.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\DBServer.cs",
-              "RelativeToolTip": "DB_BackendDAL\\DBServer.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwE8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T11:40:35.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "QuestionManager.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\QuestionManager.cs",
-              "RelativeDocumentMoniker": "DB_BackendBLL\\QuestionManager.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\QuestionManager.cs",
-              "RelativeToolTip": "DB_BackendBLL\\QuestionManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T11:39:33.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:28:13.968Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UserManager.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\UserManager.cs",
-              "RelativeDocumentMoniker": "DB_BackendBLL\\UserManager.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\UserManager.cs",
-              "RelativeToolTip": "DB_BackendBLL\\UserManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:18:05.894Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MyOrderController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyOrderController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MyOrderController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyOrderController.cs",
-              "RelativeToolTip": "Controllers\\MyOrderController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:23:35.305Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-02T09:02:26.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AccommodateServer.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\AccommodateServer.cs",
-              "RelativeDocumentMoniker": "DB_BackendDAL\\AccommodateServer.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\AccommodateServer.cs",
-              "RelativeToolTip": "DB_BackendDAL\\AccommodateServer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAABsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T08:59:52.984Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UserServer.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\UserServer.cs",
-              "RelativeDocumentMoniker": "DB_BackendDAL\\UserServer.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\UserServer.cs",
-              "RelativeToolTip": "DB_BackendDAL\\UserServer.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwAoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:37:23.451Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwDUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:20:41.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-02T03:11:29.879Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "MyTicketController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyTicketController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MyTicketController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyTicketController.cs",
-              "RelativeToolTip": "Controllers\\MyTicketController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:23:50.658Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "MyTicketDbContext.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\MyTicketDbContext.cs",
-              "RelativeDocumentMoniker": "DB_BackendDAL\\MyTicketDbContext.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\MyTicketDbContext.cs",
-              "RelativeToolTip": "DB_BackendDAL\\MyTicketDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:26:16.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "MyTicketModel.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\MyTicketModel.cs",
-              "RelativeDocumentMoniker": "DB_BackendModel\\MyTicketModel.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\MyTicketModel.cs",
-              "RelativeToolTip": "DB_BackendModel\\MyTicketModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:27:10.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AdminOrdersController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\AdminOrdersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminOrdersController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\AdminOrdersController.cs",
-              "RelativeToolTip": "Controllers\\AdminOrdersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:21:47.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "DB_Backend.http",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_Backend.http",
-              "RelativeDocumentMoniker": "DB_Backend.http",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_Backend.http",
-              "RelativeToolTip": "DB_Backend.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-09-02T03:07:11.936Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "RegisterController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\RegisterController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RegisterController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\RegisterController.cs",
-              "RelativeToolTip": "Controllers\\RegisterController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAuwC4AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T12:13:00.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "MyTicketTrainModel.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\MyTicketTrainModel.cs",
-              "RelativeDocumentMoniker": "DB_BackendModel\\MyTicketTrainModel.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\MyTicketTrainModel.cs",
-              "RelativeToolTip": "DB_BackendModel\\MyTicketTrainModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:27:40.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
               "Title": "User.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\User.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\User.cs",
               "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\User.cs",
               "RelativeToolTip": "DB_BackendModel\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T12:07:04.045Z"
+              "WhenOpened": "2024-09-07T21:07:53.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "DocumentIndex": 9,
+              "Title": "OrderServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\OrderServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\OrderServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\OrderServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\OrderServer.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAxwAwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T06:15:36.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderListServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\OrderListServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\OrderListServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\OrderListServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\OrderListServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:58:06.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderListManager.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderListManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\OrderListManager.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderListManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\OrderListManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:29:26.454Z"
+              "WhenOpened": "2024-09-07T02:57:52.797Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 10,
+              "Title": "MyTicketDbContext.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\MyTicketDbContext.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\MyTicketDbContext.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\MyTicketDbContext.cs",
+              "RelativeToolTip": "DB_BackendDAL\\MyTicketDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:21:04.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderListModel.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\OrderListModel.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\OrderListModel.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\OrderListModel.cs",
+              "RelativeToolTip": "DB_BackendModel\\OrderListModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:58:20.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UserAdmin.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\UserAdmin.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\UserAdmin.cs",
               "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\UserAdmin.cs",
               "RelativeToolTip": "DB_BackendModel\\UserAdmin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T14:13:05.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAswGkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:14:47.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\UserServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\UserServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\UserServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\UserServer.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAnwNQAAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T09:14:04.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderManager.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\OrderManager.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\OrderManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T06:25:14.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Order.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\Order.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\Order.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\Order.cs",
+              "RelativeToolTip": "DB_BackendModel\\Order.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:18:02.972Z"
+              "WhenOpened": "2024-09-07T06:27:33.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderListController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\OrderListController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderListController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\OrderListController.cs",
+              "RelativeToolTip": "Controllers\\OrderListController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAgwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:57:38.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T06:19:48.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DBServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\DBServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\DBServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\DBServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\DBServer.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAcwGwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T20:32:13.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PassengerServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\PassengerServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\PassengerServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\PassengerServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\PassengerServer.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAADgv7MAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T04:46:05.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PassengerController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\PassengerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PassengerController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\PassengerController.cs",
+              "RelativeToolTip": "Controllers\\PassengerController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAQwEEAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T05:07:21.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FoodServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\FoodServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\FoodServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\FoodServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\FoodServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:51:21.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "FoodServerManager.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\FoodServerManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\FoodServerManager.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\FoodServerManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\FoodServerManager.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:50:56.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FoodServerController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\FoodServerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FoodServerController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\FoodServerController.cs",
+              "RelativeToolTip": "Controllers\\FoodServerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:50:40.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TicketsModel.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\TicketsModel.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\TicketsModel.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\TicketsModel.cs",
+              "RelativeToolTip": "DB_BackendModel\\TicketsModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:22:19.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:51:36.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:14:07.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AdminOrdersController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\AdminOrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminOrdersController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\AdminOrdersController.cs",
+              "RelativeToolTip": "Controllers\\AdminOrdersController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAuwB0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:14:14.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TicketsServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\TicketsServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\TicketsServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\TicketsServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\TicketsServer.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAUwJcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:21:49.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "TicketsManager.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\TicketsManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\TicketsManager.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\TicketsManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\TicketsManager.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAYwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:20:27.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TicketsController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\TicketsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TicketsController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\TicketsController.cs",
+              "RelativeToolTip": "Controllers\\TicketsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:19:35.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "StationsController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\StationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StationsController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\StationsController.cs",
+              "RelativeToolTip": "Controllers\\StationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:19:06.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "TrainInfo.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\TrainInfo.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\TrainInfo.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\TrainInfo.cs",
+              "RelativeToolTip": "DB_BackendModel\\TrainInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:22:31.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "StationsServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\StationsServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\StationsServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\StationsServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\StationsServer.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:21:30.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ScreenServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\ScreenServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\ScreenServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\ScreenServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\ScreenServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:21:21.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "QuestionServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\QuestionServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\QuestionServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\QuestionServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\QuestionServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T20:32:43.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AccommodateServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\AccommodateServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\AccommodateServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\AccommodateServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\AccommodateServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:20:49.294Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 32,
+              "Title": "StationsManager.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\StationsManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\StationsManager.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\StationsManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\StationsManager.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:20:07.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ScreenManager.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\ScreenManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\ScreenManager.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\ScreenManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\ScreenManager.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:19:58.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "QuestionManager.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\QuestionManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\QuestionManager.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\QuestionManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\QuestionManager.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T20:31:13.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ScreenController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\ScreenController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ScreenController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\ScreenController.cs",
+              "RelativeToolTip": "Controllers\\ScreenController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:18:59.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "MyTicketController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyTicketController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MyTicketController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyTicketController.cs",
+              "RelativeToolTip": "Controllers\\MyTicketController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:18:34.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "QuestionController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\QuestionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QuestionController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\QuestionController.cs",
+              "RelativeToolTip": "Controllers\\QuestionController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAxwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T20:30:54.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "MyOrderController.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyOrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MyOrderController.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyOrderController.cs",
+              "RelativeToolTip": "Controllers\\MyOrderController.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T02:15:03.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "AdminServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\AdminServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\AdminServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\AdminServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\AdminServer.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAuwEwAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T14:13:24.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
               "Title": "Admin.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\Admin.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\Admin.cs",
@@ -548,7 +675,19 @@
               "RelativeToolTip": "DB_BackendModel\\Admin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:18:00.389Z"
+              "WhenOpened": "2024-09-06T14:13:07.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "QuestionModel.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\QuestionModel.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\QuestionModel.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\QuestionModel.cs",
+              "RelativeToolTip": "DB_BackendModel\\QuestionModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T20:32:57.139Z"
             }
           ]
         },

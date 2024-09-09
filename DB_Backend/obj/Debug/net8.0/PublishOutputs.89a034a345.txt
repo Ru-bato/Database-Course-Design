@@ -5,6 +5,7 @@ E:\DataBase\Database-Course-Design\DB_Backend\obj\Debug\net8.0\PubTmp\Out\DB_Bac
 E:\DataBase\Database-Course-Design\DB_Backend\obj\Debug\net8.0\PubTmp\Out\DB_Backend.deps.json
 E:\DataBase\Database-Course-Design\DB_Backend\obj\Debug\net8.0\PubTmp\Out\DB_Backend.runtimeconfig.json
 E:\DataBase\Database-Course-Design\DB_Backend\obj\Debug\net8.0\PubTmp\Out\DB_Backend.pdb
+E:\DataBase\Database-Course-Design\DB_Backend\obj\Debug\net8.0\PubTmp\Out\BCrypt.Net-Next.dll
 E:\DataBase\Database-Course-Design\DB_Backend\obj\Debug\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 E:\DataBase\Database-Course-Design\DB_Backend\obj\Debug\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
 E:\DataBase\Database-Course-Design\DB_Backend\obj\Debug\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll

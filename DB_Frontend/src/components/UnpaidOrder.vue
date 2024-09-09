@@ -22,7 +22,6 @@
     <div v-else>
       <div v-for="order in filteredOrders" :key="order.orderId" class="order-card">
         <div class="order-header">
-          <h3>订单号: {{ order.orderId }}</h3>
           <!-- 状态显示为中文 -->
           <span :class="['order-status', getStatusClass(order.orderStatus)]">{{ getStatusLabel(order.orderStatus) }}</span>
         </div>
@@ -143,11 +142,38 @@ export default {
     };
 
     const handlePay = (orderId: string) => {
+      axios.post('http://localhost:5000/api/tickets/payOrder',{OrderID:orderId})
+      .then(response =>{
+        console.log(response.data);
+        if(response.data === true){
+          console.log('支付订单成功:');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      })
       console.log('支付订单:', orderId);
+      window.alert('订单支付成功！');
+      fetchOrders();
     };
 
     const handleCancelOrder = (orderId: string) => {
+      axios.post('http://localhost:5000/api/tickets/refundTickets',{
+        OrderID:orderId,
+        IsPaid:false
+      })
+      .then(response =>{
+        console.log(response.data);
+        if(response.data === true){
+          console.log('取消订单成功:');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      })
       console.log('取消订单:', orderId);
+      window.alert('订单取消成功！');
+      fetchOrders();
     };
 
     onMounted(() => {

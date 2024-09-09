@@ -1,0 +1,91 @@
+/*导航背景色*/
+.navigation ul li:nth-child(6){
+	background-color: #2676e3;
+}
+.navigation ul li:nth-child(1){
+	background-color: #3b99fc;
+}
+
+.food{
+	background: url('../assets/bg_search1.jpg.jpg') no-repeat center center ;
+	background-size: cover;
+	width: 100%;
+	height: 630px;
+	margin-bottom: 40px;
+
+/*	line-height: 630px;
+text-align: center;*/
+}
+.food .food_i{
+	width: 980px;
+	height: 56px;
+	background-color: #fff;
+	/*居中*/
+	position: relative;
+	margin: 0 auto;
+	top: 47%;
+}
+.food>.food_i::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.food>.food_i>div{	
+	float: left;
+	text-align: center;
+	line-height: 56px;
+	font-size: 18px;
+	/*width: 210px;*/
+}
+.food>.food_i>.food_time{
+	border-right: 1px solid #e6e6e6;
+	width: 210px;
+}
+/*日历图标*/
+.food>.food_i>.food_time>div>.icon-ScheduleConfig{
+	color: #ff8f16;
+	margin-left: 8px;
+	height: 17px;
+	margin: 0;
+}
+input{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	
+}
+.food>.food_i>.food_time>div>input{
+	border: none;
+	font-size: 17px;
+	color: #726a66;
+	width: 180px;
+}
+.food>.food_i>.food_car
+,.food>.food_i>.food_from
+,.food>.food_i>.food_to{
+	width: 210px;
+	color: #666666;
+}
+.food>.food_i>.food_car>div>input
+,.food>.food_i>.food_from>div>input
+,.food>.food_i>.food_to>div>input{
+	width: 140px;
+	border: none;
+	font-size: 18px;
+}
+.food>.food_i>.food_from>div{
+	border-right: 1px solid #e6e6e6;
+}
+.food>.food_i>.food_to>div>label{
+	margin-left: 10px;
+}
+.food>.food_i>.food_search{
+	text-align: center;
+	line-height: 56px;
+	background-color: #3f23bd;
+	width: 139px;
+	/*color: #fff;*/
+}
+.food>.food_i>.food_search>a{
+	color: #fff;
+}

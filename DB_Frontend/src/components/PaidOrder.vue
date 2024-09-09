@@ -67,7 +67,8 @@
           </div>
         </div>
         <div class="order-actions">
-          <button @click="handleChangeTicket(order.orderId)">改签</button>
+          <!-- <button @click="handleChangeTicket(order.orderId)">改签</button> -->
+          <button class="orange-button" @click="gotoFoodServer()">餐饮服务</button>
           <button @click="handleCancelOrder(order.orderId)">取消订单</button>
         </div>
       </div>
@@ -78,6 +79,7 @@
 <script lang="ts">
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
+import { useRouter } from 'vue-router';
 
 interface Order {
   orderId: string;
@@ -100,6 +102,7 @@ export default {
     const endDate = ref<string>('');
     const filteredOrders = ref<Order[]>([]);
     const userId = localStorage.getItem('User_ID');
+    const router = useRouter();
 
     const fetchOrders = () => {
       console.log(`http://localhost:5000/api/MyOrder/GetMyPaidOrder?cust=${userId}`);
@@ -155,8 +158,24 @@ export default {
       console.log('查看候补情况:', orderId);
     };
 
+    const gotoFoodServer=()=>{
+      router.push({name:'FoodServer'});
+    }
+
     const handleCancelOrder = (orderId: string) => {
+      axios.post('http://localhost:5000/api/tickets/refundTickets',{
+        OrderID:orderId,
+        IsPaid:true
+      })
+      .then(response =>{
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      })
       console.log('取消订单:', orderId);
+      window.alert('取消订单成功！');
+      fetchOrders();
     };
 
     onMounted(() => {
@@ -176,6 +195,7 @@ export default {
       handlePay,
       handleWaitlistStatus,
       handleCancelOrder,
+      gotoFoodServer
     };
   }
 };
@@ -357,5 +377,15 @@ h2 {
 .station-link.arrival {
   color: #28a745;
   border-color: #28a745;
+}
+
+.orange-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 </style>

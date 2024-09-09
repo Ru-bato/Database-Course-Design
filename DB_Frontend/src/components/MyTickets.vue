@@ -1,22 +1,12 @@
 <template>
   <div class="order-container">
     <h2>我的车票</h2>
-
-    <!-- Date range picker -->
-    <div class="date-picker">
-      <label for="start-date">起始日期:</label>
-      <input type="date" id="start-date" v-model="startDate" />
-      <label for="end-date">结束日期:</label>
-      <input type="date" id="end-date" v-model="endDate" />
-      <button @click="filterByDate">筛选</button>
-    </div>
-
     <!-- Order list -->
-    <div v-if="filteredOrders.length === 0" class="no-orders">
+    <div v-if="paginatedOrders.length === 0" class="no-orders">
       <p>你目前没有车票</p>
     </div>
     <div v-else>
-      <div v-for="(order, index) in filteredOrders" :key="order.orderId" class="order-card" :class="{'alternate-bg': index % 2 === 1}">
+      <div v-for="(order, index) in paginatedOrders" :key="order.orderId" class="order-card" :class="{'alternate-bg': index % 2 === 1}">
         <div class="order-header">
           <h3>订单号: <span class="blue-text">{{ order.orderId }}</span></h3>
         </div>
@@ -51,17 +41,25 @@
           </div>
         </div>
         <div class="order-actions">
-          <button class="orange-button">餐饮</button>
-          <button class="blue-button">退票</button>
+          <button class="orange-button" @click="gotoFoodServer()">餐饮</button>
+          <button class="blue-button" @click="confirmDelete(order.orderId)">退票</button>
         </div>
       </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button @click="prevPage" :disabled="currentPage === 1">上一页</button>
+      <span>{{ currentPage }} / {{ totalPages }}</span>
+      <button @click="nextPage" :disabled="currentPage === totalPages">下一页</button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
+import router from '@/router';
 
 interface Order {
   orderId: string;
@@ -81,11 +79,13 @@ export default {
     const endDate = ref<string>('');
     const filteredOrders = ref<Order[]>([]);
     const userId = localStorage.getItem('User_ID'); // 获得当前登录的userId
+    const currentPage = ref(1);
+    const pageSize = ref(2); // 每页显示的订单数量
 
     const fetchOrders = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/api/MyTicket/GetMyTicket?cust=${userId}`);
-        orders.value = response.data;
+        orders.value = response.data.sort((a: Order, b: Order) => b.orderId.localeCompare(a.orderId));
         applyFilters();
       } catch (error) {
         console.error('Error fetching orders:', error);
@@ -98,10 +98,33 @@ export default {
                             (!endDate.value || new Date(order.departureTime) <= new Date(endDate.value));
         return matchesDate;
       });
+      currentPage.value = 1; // 重置到第一页
     };
 
     const filterByDate = () => {
       applyFilters();
+    };
+
+    const paginatedOrders = computed(() => {
+      const start = (currentPage.value - 1) * pageSize.value;
+      const end = start + pageSize.value;
+      return filteredOrders.value.slice(start, end);
+    });
+
+    const totalPages = computed(() => {
+      return Math.ceil(filteredOrders.value.length / pageSize.value);
+    });
+
+    const prevPage = () => {
+      if (currentPage.value > 1) {
+        currentPage.value--;
+      }
+    };
+
+    const nextPage = () => {
+      if (currentPage.value < totalPages.value) {
+        currentPage.value++;
+      }
     };
 
     const getTicketTypeLabel = (ticketType: string) => {
@@ -114,6 +137,25 @@ export default {
       window.open(mapUrl, '_blank');
     };
 
+    const confirmDelete = (orderId: string) => {
+      if (window.confirm('确定要退票吗？')) {
+        deleteOrder(orderId);
+      }
+    };
+
+    const deleteOrder = async (orderId: string) => {
+      try {
+        await axios.delete(`http://localhost:5000/api/MyTicket/DeleteMyTicket?o_id=${orderId}`);
+        fetchOrders(); // 重新获取订单列表
+      } catch (error) {
+        console.error('Error deleting order:', error);
+      }
+    };
+
+    const gotoFoodServer=()=>{
+      router.push({name:'FoodServer'});
+    }
+
     onMounted(() => {
       fetchOrders();
     });
@@ -123,9 +165,16 @@ export default {
       startDate,
       endDate,
       filteredOrders,
+      paginatedOrders,
       filterByDate,
       getTicketTypeLabel,
-      openMap
+      openMap,
+      currentPage,
+      totalPages,
+      prevPage,
+      nextPage,
+      confirmDelete,
+      gotoFoodServer,
     };
   }
 };
@@ -247,5 +296,36 @@ export default {
   border-radius: 5px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-size: 14px;
 }
 </style>

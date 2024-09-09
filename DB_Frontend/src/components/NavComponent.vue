@@ -2,10 +2,15 @@
   <div class="nav-box">
     <ul class="nav">
       <li v-for="(item, index) in navItems" :key="index" class="nav-item">
-        <a href="#" class="nav-hd">
-          {{ item.name }}
-          <div class="dropdown-arrow"></div>
-        </a>
+        <router-link
+          v-if="item.route"
+          :to="item.route"
+          class="nav-hd"
+        >{{ item.name }}</router-link>
+        <!-- <a href="#" class="nav-hd">
+          {{ item.name }} -->
+          <!-- <div class="dropdown-arrow"></div> -->
+        <!-- </a> -->
         <ul class="nav-dropdown">
           <li v-for="(subItem, subIndex) in item.subMenu" :key="subIndex">
             <a class="nav-dropdown-item" href="#">{{ subItem }}</a>
@@ -21,13 +26,16 @@ export default {
   data() {
     return {
       navItems: [
-        { name: "首页", subMenu: ["子菜单项 1", "子菜单项 2", "子菜单项 3"] },
-        { name: "车票", subMenu: ["子菜单项 1", "子菜单项 2", "子菜单项 3"] },
-        { name: "团购服务", subMenu: ["子菜单项 1", "子菜单项 2", "子菜单项 3"] },
-        { name: "站车服务", subMenu: ["子菜单项 1", "子菜单项 2", "子菜单项 3"] },
-        { name: "商旅服务", subMenu: ["子菜单项 1", "子菜单项 2", "子菜单项 3"] },
-        { name: "出行指南", subMenu: ["子菜单项 1", "子菜单项 2", "子菜单项 3"] },
-        { name: "信息查询", subMenu: ["子菜单项 1", "子菜单项 2", "子菜单项 3"] }
+        // { name: "酒店" ,route: ""},
+        // { name: "机票" ,route,},
+        { name: "首页" ,route:{name:'Index'}},
+        { name: "车站大屏",route:{name:'StationPage'} },
+        // { name: "站车服务" },
+        { name: "已购车票",route:{name:'PaidOrder'} },
+        { name: "候补车票",route:{name:'WaitOrder'} },
+        { name: "待支付车票",route:{name:'UnpaidOrder'} },
+        { name: "个人主页", route:{name:'PersonalPage'} },
+        { name: "常见问题",route:{name:'TicketsQuestions'} },
       ]
     };
   }
@@ -79,7 +87,7 @@ export default {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #fff;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 li.nav-item::marker {

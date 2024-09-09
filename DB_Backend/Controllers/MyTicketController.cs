@@ -66,6 +66,44 @@ namespace DB_Backend.Controllers
 
         }
 
+        [HttpDelete("DeleteMyTicket")]
 
+        public IActionResult DeleteMyTicket(string o_id)
+        {
+            using (OracleConnection connection = new OracleConnection(conStr))
+            {
+                if (o_id == null)
+                {
+                    return BadRequest("Invalid order data.");
+                }
+                try
+                {
+                    var orderlist = _dbContext.ORDERLIST.FirstOrDefault(o => o.Order_id == o_id);
+
+                    // Check if the record exists
+                    if (orderlist == null)
+                    {
+                        return NotFound(new { message = $"Train with ID {o_id} not found." });
+                    }
+
+                    var train = _dbContext.TRAIN.FirstOrDefault(t => t.Train_id == orderlist.Train_id);
+                    if (train == null)
+                    {
+                        return NotFound(new { message = $"Train with ID {orderlist.Train_id} not found." });
+                    }
+                    train.Remaining_tickets = train.Remaining_tickets + 1;
+                    // Remove the record
+                    _dbContext.ORDERLIST.Remove(orderlist);
+
+                    // Save changes to the database
+                    _dbContext.SaveChanges();
+                    return Ok(orderlist);
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, ex.Message);
+                }
+            }
+        }
     }
 }

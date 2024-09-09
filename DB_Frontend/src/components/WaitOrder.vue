@@ -155,7 +155,21 @@ export default {
     };
 
     const handleCancelOrder = (orderId: string) => {
+      axios.post('http://localhost:5000/api/tickets/refundTickets',{
+        OrderID:orderId,
+        IsPaid:false
+      })
+      .then(response =>{
+        console.log(response.data);
+        if(response.data === true){
+          console.log('取消订单成功:');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      })
       console.log('取消订单:', orderId);
+      fetchOrders();
     };
 
     onMounted(() => {

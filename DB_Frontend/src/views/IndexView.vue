@@ -1,9 +1,9 @@
 <template>
     <div>
         <!-- 页面头部 -->
-        <div class="header">
+        <!-- <div class="header"> -->
             <!-- <iframe src="../header/index_main.html" width="100%" frameborder="0"></iframe> -->
-        </div>
+        <!-- </div> -->
 
         <!-- 轮播图以及搜索框 -->
         <div class="section-1">
@@ -11,7 +11,7 @@
             <div class="slides-container">
                 <!-- 图像 -->
                 <div class="slides-list">
-                    <img src='@/assets/slide1.jpg' alt="slide1">
+                    <img src='../assets/slide1.jpg' alt="slide1">
                     <img src='@/assets/slide2.jpg' alt="slide2">
                     <img src='@/assets/slide3.jpg' alt="slide3">
                 </div>
@@ -167,7 +167,7 @@
     // 管理搜索框
     class searchManager {
         // 构造函数
-        constructor(container) {
+        constructor(container,router) {
             this.container = container;
             this.now_input = -1; // 当前输入框
             // 获取元素
@@ -180,6 +180,7 @@
             this.submit_btn = search_list.querySelector('#submit');
             this.err_from = search_list.querySelector('#fromErr');
             this.err_to = search_list.querySelector('#toErr');
+            this.router = router;
             this.addEventListener();
         }
 
@@ -227,10 +228,23 @@
                 const from = this.input_from.value;
                 const to = this.input_to.value;
                 const time = this.input_time.value;
+                const date = new Date(time);
+                // 提取年、月、日
+                const year = date.getFullYear();
+                const month = date.getMonth() + 1; // 月份是从0开始的，所以需要加1
+                const day = date.getDate();
+                // 格式化为 'YYYY/M/D'
+                const date_new = `${year}/${month}/${day}`;
                 const ifStudent = this.chk_student.checked;
-                const ifRound = this.chk_round.checked;
-                const url = `../tickets_show/tickets_list.html?from=${from}&to=${to}&time=${time}&ifStudent=${ifStudent}&ifRound=${ifRound}`;
-                window.location.href = url;
+                this.router.push({
+                    name:'TicketShow',
+                    query: {
+                        from: from,
+                        to: to,
+                        date: date_new,
+                        isStudent: ifStudent,
+                    }
+                });
             }
         }
 
@@ -472,13 +486,12 @@
                     const dropdown_container = document.querySelector('.dropdown-container');
                     if (dropdown_container) {
                         const dropdown_manager = new dropdownManager(dropdown_container);
-                        const search_manager = new searchManager(search_container);
+                        const search_manager = new searchManager(search_container,this.$router);
                         dropdown_manager.search_manager = search_manager;
                         search_manager.dropdown_manager = dropdown_manager;
                     }
                 }
             }
-        
         },
         mounted(){
             this.init();
@@ -520,7 +533,7 @@ ul {
     position: relative;
     left: 0px;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     transition: 0.5s ease-in-out;
 }
 .section-1 .slides-container .slides-list img {
@@ -652,6 +665,10 @@ ul {
 }
 
 /* ---------------------------下拉框--------------------------- */
+.header::before {
+    display: none;
+}
+
 .dropdown-container {
     position: absolute;
 }
