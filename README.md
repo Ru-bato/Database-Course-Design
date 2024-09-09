@@ -1,8 +1,10 @@
 # 星“济”铁路——铁路票务智能化管理平台
 
+Intelligent Management Platform For Railroad Tickets
+
 ## Introduction
 
-This project is a Database Principle And Application Course Design project for 2024 in School of Software, Tongji University, which designs an `Intelligent Management Platform For Railroad Tickets` with reference to APPs such as railroad 12306(铁路12306) and Ctrip travel(携程旅行).
+This project is a Database Principle And Application Course Design project for 2024 in School of Software, Tongji University, which designs an `Intelligent Management Platform For Railroad Tickets` with reference to APPs such as Railroad 12306(铁路12306) and Ctrip travel(携程旅行).
 
 This is a 10-person collaborative project. The version is `VI`, which is the final version.
 
@@ -41,7 +43,7 @@ This is a 10-person collaborative project. The version is `VI`, which is the fin
   ```
 
 - Direct Access
-  This project used to be deployed to Alibaba Cloud's(阿里云) Windows cloud servers, but due to the release of the cloud servers, by the time you read this, it probably won't be accessible via [this url](http://47.100.21.14:18080/) anymore.
+  This project used to be deployed to Alibaba Cloud's(阿里云) Windows cloud servers, but due to the release of the cloud servers, by the time you read this, it probably won't be accessible via <a href="http://47.100.21.14:18080/" target="_blank" rel="noopener noreferrer">this url</a> anymore.
 
 ## Functionalities
 
