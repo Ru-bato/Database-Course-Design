@@ -457,6 +457,7 @@ export default {
                 console.error('Error fetching data:', error);
             }
         },
+
         processQuestions(data) {
             // 获取最大 questionType 以初始化数组
             const maxType = Math.max(...data.map(q => q.questionType));
@@ -503,10 +504,25 @@ export default {
 
     },
     async mounted() {
-        await this.getQuestionBackend();  // 确保在组件挂载时获取数据
-        this.setupNavItems(); // 初始化导航项
-        this.toggleMenu('ticket-menu', 'ticket-info', 'subtitle-1'); // 打开时默认显示车票信息
+        // 1. 确保在组件挂载时获取数据
+        await this.getQuestionBackend();
+
+        // 2. 初始化导航项和默认显示内容
+        this.setupNavItems();
+        this.toggleMenu('ticket-menu', 'ticket-info', 'subtitle-1');
+
+        // 3. 如果 localStorage 中存在搜索查询，则按顺序处理
+        const searchQuery = localStorage.getItem('searchQuery');
+        if (searchQuery) {
+            this.searchQuery = searchQuery;  // 先获取并设置查询
+            console.log(this.searchQuery);
+            console.log(this.questions);
+            // while(this.questions.length == 0);
+            // 4. 之后调用 showAnswer()，确保执行顺序正确
+            // this.showAnswer();
+        }
     },
+
 };
 </script>
 

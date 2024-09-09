@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\useradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\useradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backenddal\\userserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendbll\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -159,10 +167,6 @@
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\useradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\useradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|e:\\database\\database-course-design\\db_backend\\db_backendmodel\\questionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A3ABB13-2E41-44E2-9D01-F293DD0B51B3}|DB_Backend.csproj|solutionrelative:db_backendmodel\\questionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -174,41 +178,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserServer.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\UserServer.cs",
-              "RelativeDocumentMoniker": "DB_BackendDAL\\UserServer.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\UserServer.cs",
-              "RelativeToolTip": "DB_BackendDAL\\UserServer.cs",
-              "ViewState": "AgIAALkAAAAAAAAAAAAnwNQAAABtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T09:14:04.603Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderManager.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderManager.cs",
-              "RelativeDocumentMoniker": "DB_BackendBLL\\OrderManager.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderManager.cs",
-              "RelativeToolTip": "DB_BackendBLL\\OrderManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\User.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\User.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\User.cs",
+              "RelativeToolTip": "DB_BackendModel\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T06:25:14.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-07T21:07:53.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "OrderServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\OrderServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\OrderServer.cs",
@@ -220,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "OrderListServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\OrderListServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\OrderListServer.cs",
@@ -232,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "OrderListManager.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderListManager.cs",
               "RelativeDocumentMoniker": "DB_BackendBLL\\OrderListManager.cs",
@@ -244,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "MyTicketDbContext.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\MyTicketDbContext.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\MyTicketDbContext.cs",
@@ -256,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "OrderListModel.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\OrderListModel.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\OrderListModel.cs",
@@ -268,13 +258,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "UserAdmin.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\UserAdmin.cs",
+              "RelativeDocumentMoniker": "DB_BackendModel\\UserAdmin.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\UserAdmin.cs",
+              "RelativeToolTip": "DB_BackendModel\\UserAdmin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T14:13:05.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "LoginController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAIsAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAswGkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-07T02:14:47.192Z",
               "EditorCaption": ""
@@ -282,6 +284,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "UserServer.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\UserServer.cs",
+              "RelativeDocumentMoniker": "DB_BackendDAL\\UserServer.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\UserServer.cs",
+              "RelativeToolTip": "DB_BackendDAL\\UserServer.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAnwNQAAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T09:14:04.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderManager.cs",
+              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderManager.cs",
+              "RelativeDocumentMoniker": "DB_BackendBLL\\OrderManager.cs",
+              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\OrderManager.cs",
+              "RelativeToolTip": "DB_BackendBLL\\OrderManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T06:25:14.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Order.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\Order.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\Order.cs",
@@ -293,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "OrderListController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\OrderListController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrderListController.cs",
@@ -305,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "OrderController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
@@ -317,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "DBServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\DBServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\DBServer.cs",
@@ -329,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "PassengerServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\PassengerServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\PassengerServer.cs",
@@ -341,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "PassengerController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\PassengerController.cs",
               "RelativeDocumentMoniker": "Controllers\\PassengerController.cs",
@@ -353,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "FoodServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\FoodServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\FoodServer.cs",
@@ -365,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "FoodServerManager.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\FoodServerManager.cs",
               "RelativeDocumentMoniker": "DB_BackendBLL\\FoodServerManager.cs",
@@ -377,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "FoodServerController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\FoodServerController.cs",
               "RelativeDocumentMoniker": "Controllers\\FoodServerController.cs",
@@ -389,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "TicketsModel.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\TicketsModel.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\TicketsModel.cs",
@@ -401,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -413,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "AdminController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -425,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "AdminOrdersController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\AdminOrdersController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminOrdersController.cs",
@@ -437,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "TicketsServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\TicketsServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\TicketsServer.cs",
@@ -449,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "TicketsManager.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\TicketsManager.cs",
               "RelativeDocumentMoniker": "DB_BackendBLL\\TicketsManager.cs",
@@ -461,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "TicketsController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\TicketsController.cs",
               "RelativeDocumentMoniker": "Controllers\\TicketsController.cs",
@@ -473,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "StationsController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\StationsController.cs",
               "RelativeDocumentMoniker": "Controllers\\StationsController.cs",
@@ -485,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "TrainInfo.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\TrainInfo.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\TrainInfo.cs",
@@ -497,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "StationsServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\StationsServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\StationsServer.cs",
@@ -509,7 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "ScreenServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\ScreenServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\ScreenServer.cs",
@@ -521,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "QuestionServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\QuestionServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\QuestionServer.cs",
@@ -533,7 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "AccommodateServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\AccommodateServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\AccommodateServer.cs",
@@ -545,7 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "StationsManager.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\StationsManager.cs",
               "RelativeDocumentMoniker": "DB_BackendBLL\\StationsManager.cs",
@@ -557,7 +583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "ScreenManager.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\ScreenManager.cs",
               "RelativeDocumentMoniker": "DB_BackendBLL\\ScreenManager.cs",
@@ -569,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "QuestionManager.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendBLL\\QuestionManager.cs",
               "RelativeDocumentMoniker": "DB_BackendBLL\\QuestionManager.cs",
@@ -581,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "ScreenController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\ScreenController.cs",
               "RelativeDocumentMoniker": "Controllers\\ScreenController.cs",
@@ -593,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "MyTicketController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyTicketController.cs",
               "RelativeDocumentMoniker": "Controllers\\MyTicketController.cs",
@@ -605,7 +631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "QuestionController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\QuestionController.cs",
               "RelativeDocumentMoniker": "Controllers\\QuestionController.cs",
@@ -617,7 +643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "MyOrderController.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\Controllers\\MyOrderController.cs",
               "RelativeDocumentMoniker": "Controllers\\MyOrderController.cs",
@@ -629,7 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "AdminServer.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendDAL\\AdminServer.cs",
               "RelativeDocumentMoniker": "DB_BackendDAL\\AdminServer.cs",
@@ -641,7 +667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "Admin.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\Admin.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\Admin.cs",
@@ -653,19 +679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "UserAdmin.cs",
-              "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\UserAdmin.cs",
-              "RelativeDocumentMoniker": "DB_BackendModel\\UserAdmin.cs",
-              "ToolTip": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\UserAdmin.cs",
-              "RelativeToolTip": "DB_BackendModel\\UserAdmin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T14:13:05.863Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "QuestionModel.cs",
               "DocumentMoniker": "E:\\DataBase\\Database-Course-Design\\DB_Backend\\DB_BackendModel\\QuestionModel.cs",
               "RelativeDocumentMoniker": "DB_BackendModel\\QuestionModel.cs",

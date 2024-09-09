@@ -9,7 +9,7 @@
 <script lang="ts">
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import NavComponent from '@/components/NavComponent.vue';
-import OrderListstatistic from '@/components/OrderListstatistic.vue';
+import OrderListstatistic from '@/components/OrderListStatistic.vue';
 
 export default {
     components: {

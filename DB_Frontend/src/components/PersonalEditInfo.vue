@@ -11,10 +11,6 @@
         <input type="password" id="password" v-model="form.password" placeholder="留空表示不修改" />
       </div>
       <div class="form-group">
-        <label for="idNumber">身份证号:</label>
-        <input type="text" id="idNumber" v-model="form.idNumber" placeholder="留空表示不修改" />
-      </div>
-      <div class="form-group">
         <label for="isStudent">是否为学生:</label>
         <select id="isStudent" v-model="form.isStudent">
           <option :value="true">是</option>
@@ -35,16 +31,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import axios from 'axios';
 
 interface UserForm {
   username: string;
   password: string;
-  idNumber: string;
   isStudent: boolean;
   phoneNumber: string;
   ridingInterval: string;
+  isAdmin: boolean;
 }
 
 export default defineComponent({
@@ -53,11 +49,40 @@ export default defineComponent({
     const form = ref<UserForm>({
       username: '',
       password: '',
-      idNumber: '',
       isStudent: true,
       phoneNumber: '',
       ridingInterval: '',
+      isAdmin: false,
     });
+
+    const userInfo = ref<UserForm>({
+      username: '',
+      password: '',
+      isStudent: true,
+      phoneNumber: '',
+      ridingInterval: '',
+      isAdmin: false,
+    });
+
+    const getUserInfo = async () => {
+      const userId = localStorage.getItem('User_ID');
+
+      try {
+        const response = await axios.get(`http://localhost:5000/api/User/GetUser/${userId}`)
+        if (response.data) {
+          userInfo.value.username = response.data.user.username;
+          userInfo.value.password = response.data.user.password;
+          userInfo.value.phoneNumber = response.data.user.phone_Number;
+          userInfo.value.username = response.data.user.username;
+          userInfo.value.ridingInterval = response.data.user.riding_Interval;
+          userInfo.value.isStudent = response.data.user.isStudent;
+        } else {
+          console.error('getUserInfo: response is empty');
+        }
+      } catch (error) {
+        console.error('Error getUserInfo: ', error);
+      }
+    };
 
     const submitForm = async () => {
       const userId = localStorage.getItem('User_ID');
@@ -73,13 +98,25 @@ export default defineComponent({
           User_id: userId,
           Username: form.value.username || undefined,  // 如果为空则不修改
           Password: form.value.password || undefined,
-          Id_number: form.value.idNumber || undefined,
           Is_student: form.value.isStudent,
           Status: true, // 默认设置为 true 或根据需求设置
           Phone_number: form.value.phoneNumber || undefined,
           Riding_interval: form.value.ridingInterval || undefined,
         };
 
+        getUserInfo();
+
+        if (typeof userData.Username === 'undefined')
+          userData.Username = userInfo.value.username;
+        if (typeof userData.Password === 'undefined')
+          userData.Password = userInfo.value.password;
+        if (typeof userData.Phone_number === 'undefined')
+          userData.Phone_number = userInfo.value.phoneNumber;
+        if (typeof userData.Riding_interval === 'undefined')
+          userData.Riding_interval = userInfo.value.ridingInterval;
+
+        console.log('userData: ', userData);
+        
         // 调用 API 更新用户信息
         const response = await axios.put('http://localhost:5000/api/User/UpdateUser', userData);
 
@@ -94,8 +131,15 @@ export default defineComponent({
       }
     };
 
+    onMounted(() => {
+      getUserInfo();
+      form.value.isStudent = userInfo.value.isStudent;
+    });
+
     return {
       form,
+      userInfo,
+      getUserInfo,
       submitForm,
     };
   },

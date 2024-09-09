@@ -71,7 +71,7 @@ const handleRegister = () => {
     .then(response => {
       // 注册成功
       console.log(response.data);
-      router.push('/'); 
+      router.push('/login'); 
     })
     .catch(error => {
       if (error.response) {

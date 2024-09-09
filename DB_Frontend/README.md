@@ -1,45 +1,61 @@
-# DB_Frontend
+# 前端简要说明
 
-This template should help get you started developing with Vue 3 in Vite.
+## 请注意，此说明在项目初期编写，随着项目进行，并未对其更新，因此其内容仅供参考
 
-## Recommended IDE Setup
+## 目录结构
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```
+frontend/
+├── public/                 # 静态资源
+├── src/
+│   ├── assets/             # 资源文件（图片、样式等）
+│   ├── components/         # 通用组件
+│   ├── router/             # 路由配置
+│   ├── store/              # Vuex 状态管理
+│   ├── views/              # 页面视图
+│   ├── styles/             # 全局样式（暂不设置，有需要再添加）
+│   ├── utils/              # 工具函数
+│   ├── App.vue             # 主组件
+│   ├── main.ts             # 入口文件
+│   └── shims-vue.d.ts      # 类型声明（暂不设置，有需要再添加）
+└── package.json            # 项目依赖
 ```
 
-### Compile and Hot-Reload for Development
+## 命名约定
 
-```sh
-npm run dev
-```
+### 文件和目录
 
-### Type-Check, Compile and Minify for Production
+- 组件文件：采用 PascalCase，例如 `MyComponent.vue`
+- 视图文件：采用 PascalCase，例如 `HomePage.vue`
+- 样式文件：采用 kebab-case，例如 `main-header.scss`
+- 工具函数：采用 camelCase，例如 `formatDate.ts`
 
-```sh
-npm run build
-```
+### 变量和函数
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+- 变量：采用 camelCase，例如 `userName`
+- 常量：采用 UPPER_SNAKE_CASE，例如 `MAX_ITEMS`
+- 函数：采用 camelCase，例如 `fetchData()`
 
-```sh
-npm run test:unit
-```
+## 代码风格
 
-### Lint with [ESLint](https://eslint.org/)
+### 代码缩进
 
-```sh
-npm run lint
-```
+- 使用 2 个空格进行缩进
+
+### 分号（CSS和Typescript）
+
+- 每行语句结束时使用分号
+
+### 引号
+
+- TypeScript 中使用单引号，HTML 属性中使用双引号
+
+### 空行
+
+- 文件末尾保留一个空行
+- 不同逻辑块之间使用空行分隔
+
+### 注释
+
+- 项目中各种信息均用中文（这是老师的要求）
+- 因此自己写的注释请用中文，gpt生成的注释随意，尽量中文

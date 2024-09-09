@@ -128,7 +128,7 @@ export default defineComponent({
       let passengerUserId: string = ''; // 通过新增人的信息查找新增用户的用户id
       try {
         console.log('passengerName: ', form.value.Passenger_name);
-        console.log('idNumber:, ', form.value.Id_number);
+        console.log('idNumber: ', form.value.Id_number);
 
         const response = await axios.post('http://localhost:5000/api/Passenger/FindUserByPassengerID', {
           passengerName: form.value.Passenger_name,

@@ -119,8 +119,8 @@ namespace DB_Backend.DB_BackendDAL
                     //command.Parameters.Add(new OracleParameter("Is_student", user.Is_student));
                     //command.Parameters.Add(new OracleParameter("Status", user.Status));
                     // 将布尔值转换为数据库中的数值
-                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? "T" : "F"));
-                    command.Parameters.Add(new OracleParameter("Status", user.Status ? "T" : "F"));
+                    command.Parameters.Add(new OracleParameter("Is_student", user.Is_Student ? "Y" : "N"));
+                    command.Parameters.Add(new OracleParameter("Status", user.Status ? "Y" : "N"));
                     command.Parameters.Add(new OracleParameter("Phone_number", user.Phone_Number));
                     command.Parameters.Add(new OracleParameter("Riding_interval", user.Riding_Interval));
                     command.Parameters.Add(new OracleParameter("User_id", user.User_ID));

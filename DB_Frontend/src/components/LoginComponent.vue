@@ -42,7 +42,7 @@ const login = () => {
       console.log(response.data);
       const userId = response.data.data.user_ID;
       if (userId) {
-        alert(userId);
+        // alert(userId);
         localStorage.setItem('User_ID', userId);
         console.log('登陆成功');
         router.push('/'); // 重定向到首页

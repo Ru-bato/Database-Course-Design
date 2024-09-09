@@ -36,7 +36,6 @@ export default {
         { name: "待支付车票",route:{name:'UnpaidOrder'} },
         { name: "个人主页", route:{name:'PersonalPage'} },
         { name: "常见问题",route:{name:'TicketsQuestions'} },
-        
       ]
     };
   }

@@ -3,16 +3,16 @@
     <h3>订单管理</h3>
     <input v-model="userId" placeholder="输入用户ID" />
     <button @click="fetchOrders">查询订单</button>
-    <button @click="openAddOrderModal">添加订单</button>
+    <button style="display: none;" @click="openAddOrderModal"></button>
 
     <div v-if="orders && orders.length">
       <h4>订单详情</h4>
       <div v-for="order in orders" :key="order.Order_id">
-        <p><strong>订单ID:</strong> {{ order.Order_id }}</p>
-        <p><strong>火车ID:</strong> {{ order.Train_id }}</p>
-        <button @click="viewOrderDetails(order.Order_id)">查看详细信息</button>
-        <button @click="editOrder(order.Order_id)">编辑订单信息</button>
-        <button @click="deleteOrder(order.Order_id)">删除订单</button>
+        <p><strong>订单ID:</strong> {{ order.order_id }}</p>
+        <p><strong>火车ID:</strong> {{ order.train_id }}</p>
+        <button @click="viewOrderDetails(order.order_id)">查看详细信息</button>
+        <button style="display: none;" @click="editOrder(order.order_id)">编辑订单信息</button>
+        <button style="display: none;" @click="deleteOrder(order.Order_id)">删除订单</button>
       </div>
     </div>
 
@@ -35,11 +35,11 @@
       <div class="modal-content">
         <span class="close" @click="showModal = false">&times;</span>
         <h4>订单详情</h4>
-        <p><strong>订单ID:</strong> {{ selectedOrder?.Order_id }}</p>
-        <p><strong>用户ID:</strong> {{ selectedOrder?.User_id }}</p>
-        <p><strong>火车ID:</strong> {{ selectedOrder?.Train_id }}</p>
-        <p><strong>订单状态:</strong> {{ selectedOrder?.Order_Status }}</p>
-        <p><strong>价格:</strong> {{ selectedOrder?.Price }}</p>
+        <p><strong>订单ID:</strong> {{ selectedOrder?.order_id }}</p>
+        <p><strong>用户ID:</strong> {{ selectedOrder?.user_id }}</p>
+        <p><strong>火车ID:</strong> {{ selectedOrder?.train_id }}</p>
+        <p><strong>订单状态:</strong> {{ selectedOrder?.order_Status }}</p>
+        <p><strong>价格:</strong> {{ selectedOrder?.price }}</p>
         <p><strong>乘客ID:</strong> {{ selectedOrder?.passenger_id }}</p>
         <p><strong>车票类型:</strong> {{ selectedOrder?.ticket_type }}</p>
       </div>
@@ -104,7 +104,8 @@ export default defineComponent({
     const createOrder = () => {
       axios.post('http://localhost:5000/api/Order/CreateOrder', newOrder.value)
         .then(response => {
-          alert('订单创建成功');
+          if (response.data)
+            window.alert('订单创建成功');
           showAddOrderModal.value = false; // 关闭模态框
           fetchOrders(); // 重新加载订单
         })
@@ -153,7 +154,8 @@ export default defineComponent({
     const deleteOrder = (id: string) => {
       axios.delete(`http://localhost:5000/api/Order/DeleteOrder/${id}`)
         .then(response => {
-          alert(response.data);
+          if (response.data)
+            alert('订单删除成功！');
           fetchOrders(); // 删除后重新查询订单
         })
         .catch(error => {

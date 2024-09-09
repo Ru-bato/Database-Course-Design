@@ -12,10 +12,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" :key="user.User_ID">
-          <td>{{ user.User_ID }}</td>
-          <td>{{ user.Username }}</td>
-          <td>{{ user.Status ? '正常' : '封禁' }}</td>
+        <tr v-for="user in sortedUsers" :key="user.User_ID">
+          <td>{{ user.user_ID }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.status ? '正常' : '封禁' }}</td>
           <td>
             <button @click="editUser(user)">编辑</button>
             <button @click="deleteUser(user.User_ID)">删除</button>
@@ -59,7 +59,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
 import axios from 'axios';
 
 // 定义用户接口
@@ -90,6 +90,11 @@ export default defineComponent({
       Riding_interval: undefined,
     });
 
+    // 计算属性返回排序后的用户列表
+    const sortedUsers = computed(() => {
+      return [...users.value].sort((a, b) => a.user_ID - b.user_ID);
+    });
+
     const fetchUsers = async () => {
       try {
         //每次获取用户列表清空users数组避免重复
@@ -118,7 +123,7 @@ export default defineComponent({
     const createUser = async () => {
       try {
         const response = await axios.post<string>('http://localhost:5000/api/User/CreateUser', newUser.value);
-        alert(response.data);
+        alert('用户添加成功！');
         showAddUserModal.value = false; // 关闭模态框
         fetchUsers(); // 重新加载用户信息
       } catch (error) {
@@ -130,7 +135,7 @@ export default defineComponent({
       const newStatus = !user.Status;
       try {
         const response = await axios.put<string>(`http://localhost:5000/api/Admin/ProhibitUserLogin/${user.User_ID}`, null, { params: { status: newStatus } });
-        alert(response.data);
+        alert('用户状态修改成功！');
         user.Status = newStatus; // 更新前端状态
       } catch (error) {
         console.error("修改用户状态失败：", error);
@@ -140,7 +145,7 @@ export default defineComponent({
     const editUser = async (user: User) => {
       try {
         const response = await axios.put<string>('http://localhost:5000/api/Admin/UpdateUser', user);
-        alert(response.data);
+        alert('用户信息修改失败！');
         fetchUsers();
       } catch (error) {
         console.error("修改用户信息失败：", error);
@@ -150,7 +155,7 @@ export default defineComponent({
     const deleteUser = async (userId: string) => {
       try {
         const response = await axios.delete<string>(`http://localhost:5000/api/Admin/DeleteUser/${userId}`);
-        alert(response.data);
+        alert('用户删除成功！');
         fetchUsers();
       } catch (error) {
         console.error("删除用户失败：", error);
@@ -164,6 +169,7 @@ export default defineComponent({
       users,
       showAddUserModal,
       newUser,
+      sortedUsers,
       createUser,
       toggleUserStatus,
       editUser,

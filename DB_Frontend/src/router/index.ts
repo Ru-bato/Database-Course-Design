@@ -14,14 +14,13 @@ import ResetPasswordPage from '@/views/ResetPasswordPage.vue'
 import PersonalPage from '@/views/PersonalPage.vue'
 import TickShowPage from '@/views/TickShowPage.vue'
 import OrderListPage from '@/views/OrderListPage.vue'
-import foodServerComponent from '../components/foodServerComponent.vue'
-import foodListComponent from '../components/foodListComponent.vue'
-import myFoodComponent from '@/components/myFoodComponent.vue'
+import FoodListPage from '@/views/FoodListPage.vue'
+import FoodServerPage from '@/views/FoodServerPage.vue'
+import MyFoodPage from '@/views/MyFoodPage.vue'
 import BuyTicketsPage from '@/views/BuyTicketsPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', name: 'Index', component: Index, meta: { requiresAuth: true } },
-  // { path: '/', name: 'Home', component: Home },
   { path: '/login', name: 'Login', component: Login },
   { path: '/register', name: 'Register', component: Register },
   { path: '/verifyIdentity', name: 'VerifyIdentity', component: VerifyIdentityPage },
@@ -46,9 +45,9 @@ const routes: Array<RouteRecordRaw> = [
   },
   { path: '/ticketShow', name: 'TicketShow', component: TickShowPage },
   { path: '/orderList', name: 'OrderList', component: OrderListPage },
-  { path: '/foodServer', name: 'FoodServer', component: foodServerComponent },
-  { path: '/foodList', name: 'FoodList', component: foodListComponent },
-  { path: '/myFood', name: 'MyFood', component: myFoodComponent },
+  { path: '/foodServer', name: 'FoodServer', component: FoodServerPage },
+  { path: '/foodList', name: 'FoodList', component: FoodListPage },
+  { path: '/myFood', name: 'MyFood', component:MyFoodPage },
   { path: '/buyTickets', name: 'BuyTickets', component: BuyTicketsPage }
 ]
 
@@ -61,7 +60,7 @@ const router = createRouter({
 
 // 初始化最后活动时间
 let lastActivityTime = Date.now()
-const IDLE_TIME_LIMIT = 15 * 60 * 1000 // 15 分钟
+const IDLE_TIME_LIMIT =  15 * 60 * 1000 // 15分钟
 
 function updateLastActivityTime() {
   lastActivityTime = Date.now()

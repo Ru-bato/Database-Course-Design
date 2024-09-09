@@ -240,7 +240,7 @@ export default defineComponent({
             }
             catch (error) {
                 console.error('Error fetching tickets:', error);
-                alert('An error occurred while fetching tickets.');
+                alert('获取订单时出现错误！');
             }
 
         },
