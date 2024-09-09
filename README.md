@@ -76,3 +76,4 @@ This is a brief description of the functionality, see the `document` directory f
 
 Many thanks to Everyone for their contributions and cooperation.
 This project is a partial implementation of the common features of the railroad ticketing management system, there are inevitably some imperfections. We will no longer maintain this project, leaving it to be solved by future Fates.
+
